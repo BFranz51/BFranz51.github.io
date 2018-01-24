@@ -1,0 +1,18 @@
+.navbar-newbg {
+	color: #146eff;
+	background-color: #146eff;
+	background-image: none;
+	background-repeat: no-repeat;
+}
+
+.text-titleblue {
+	color: #1212BB;
+}
+
+.text-titleorange {
+	color: #AA3812;
+}
+
+li{
+    margin: 4px 0;
+}

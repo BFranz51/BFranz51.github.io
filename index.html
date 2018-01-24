@@ -22,16 +22,18 @@
 
     <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
+    <link href="css/custom_override.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <!-- used to contain 'bg-primary'-->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-newbg fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Start Bootstrap</span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile1.jpg" alt="">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-3" src="img/profile1_smaller.jpg" alt="">
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,23 +42,35 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#about">About Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#procAnim1">Procedural Animation for Humanoids and Spiders</a>
+            <a class="nav-link js-scroll-trigger" href="#mona">MONA (Cancer Research)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#combat1">3D Melee Combat in Unity3D</a>
+            <a class="nav-link js-scroll-trigger" href="#gabClass">Genetic Algorithm Environment in C++</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#game1">Unity3D Action Game</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#hair1">Real-Time Hair Physics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#gabClass">GAB-Class: Genetic Algorithm Classes and Libraries</a>
+            <a class="nav-link js-scroll-trigger" href="#procAnim1">Procedural Animation for Unity3D Spiders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#wordSearch">Word Search Game for Amblyopia Therapy</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#musicGA">Genetic Algorithm for Evolving Music</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#composedMusic">Composed Music</a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#smallProjects">Small Projects</a>
+          </li>-->
         </ul>
       </div>
     </nav>
@@ -65,32 +79,29 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
-          <h1 class="mb-0">Bryan
-            <span class="text-primary">Franz</span>
+          <h1 class="text-titleblue">Bryan
+            <span class="text-titleorange">Franz</span>
           </h1>
           <!--<div class="subheading mb-5">Address · Address · Phone ·
             <a href="mailto:name@email.com">name@email.com</a>
           </div>-->
-          <p class="mb-5">This is a collection of my projects</p>
+          <p>(Intro blurb)</p>
+          <p>I enjoy finding ways to apply mathematics and programming to real-world problems. There's nothing better than finding creative-technical ways to model something. Most of my work is in game development, medical research, and machine learning.</p>
+          <p>When I'm not programming, I like to compose music, play volleyball, write stories/music, go on outdoor adventures like skydiving, and volunteer.</p>
+          <p>This is a collection of my favorite programming and math projects, as well as some experiments in 3D art and music composition.</p>
+          <p>Enjoy!</p>
+          <!--<p>Currently, I'm using this as a job-search aid. Here's my professional skill stack:</p>
+          <ul>
+            <li>C#, C++, Python, JavaScript, R</li>
+            <li>OOP and component-based architectures, SQL, Linux, Rocks HPC, Git, Agile</li>
+            <li>Visual Studios 2015, Unity3D</li>
+            <li>Hobbyist experience with Blender3D, sound design, audio processing, and live/studio recording environments using Logic 8, Cubase 9, and Cakewalk SONAR</li>
+            <li>AFAA certified group exercise instructor (side job in college, focusing on cardio/strength formats)</li>
+            <li>Academic experience with Hadoop, Apache Pig, and Java</li>
+          </ul>-->
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
+              <a href="https://LinkedIn.com/in/Bryan-Franz-147061155">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -98,7 +109,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://GitHub.com/BFranz51">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -109,79 +120,81 @@
         </div>
       </section>
 
-      <!-- PROCEDURAL ANIMATION -->
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="procAnim1">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="mona">
         <div class="my-auto">
-          <h2 class="mb-5">Procedural Animation for Humanoids and Spiders</h2>
+          <h2 class="mb-0">MONA (Multi-Omics Network Analysis)</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Languages: Python, R</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Rocks HPC, Linux, NumPy, SciPy, Bioinformatics</div></div>
+          </div>
+          <br>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              
+              <h3 class="mb-0">Project Description</h3>
+              <p>During my year-long internship at Moffitt Cancer Center, I was lucky to be working in the Bioinformatics Core on one of their new research programs, MONA. MONA was originally conceived for the purpose of finding new interactions between genes and metabolites associated with lung cancer, but the flexible approach lends it toward anything involving genes, metabolites, proteins, micro RNA, etc.</p>
+              <p>Aside from its network-based approach for integrative data analysis, it has a customizable feature for using weighted correlations to add speculative interactions between expressors (genes and metabolites) which aren't currently annotated.</p>
+              <p>The end goal is to give researchers a way to identify likely interactions to do further study on.</p>
+
+
+
+              <h3 class="mb-0">Core Analysis</h3>
+              <p>(describe)</p>
+
+
+
+              <h3 class="mb-0">Interactive Network Visualization</h3>
+              <p>For the data visualization, I used the statistics-focused R language. R was a natural choice because of how easily it could handle structured data and the availability of the Shiny framework. RShiny is useful for quickly creating interactive web applications that incorporate R functionality.</p>
+              <p>I experimented with several different visualization packages before settling on the visNetwork package. Since it created graphs that updated in real-time and could be pulled around by the user, it was a natural choice for large-scale data, and fun to use.</p>
+              <p>MONA incorporates a network-based approach for integrative data analysis, using empirical correlations to make edges with expressors that aren’t previously annotated.</p>
+
+
+
+              <h3 class="mb-0">FUTURE PLANS:</h3>
+              <p>While my internship has officially ended in December 2017, I am continuing work on MONA as a developer and contributor to the upcoming paper. My current work is a mix of adding features and testing MONA with different cancer research experiment data.</p>
+              <p><strong>NOTE:</strong> This project is property of Moffitt Cancer Center and is currently unpublished. I'll update this after publication and add the link to the paper!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="gabClass">
+        <div class="my-auto">
+          <h2 class="mb-0">Genetic Algorithm Environment</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Language: C++</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Visual Studio 2015</div></div>
+          </div>
+          <br>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Project Description</h3>
-              <p>I created this project to support my hobby game, Sword Iownit.  The animations I had created by myself were useful for testing, but lacked the impact and weight that other combat games had. Since I wanted to spend most of my time programming, I turned to procedural solutions.</p>
-              <!--<p><strong>NOTE:</strong> After doing this project, I started experimenting with using Rigify to create smoother keyframed animations that used IK.</p>-->
+              <p>I often have ideas for ways to apply genetic algorithms, but usually end up not implementing them due to the time required to get them working. GAB-Class is designed to make it as fast as possible to get genetic algorithms working in C++.</p>
+              <p>Here is the link to the project source code: <a href="https://github.com/BFranz51/GAB-Class">GitHub Link</a></p>
             </div>
           </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Basic Keyframed Animation</h3>
-              <p>One of the most popular animation techniques for hobbyist game devs is using keyframed animations to block out every action. In the figure below, the dots on the left represent bone rotations at certain times during a looping jog animation. These are called keyframes.</p>
-              <img class="img-fluid img-profile mx-auto mb-2" src="img/procAnim1/keyframes1.jpg" alt="">
-              <p>Keyframed animations offer great control over specific poses during actions. In a run cycle, it is easy to define the reaching/passing points. However, it can easily create stiff animations where the actor looks like they are moving to the beat of a metronome.</p>
-              <p>In order to make smoother animations with more perceived weight behind them, animators can add intermediate keyframes and/or shift the timing of keyframes so that bones are not perfectly in-sync. However, both solutions make it very time-consuming and difficult to modify the animations later. Changing one pose requires modifying every keyframe involved to avoid sudden, jerky motion.</p>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Junior Web Designer</h3>
-              <div class="subheading mb-3">Shout! Media Productions</div>
-              <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">July 2010 - December 2011</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Design Intern</h3>
-              <div class="subheading mb-3">Shout! Media Productions</div>
-              <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2008 - June 2010</span>
-            </div>
-          </div>
-
         </div>
-
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="combat1">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="game1">
         <div class="my-auto">
-          <h2 class="mb-5">Combat1</h2>
+          <h2 class="mb-0">Unity3D Action Game</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Languages: JavaScript, C#</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D, Audacity, Cakewalk SONAR, Cubase 9, GIMP 2, Inkscape, Processing (for pre-rendered graphics)</div></div>
+          </div>
+          <br>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">University of Colorado Boulder</h3>
-              <div class="subheading mb-3">Bachelor of Science</div>
-              <div>Computer Science - Web Development Track</div>
-              <p>GPA: 3.23</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2006 - May 2010</span>
-            </div>
-          </div>
+              <h3 class="mb-0">Project Description</h3>
+              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
+              <p>This is a work-in-progress game I've been working on as a hobby. The basic combat is inspired by Dark Souls.</p>
+              <!--<img class="img-fluid img-profile mx-auto mb-2" src="img/procAnim1/keyframes1.jpg" alt="">-->
+              <p>(info)</p>
 
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">James Buchanan High School</h3>
-              <div class="subheading mb-3">Technology Magnet Program</div>
-              <p>GPA: 3.56</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2002 - May 2006</span>
             </div>
           </div>
 
@@ -190,105 +203,252 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="hair1">
         <div class="my-auto">
-          <h2 class="mb-5">Hair1</h2>
+          <h2 class="mb-0">Hair Physics</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Language: C#</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
+          </div>
+          <br>
 
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-html5"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-css3"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-javascript"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-jquery"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-sass"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-less"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-wordpress"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-grunt"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-gulp"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"></i>
-            </li>
-          </ul>
-
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Browser Testing &amp; Debugging</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
-          </ul>
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Project Description</h3>
+              <p>I had previously experimented with making hair in Blender for my Unity3D game, but as the combat become more action-packed, I wanted the hair to act as a flag and emphasize the movement.</p>
+              <p>The following video shows each feature being added:</p>
+              <p>(Video)</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="gabClass">
+      <!-- PROCEDURAL ANIMATION -->
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="procAnim1">
         <div class="my-auto">
-          <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skiier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p>
+          <h2 class="mb-0">Procedural Animation for Humanoids and Spiders</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Language: JavaScript</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
+          </div>
+          <br>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Project Description</h3>
+              <p>I created this project to support my hobby game, Sword Iownit.  The animations I had created by myself were useful for testing, but lacked the impact and weight that other combat games had. Since I wanted to spend most of my time programming, I turned to procedural solutions.</p>
+              <p>This video shows the results in action</p>
+              <!--<p><strong>NOTE:</strong> After doing this project, I started experimenting with using Rigify to create smoother keyframed animations that used IK.</p>-->
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Basic Keyframed Animation</h3>
+              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
+              <p>One of the most popular animation techniques for hobbyist game devs is using keyframed animations to block out every action. In the figure below, the dots on the left represent bone rotations at certain times during a looping jog animation. These are called keyframes.</p>
+              <img class="img-fluid img-profile mx-auto mb-2" src="img/procAnim1/keyframes1.jpg" alt="">
+              <p>Keyframed animations offer great control over specific poses during actions. In a run cycle, it is easy to define the reaching/passing points. However, it tends to create stiff animations where the actor looks like they are moving to the beat of a metronome.</p>
+              <p>Adding intermediate keyframes and shifting the timing of keyframes can help mitigate this, but it is a time-consuming process and makes it difficult to modify the animations later. I often found myself tweaking part of an animation to make it smoother, only to find that it ruined the animation 6 frames later.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="wordSearch">
+        <div class="my-auto">
+          <h2 class="mb-0">Word Search Game for Amblyopia Therapy</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Language: C#</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Amblyopia research</div></div>
+          </div>
+          <br>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">What is Amblyopia?</h3>
+              <p>Ambylopia is an eye problem where a person has a weakened eye. In many cases, the person favors their strongest eye, and the weak eye can begin to wander. This is commonly known as having a "lazy eye."</p>
+              <p>According to Lazyeyegames.com, almost 3% of people have this problem. One of my family members has it, and I decided to recreate her favorite word search game with a color-scheme designed to help her eye if she used red-blue glasses while playing it.</p>
+              <p>According to my main reference, Lazyeyegames.com, amblyopia involves the brain ignoring a certain amount of input from the weak eye. In order to improve, the brain must be forced to use both eyes simultaneously. This point affected the game design and steered me away from making a game that simply "exercised" the weak eye, and toward a game design that required the player to use both eyes at the same time.</p>
+              <p>To accomplish this, I decided to create a handful of minigames using the idea behind a popular word search game. Being a game where the player searches for words among random letters, the players’ eyes must be watching many things simultaneously and looking for patterns.</p>
+              
+              <h3 class="mb-0">How is the game set up to use both eyes?</h3>
+              <p>The player wears red-blue glasses. The game colors are tweaked so that the red aligns with the red lens and the blue with the blue lens. When letters in these colors are drawn on a black screen, the player sees a different image in each eye. The game is set up so that letters are randomly assigned to be blue or red.</p>
+              <p>Through experimentation, I found that viewing other colors through the glasses was disorienting and stressful. This was due to the colors looking very different in each eye, and being able to see both colors simultaneously. However, yellow and purple were fairly neutral, so I used those to convey information to the player quickly. For example, the score was shown in a neutral color so that the player could quickly glance at it before returning to the red/blue letters.</p>
+
+              <h3 class="mb-0">Implementation</h3>
+              <p>To handle so many words in a quick manner, I loaded 235,886 words into a dictionary. Since the data did not include plurals, the game automatically assumes that valid words with an “S” at the end are also valid. Furthermore, if a word is rejected, the player can press a key to have it added to a secondary dictionary of custom words.</p>
+
+              <h3 class="mb-0">Making it fun and responsive!</h3>
+              <p>It is difficult for people with amblyopia to use their eyes together and sometimes they will get headaches while doing so. To make the game less stressful, I included settings for letter size and the speed of the game so players could adjust the game to their comfort level.</p>
+              <p>I also wanted to make the game as enjoyable as possible, so people would do their therapy regularly. This was fairly challenging because I couldn't use techniques like screenshake and particle bursts. The visuals needed to be simple and extremely clear at all times. In the end, I decided to add these features:</p>
+              <lu>
+                <li>Letters briefly expand when selected, with a satisfying sound</li>
+                <li>Successfully finding a word triggers a happy coin sound</li>
+                <li>Cheesy announcers congratulate the player when they find large words (these audio clips were from a package purchased on the Unity Asset Store)</li>
+                <li>The game keeps record of the top 10 high scores in all game modes, as well as the total number of words found</li>
+              </lu>
+
+              <br>
+              <h3 class="mb-0">Conclusion</h3>
+              <p>It was an amazing experience being able to work on this project. Technology can be a powerful new tool for dealing with medical conditions and games can offer a way to make it a more fun and enjoyable experience.</p>
+              <p><strong>FUTURE PLANS:</strong> I'm in contact with the USF professor who oversaw the project for getting medical approval. I don't think it will happen soon, but it would be nice as there aren't many games out there for Amblyopia. (Maybe because of the medical approval?)</p>
+
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="musicGA">
         <div class="my-auto">
-          <h2 class="mb-5">Awards &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Google Analytics Certified Developer</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Mobile Web Specialist - Google Certification</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              2<sup>nd</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-            <li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - James Buchanan High School - Hackathon 2006</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              3<sup>rd</sup>
-              Place - James Buchanan High School - Hackathon 2005</li>
-          </ul>
+          <h2 class="mb-0">Music Evolution</h2>
+            <div class="subheading mb-3">Language: VBA <sup>(I wasn't <sup>a computer <sup>science <sup>major yet)</sup></sup></sup></sup></div>
+          <br>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Project Description</h3>
+              <p>This project served as my senior project while getting a math degree. I only knew VB6 at the time and decided to use VBA in Excel. I had it output the music to an Excel sheet mimicing a piano roll, which I would then play on my MIDI keyboard.</p>
+              <p>That took a very long time (I play guitar, not piano), so for most of the development, I wasn't able to actually hear the music.</p>
+
+
+              <h3 class="mb-0">Preparation Phase</h3>
+              <p>The program started by generating a pseudo-random chord progression in C Major. This didn't have a direct effect on the notes, but influenced the fitness function.</p>
+              <p>The 2nd preparation phase was deciding where notes would occur for each instrument. I wrote a GA for this</p>
+              <p>I separated these phases from the main GA because it would let my laptop not die when performing calculations, and it allowed me to keep the same chord progressions and note locations across several iterations of the GA. This gave me a clearer picture of how the GA was developing.</p>
+              <p>This is why some of the samples have such a similar sound - they were evolving based on the same chord progressions and/or note locations.</p>
+
+
+
+              <h3 class="mb-0">Evolving the Notes</h3>
+              <p>This was the most important and processor-heavy part of the project. The GA started by filling in the previously-assigned note locations with completely random pitches in the ranges of each instrument. It then created 99 copies so there were 100 total quartet passages, or "chromosomes" (in GA terms).</p>
+
+
+
+              <h3 class="mb-0">Selection Phase</h3>
+              <p>Each generation, the chromosomes were scored according to a fitness function meant to reflect how "good" they should sound.</p>
+              <p>Research has shown that popular songs tend to flow the way the brain expects them to, but also have a small, important level of unexpectedness. I used that principle by recording how much variance there was in each chromosome and combining that with a score of how well it fit music theory and the intended chord progression.</p>
+              <p>This was done in several passes:</p>
+
+              <p><div class="subheading mb-3"><u>NOTE LEVEL:</u></div></p>
+              <p>Each note was evaluated based on how it flowed into and out of the notes around it (based on intervals), and the harmonies it created with the notes the other instruments were playing. It also accounted for the time since those other notes were started - playing notes simultaneously made their harmony score/penalty more pronounced than one note playing over other notes being held.</p>
+
+              <p><div class="subheading mb-3"><u>MEASURE LEVEL:</u></div></p>
+              <p>The notes in each measure were evaluated based on factors such as how well they represented the chord progression, and whether "unexpected" notes were in proper locations (ie. notes that would act as "leading tones" into a chord change).</p>
+
+              <p><div class="subheading mb-3"><u>SONG LEVEL:</u></div></p>
+              <p>I used statistical analysis to encourage chromosomes with interesting distributions. This helped solve a few problems. Withit this factor, chromosomes were overusing "safe" notes and sticking to the same intervals.</p>
+
+              <p>All this was taken into account for the final score.</p>
+
+
+
+              <h3 class="mb-0">Copy Phase</h3>
+              <p>Normally there is a Crossover Phase, where low scoring chromosomes are recreated from crossed-over data from high scoring ones. I don't remember where I learned what a GA was, but I didn't know about crossovers.</p>
+              <p>So I just copied the top scoring chromosome directly to all the others. It was essentially a GA set up with extreme elitism and low diversity.</p>
+
+
+
+              <h3 class="mb-0">Mutation Phase</h3>
+              <p>Each generation, all but the top scoring chromosome were mutated randomly. The mutations ranged from "take the 47th cello note and move it down 3 semitones" to "grab 6 notes and pull them up/down a measure."</p>
+              <p>I found that the mutations had a huge influence on how long the GA had to run before getting a good result. For example: A melody could suddenly jump 2 octaves higher, stay there for a few notes, and then return to the normal range. This is obviously bad, but anytime a single note would randomly move downward, it would make the chromosome even worse. This is why I used so many types of mutations - including ones that would move entire sections of neighboring notes.</p>
+
+              <h3 class="mb-0">First Results</h3>
+              <p>Things started out pretty randomly... The algorithm had a long ways to go.</p>
+              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197510982&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+              <br>
+              <br>
+              <p>After improving the algorithm, this flighty tune appeared, before quickly descending into madness.</p>
+              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197511575&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+              <br>
+              <br>
+              <p>Eventually, the music started sounding like... something you would call 'music'.</p>
+              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197511622&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+              <br>
+              <br>
+              <h3 class="mb-0">Best Result</h3>
+              <p>Finally, I got a piece that had some interesting melodies and countermelodies! It sounds like it really wants to build up to something great - before getting slightly confused.</p>
+              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197511647&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+
+              <br>
+              <br>
+              <br>
+              <h3 class="mb-0">FUTURE PLANS</h3>
+              <p>I plan to translate the project to C# and take advantage of having a faster PC than I did back in 2012, as well as my increased knowledge of genetic algorithms. The obvious improvement is to incorporate crossovers.</p>
+              <p>I'd also like to experiment with detecting when results become stagnant, and splitting the GA population for a set number of generations. Elite individuals will apply simulated annealing in an attempt to converge on a better solution while non-elite (I like to call them "volatile") individuals have an increased mutation rate and switch to using rank selection.</p>
+              <p>(Non-GA translation) This would give the best individuals a chance to further prove themselves, while giving other solutions a chance. At least, it would be fun to try!</p>
+
+
+            </div>
+          </div>
         </div>
       </section>
+
+      <!-- MUSIC!!! -->
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="composedMusic">
+        <div class="my-auto">
+          <h2 class="mb-0">Composed Music</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Logic 8 with EastWest Synthesizers</div></div>
+            <div class="col-md-6"><div class="subheading mb-3"></div></div>
+          </div>
+          <br>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <!--<h3 class="mb-0">Recent Compositions</h3>-->
+              
+              <br><br>
+              <p><strong>Shadowdancer:</strong> A strings piece.</p>
+              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/258999221&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+
+              <br><br>
+              <p><strong>Winterswept:</strong> An eerie piece about ghost stories.</p>
+              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/200701545&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+
+              <br><br>
+              <p><strong>Greensleeves Arrangement:</strong> Piano with a violin lead.</p>
+              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/29555701&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+              
+              
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Past Albums</h3>
+              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="smallProjects">
+        <div class="my-auto">
+          <h2 class="mb-0">Small Projects</h2>
+          <p>These are assorted projects I did for school or for fun. Sometimes both, but not usually.</p>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <br><br>
+              <h3 class="mb-0">Force-Directed Graph in C#</h3>
+              <p>Link: (github)</p>
+              <br><br>
+              <h3 class="mb-0">Fortune's Algorithm in Python</h3>
+              <p>Link: (github)</p>
+              <br><br>
+              <h3 class="mb-0">Strategy Game in Python</h3>
+              <p>A short game inspired by the pawn's game in Python. Uses MinMax algorithm with limited depth to be very frustrating.</p>
+              <p>Link: (github)</p>
+              
+              
+            </div>
+          </div>
+
+        </div>
+
+      </section>-->
 
     </div>
 
