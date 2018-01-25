@@ -125,7 +125,7 @@
           <h2 class="mb-0">MONA (Multi-Omics Network Analysis)</h2>
           <div class="row">
             <div class="col-md-6"><div class="subheading mb-3">Languages: Python, R</div></div>
-            <div class="col-md-6"><div class="subheading mb-3">Rocks HPC, Linux, NumPy, SciPy, Bioinformatics</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Rocks HPC, Linux, NumPy, SciPy, Bioinformatics, Pandas Data Analysis</div></div>
           </div>
           <br>
 
@@ -175,7 +175,112 @@
               <p>The project includes a GeneticAlgorithm class which holds the data and runs each generation, a Chromosome abstract class that provides common methods, and two static libraries for crossover and mutation methods.</p>
               <p>With this setup, it only takes roughly 15 minutes to create a new genetic algorithm and get started writing the fitness function.</p>
               <p>Here is the link to the project source code: <a href="https://github.com/BFranz51/GAB-Class">GitHub Link</a></p>
-              <p></p>
+
+              <h3 class="mb-0">Features</h3>
+              <ul>
+                <li>Mutation Settings
+                  <ul>
+                    <li>Mutations occur on "blocks" of sequential bits according to user settings. The user can define the block size, percentage chance of any bit being toggled, and restrict by bit/byte/value.</li>
+                    <li>Examples of what can be done:</li>
+                    <ul>
+                      <li>Toggle a random bit</li>
+                      <li>Toggle 20 random disconnected bits</li>
+                      <li>Mutate 1 random byte by giving each bit a 78% chance to toggle</li>
+                      <li>Mutate between 1 and 4 random values, giving each of their bits a 22% chance to toggle</li>
+                      <li>Give every bit a 1% chance of toggling</li>
+                    </ul>
+                  </ul>
+                </li>
+                <li>Crossover Features
+                  <ul>
+                    <li>COPY - Volatile data is directly copied from elite parents</li>
+                    <li>SHUFFLE - Volatile data is copied from 2 elite parents, with each byte being chosen from a random parent</li>
+                    <li>N-SPLIT - Volatile data is copied in (N + 1) sequential chunks from 2 elite parents</li>
+                  </ul>
+                </li>
+                <li>Encoding Supported
+                  <ul>
+                    <li>Any primitive</li>
+                    <li>Numeric vectors</li>
+                    <li>Boolean vectors</li>
+                  </ul>
+                </li>
+                <li>Input/Output
+                  <ul>
+                    <li>Simple output to console</li>
+                    <li>Binary files</li>
+                    <li>CSV files</li>
+                  </ul>
+                </li>
+                <li>Examples included
+                  <ul>
+                    <li>Knapsack problem</li>
+                    <li>Sudoku puzzle</li>
+                    <li>Template derived class for quickly setting up new GAs</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h3 class="mb-0">What is a Genetic Algorithm?</h3>
+              <p>Genetic algorithms (GAs) are optimization algorithms that use the principles of evolution and natural selection to solve problems. GAs are useful for problems with the following properties:</p>
+              <ul>
+                <li>Large or infinite number of possible solutions</li>
+                <li>Possible to mathematically evaluate potential solutions</li>
+                <li>No need to prove that solutions are optimal (at least, not as part of the GA)</li>
+              </ul>
+              <p>GAs run in generations, with each generation having the following phases:</p>
+              <ul>
+                <li><strong>Selection Phase</strong> - each solution is scored according to a fitness function</li>
+                <li><strong>Crossover Phase</strong> – lower scored solutions are replaced with combinations of higher scored solutions</li>
+                <li><strong>Mutation Phase</strong> – solutions are randomly changed</li>
+              </ul>
+              <p>Terms:</p>
+              <ul>
+                <li>"Individual" / "Chromosome" = A possible solution to the GA problem</li>
+                <li>"Elite" = high scoring individual that is not crossed over or mutated</li>
+                <li>"Volatile" = any non-elite individual</li>
+              </ul>
+
+              <h3 class="mb-0">Implementation</h3>
+              <p>GAB-Class is the combination of several classes:</p>
+              <ul>
+                <li>GeneticAlgorithm class
+                  <ul>
+                    <li>Manages vector of chromosomes</li>
+                    <li>Runs all GA phases, calling appropriate Chromo methods</li>
+                  </ul>
+                </li>
+                <li>Chromo class
+                  <ul>
+                    <li>This is a base class that provides common functionality for chromosomes</li>
+                    <li>Contains crossover and mutation functions</li>
+                    <li>Contains file I/O functions</li>
+                  </ul>
+                </li>
+                <li>A user-defined class that inherits from Chromo
+                  <ul>
+                    <li>This is where users can implement their GAs</li>
+                    <li>Contains any data required for the problem being solved</li>
+                    <li>Contains fitness function</li>
+                    <li>Contations any custom mutations</li>
+                    <li>Overrides functions to handle serialization</li>
+                    <li>GAB-Class includes a ChromoDefault class which can be used as a template for this</li>
+                  </ul>
+                </li>
+                <li>ChromoSerialization.h and GeneticAlgorithmTechniques.h
+                  <ul>
+                    <li>Static helper functions and enums</li>
+                    <li>Handles data encoding/decoding</li>
+                    <li>Math methods such as returning a vector of random unique numbers</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <p>The biggest problem I encountered in this project was that the bulk of the work was still being done in the derived classes. Ideally, users should spend their time on the fitness function and let GAB-Class handle the crossover and mutation phases. GAB-Class needed some way to modify arbitrary data contained in the derived classes. I decided to encode the data into long string variables.</p>
+
+              <p>The crossover and mutation phases are handled by GAB-Class and performed on the encoded strings. Afterwards, they are decoded back into data that the fitness function can work with.</p>
+
+
             </div>
           </div>
         </div>
@@ -239,12 +344,14 @@
               <h3 class="mb-0">Project Description</h3>
               <p>I created this project to support my hobby game, Sword Iownit.  The animations I had created by myself were useful for testing, but lacked the impact and weight that other combat games had. Since I wanted to spend most of my time programming, I turned to procedural solutions.</p>
               <p>This video shows the results in action</p>
+              <!--<p><iframe width="560" height="315" src="https://www.youtube.com/embed/YT92d2eqSE4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>-->
               <!--<p><strong>NOTE:</strong> After doing this project, I started experimenting with using Rigify to create smoother keyframed animations that used IK.</p>-->
             </div>
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
+              
               <h3 class="mb-0">Basic Keyframed Animation</h3>
               <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
               <p>One of the most popular animation techniques for hobbyist game devs is using keyframed animations to block out every action. In the figure below, the dots on the left represent bone rotations at certain times during a looping jog animation. These are called keyframes.</p>
