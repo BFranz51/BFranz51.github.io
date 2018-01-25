@@ -172,7 +172,10 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Project Description</h3>
               <p>I often have ideas for ways to apply genetic algorithms, but usually end up not implementing them due to the time required to get them working. GAB-Class is designed to make it as fast as possible to get genetic algorithms working in C++.</p>
+              <p>The project includes a GeneticAlgorithm class which holds the data and runs each generation, a Chromosome abstract class that provides common methods, and two static libraries for crossover and mutation methods.</p>
+              <p>With this setup, it only takes roughly 15 minutes to create a new genetic algorithm and get started writing the fitness function.</p>
               <p>Here is the link to the project source code: <a href="https://github.com/BFranz51/GAB-Class">GitHub Link</a></p>
+              <p></p>
             </div>
           </div>
         </div>
@@ -259,7 +262,7 @@
         <div class="my-auto">
           <h2 class="mb-0">Word Search Game for Amblyopia Therapy</h2>
           <div class="row">
-            <div class="col-md-6"><div class="subheading mb-3">Language: C#</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Language: JavaScript</div></div>
             <div class="col-md-6"><div class="subheading mb-3">Unity3D, Amblyopia research</div></div>
           </div>
           <br>
@@ -274,10 +277,34 @@
               
               <h3 class="mb-0">How is the game set up to use both eyes?</h3>
               <p>The player wears red-blue glasses. The game colors are tweaked so that the red aligns with the red lens and the blue with the blue lens. When letters in these colors are drawn on a black screen, the player sees a different image in each eye. The game is set up so that letters are randomly assigned to be blue or red.</p>
-              <p>Through experimentation, I found that viewing other colors through the glasses was disorienting and stressful. This was due to the colors looking very different in each eye, and being able to see both colors simultaneously. However, yellow and purple were fairly neutral, so I used those to convey information to the player quickly. For example, the score was shown in a neutral color so that the player could quickly glance at it before returning to the red/blue letters.</p>
+              <img class="img-fluid img-profile mx-auto mb-2" src="img/wordSearch/layout.jpg" alt="">
+              <p>Through experimentation, I found that viewing other colors through the glasses was disorienting and stressful. This was due to the colors looking very different in each eye, and being able to see both colors simultaneously. However, yellow and purple were fairly neutral, so I used those to convey information to the player quickly.</p>
+              <p>For example, the score was shown in a neutral color so that the player could quickly glance at it before returning to the red/blue letters. Also, the amount of time left each round was indicated by a large box that shrank in size. Giving it a neutral color and a basic shape made it easier to see in peripheral vision.</p>
 
               <h3 class="mb-0">Implementation</h3>
               <p>To handle so many words in a quick manner, I loaded 235,886 words into a dictionary. Since the data did not include plurals, the game automatically assumes that valid words with an “S” at the end are also valid. Furthermore, if a word is rejected, the player can press a key to have it added to a secondary dictionary of custom words.</p>
+
+              <h3 class="mb-0">Game modes</h3>
+              <p>I added 8 game modes total. Here is a sampling:</p>
+              <br>
+              <img class="img-fluid img-profile mx-auto mb-2" src="img/wordSearch/explore.jpg" alt="">
+              <br><br>
+              <div class="subheading mb-3">EXPLORATION:</div>
+              <p>The player starts with only the word "CAT" on the top left. Typing a word causes all the letters next to that word to be discovered. The goal is to uncover the entire grid before time runs out.</p>
+              <img class="img-fluid img-profile mx-auto mb-2" src="img/wordSearch/lava.jpg" alt="">
+              <br><br>
+              <div class="subheading mb-3">LAVA ESCAPE:</div>
+              <p>Letters sink into lava, according to how “heavy” they are. Typing words adds new random letters around those words, but also increases the weight. The player attempts to stay above the lava for as long as possible.</p>
+              <img class="img-fluid img-profile mx-auto mb-2" src="img/wordSearch/zombies.jpg" alt="">
+              <br><br>
+              <div class="subheading mb-3">ZOMBIES:</div>
+              <p>Typing a word holds the zombies at bay, but if no word is typed within a couple seconds, the zombies are given 1 turn to spread. Eventually, they take over the entire grid.</p>
+              <img class="img-fluid img-profile mx-auto mb-2" src="img/wordSearch/wolves.jpg" alt="">
+              <br><br>
+              <div class="subheading mb-3">WOLVES:</div>
+              <p>This mode increases the grid size, shrinks the letters, and adds random blank spaces. To increase the tension, there is a sound loop of wolves howling, so that players can feel like they're about to be eaten if they don't find enough words.</p>
+              <br>
+
 
               <h3 class="mb-0">Making it fun and responsive!</h3>
               <p>It is difficult for people with amblyopia to use their eyes together and sometimes they will get headaches while doing so. To make the game less stressful, I included settings for letter size and the speed of the game so players could adjust the game to their comfort level.</p>
