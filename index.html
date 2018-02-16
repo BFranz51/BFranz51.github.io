@@ -48,13 +48,10 @@
             <a class="nav-link js-scroll-trigger" href="#mona">MONA (Cancer Research)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#gabClass">Genetic Algorithm Environment in C++</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#water1">Dynamic Water Simulation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#wind1">Displacement Shaders for Hurricane Winds</a>
+            <a class="nav-link js-scroll-trigger" href="#gabClass">Genetic Algorithm Environment in C++</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#game1">Unity3D Action Game</a>
@@ -67,6 +64,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#wordSearch">Word Search Game for Amblyopia Eye Therapy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#wind1">Displacement Shaders for Hurricane Winds</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#musicGA">Genetic Algorithm for Evolving Music</a>
@@ -100,20 +100,17 @@
           <ul>
             <li>C++, C#.NET, Python, JavaScript, R</li>
             <li>Data analysis with NumPy, SciPy, Pandas, SQL, Rocks HPC Cluster</li>
-            <li>Win/Linux, git, Agile</li>
-            <li>Visual Studio 2015, Unity3D</li>
+            <li>Winows, Linux, git, Agile, Visual Studio 2015, Unity3D</li>
             <li>HLSL/Cg shader development with DirectX 9 and 11</li>
             <li>Academic experience with Hadoop, Apache Pig, AWS, and Docker</li>
-            <li>Working knowledge of Blender3D modeling (with Rigify), UV mapping, rigging, and animation</li>
+            <!--<li>Blender3D modeling (with Rigify), UV mapping, rigging, and animation</li>-->
             <li>Working knowledge of sound design, audio processing, music theory, live sound, and studio recording using Logic 8, Cubase 9, Cakewalk SONAR, and EastWest synthesizers</li>
-            <li>Working knowledge of texture design with GIMP 2 and Inkscape</li>
-            <li>Earth-shaking customer service as a AFAA certified group exercise and paddleboard instructor, focusing on cardio/strength formats</li>
+            <!--<li>Working knowledge of texture design with GIMP 2 and Inkscape</li>-->
+            <!--<li>Earth-shaking customer service as a AFAA certified group exercise and paddleboard instructor, focusing on cardio/strength formats</li>-->
           </ul>
 
-          <p>If you're going to interview me, I'm happy to talk about any of those.</p>
-
           <p>Enjoy!</p>
-          
+
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
               <a href="https://LinkedIn.com/in/Bryan-Franz-147061155">
@@ -132,6 +129,35 @@
               </a>
             </li>
           </ul>
+
+          <!-- Gallery of sorts -->
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="nav-link js-scroll-trigger" href="#wind1">
+                  <img src="img/trees/hurricane.gif" alt="(Image not found)" style="width:100%">
+                  <div class="caption">
+                    <p>HLSL wind shaders</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="nav-link js-scroll-trigger" href="#water1">
+                  <img src="img/water1/sand1.gif" alt="(Image not found)" style="width:100%">
+                  <div class="caption">
+                    <p>Unity3D dynamic water</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          
         </div>
       </section>
 
@@ -176,6 +202,94 @@
               <p>This project is property of Moffitt Cancer Center and is currently unpublished. I'll update this after publication and add the link to the paper!</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="water1">
+        <div class="my-auto">
+          <h2 class="mb-0">Real-Time Dynamic Water</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Languages: C#, HLSL/Cg</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
+          </div>
+          <br>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Current Features</h3>
+              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
+              <ul>
+                <li>Combines ocean waves with waves created by moving objects</li>
+                <li>Special ripples for huge impacts</li>
+                <li>Shallow water flow handling</li>
+                <li>Custom surface shader with DX11 tessellation, vertex displacement, depth-based opacity, and automatic foam</li>
+              </ul>
+              <p>This is a water system I'm working on for a hobby game. The goal is to create dynamic water for several boss battles.</p>
+
+              <!-- Gallery of sorts -->
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <a href="img/water1/justShader.gif">
+                      <img src="img/water1/justShader.gif" alt="(Image not found)" style="width:100%">
+                      <div class="caption">
+                        <p>1. Just the shader</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <a href="img/water1/pushWater1.gif">
+                      <img src="img/water1/pushWater1.gif" alt="(Image not found)" style="width:100%">
+                      <div class="caption">
+                        <p>2. Creating waves</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <a href="img/water1/flux.gif">
+                      <img src="img/water1/flux.gif" alt="(Image not found)" style="width:100%">
+                      <div class="caption">
+                        <p>3. Random fluctuation</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <a href="img/water1/tide.gif">
+                      <img src="img/water1/tide.gif" alt="(Image not found)" style="width:100%">
+                      <div class="caption">
+                        <p>4. Ocean waves</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <a href="img/water1/sand1.gif">
+                      <img src="img/water1/sand1.gif" alt="(Image not found)" style="width:100%">
+                      <div class="caption">
+                        <p>5. Interaction with land</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -300,72 +414,6 @@
         </div>
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="water1">
-        <div class="my-auto">
-          <h2 class="mb-0">Real-Time Dynamic Water</h2>
-          <div class="row">
-            <div class="col-md-6"><div class="subheading mb-3">Languages: C#</div></div>
-            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
-          </div>
-          <br>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Current Features</h3>
-              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
-              <ul>
-                <li>Combines ocean waves with waves created by moving objects</li>
-                <li>Special ripples for huge impacts</li>
-                <li>Shallow water flow handling</li>
-                <li>Custom surface shader with DX11 tessellation, vertex displacement, depth-based opacity, and automatic foam</li>
-              </ul>
-              <p>This is a water system I'm working on for a hobby game. The goal is to create dynamic water for several boss battles.</p>
-              <h3 class="mb-0">Figure 1: Water shader with vertex displacement</h3>
-              <img class="img-fluid img-profile mx-auto mb-2" src="img/water1/justShader.gif" alt="">
-              <h3 class="mb-0">Figure 2: Creating waves via movement</h3>
-              <img class="img-fluid img-profile mx-auto mb-2" src="img/water1/pushWater1.gif" alt="">
-              <h3 class="mb-0">Figure 3: Random fluctuation</h3>
-              <img class="img-fluid img-profile mx-auto mb-2" src="img/water1/flux.gif" alt="">
-              <h3 class="mb-0">Figure 4: Ocean waves</h3>
-              <img class="img-fluid img-profile mx-auto mb-2" src="img/water1/tide.gif" alt="">
-
-            </div>
-          </div>
-
-        </div>
-      </section>
-      
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="wind1">
-        <div class="my-auto">
-          <h2 class="mb-0">Displacement Shaders for Hurricane Winds</h2>
-          <div class="row">
-            <div class="col-md-6"><div class="subheading mb-3">Languages: HLSL, Cg</div></div>
-            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
-          </div>
-          <br>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Current Features</h3>
-              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
-              <ul>
-                <li>Inputs for wind direction and force</li>
-                <li>"Normal" and "Extreme" settings allow control over how much the main tree trunk bends</li>
-                <li>Automatic wind variations based on user settings</li>
-                <li>Works with both static and dynamic wind inputs</li>
-              </ul>
-              <p></p>
-              <!--<img class="img-fluid img-profile mx-auto mb-2" src="img/water1/justShader.gif" alt="">-->
-              <h3 class="mb-0">Design Choices</h3>
-              <p>In order to allow for large numbers of trees being rendered, I decided to preserve <a href="https://docs.unity3d.com/Manual/DrawCallBatching.html">static and dynamic batching</a>. This meant that I couldn't modify the original mesh data for individual trees. To get around this problem, I left the meshes alone and created shaders with vertex displacement functions.</p>
-              <p>This created some new limitations. The problem was almost stateless, with the only inputs being the unmodified vertex positions in local space and the time since startup, and no way to store vertex data like velocity. To get around this, I decided to make every function deterministic and continuous, while adding as many factors as possible in order to break up the motion according to tree position and time.</p>
-              
-            </div>
-          </div>
-
-        </div>
-      </section>
-
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="game1">
         <div class="my-auto">
           <h2 class="mb-0">Unity3D Action Game</h2>
@@ -456,8 +504,8 @@
           </div>
 
         </div>
-
       </section>
+
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="wordSearch">
         <div class="my-auto">
@@ -520,6 +568,90 @@
               <p>It was an amazing experience being able to work on this project. Technology can be a powerful new tool for dealing with medical conditions and games can offer a way to make it a more fun and enjoyable experience.</p>
               <p><strong>FUTURE PLANS:</strong> I'm in contact with the USF professor who oversaw the project for getting medical approval. We need a larger sample size before applying for FDA approval. I don't think it will happen soon, but it would be nice as there aren't many games out there for Amblyopia.</p>
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="wind1">
+        <div class="my-auto">
+          <h2 class="mb-0">Displacement Shaders for Hurricane Winds</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Languages: HLSL/Cg</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
+          </div>
+          <br>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Current Features</h3>
+              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
+              <ul>
+                <li>Inputs for wind direction and force</li>
+                <li>"Normal" and "Extreme" settings allow control over how much the main tree trunk bends</li>
+                <li>Automatic wind variations based on user settings</li>
+                <li>Works with both static and dynamic wind inputs</li>
+              </ul>
+              <p></p>
+
+              <!-- Gallery of sorts -->
+              <div class="row">
+
+                <div class="col-md-12">
+                  <div class="thumbnail">
+                    <h3 class="mb-0">Figure 1: Happy trees</h3>
+                    <a href="img/trees/happyTrees.jpg">
+                      <img src="img/trees/happyTrees.jpg" alt="(Image not found)" style="width:100%">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <h3 class="mb-0">Figure 2: Small fluctuations</h3>
+                    <a href="img/trees/flux.gif">
+                      <img src="img/trees/flux.gif" alt="(Image not found)" style="width:100%">
+                      
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <h3 class="mb-0">Figure 3: Uniform bending (bad!)</h3>
+                    <a href="img/trees/uniformBend.gif">
+                      <img src="img/trees/uniformBend.gif" alt="(Image not found)" style="width:100%">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <h3 class="mb-0">Figure 4: Adding variation</h3>
+                    <a href="img/trees/variaBend.gif">
+                      <img src="img/trees/variaBend.gif" alt="(Image not found)" style="width:100%">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <h3 class="mb-0">Figure 5: Extreme wind</h3>
+                    <a href="img/trees/hurriane.gif">
+                      <img src="img/trees/hurricane.gif" alt="(Image not found)" style="width:100%">
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+
+              
+              
+              <h3 class="mb-0">Design Choices</h3>
+              <p>In order to allow for large numbers of trees being rendered, I decided to preserve <a href="https://docs.unity3d.com/Manual/DrawCallBatching.html">static and dynamic batching</a>. This meant that I couldn't modify the original mesh data for individual trees. To get around this problem, I left the meshes alone and created shaders with vertex displacement functions.</p>
+              <p>This created some new limitations. The problem was almost stateless, with the only inputs being the unmodified vertex positions in local space and the time since startup, and no way to store vertex data like velocity. To get around this, I decided to make every function deterministic and continuous, while adding as many factors as possible in order to break up the motion according to tree position and time.</p>
+              
             </div>
           </div>
         </div>
