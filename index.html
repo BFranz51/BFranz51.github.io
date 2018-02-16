@@ -178,29 +178,27 @@
             <div class="resume-content mr-auto">
               
               <h3 class="mb-0">Project Description</h3>
-              <p>During my year-long internship at <a href="https://moffitt.org/">Moffitt Cancer Center</a>, I was lucky to be working in the Bioinformatics Core on one of their new research programs, MONA. MONA is a novel data analysis program that finds speculative interactions between genes and metabolites which may not be annotated yet. This gives researchers another tool to identify likely interactions to do further study on.</p>
-              <p>MONA was originally conceived to deal with lung cancer, but its flexible approach lends it toward anything involving genes, metabolites, proteins, and micro RNA.</p>
+              <p>During my year-long internship at <a href="https://moffitt.org/">Moffitt Cancer Center</a>, I was on a small software development team in the Bioinformatics Core, working on one of their new research programs, MONA. MONA is a data analysis program that finds speculative interactions between genes and metabolites which may not be annotated yet. This gives researchers another tool to identify likely interactions to do further study on. MONA was originally designed for lung cancer research, but its flexible approach lends it toward anything involving genes, metabolites, proteins, and micro RNA.</p>
 
               <h3 class="mb-0">Features</h3>
               <ul>
-                <li>Real-time force directed graph viewer</li>
+                <li>Real-time, interactive force directed graph</li>
                 <li>Pathway enrichment for network combinations</li>
                 <li>Network output in CSV and XGMML formats</li>
                 <li><strong>Unique Features:</strong>
                   <ul>
-                    <li>Network-based approach for integrative data analysis</li>
-                    <li>Uses weighted correlations to find possible interactions in experiment data</li>
+                    <li>Network based approach for integrative data analysis</li>
+                    <li>Uses weighted correlations to find new possible interactions in experiment data</li>
                   </ul>
                 </li>
               </ul>
               
               <h3 class="mb-0">My Contributions</h3>
-              <p>I started my work MONA by making test cases for the existing codebase. It was mostly data analysis on various inputs, confirming theories with a bioinformatics statistician at Moffitt, and making appropriate changes to the Python code.</p>
-              <p>Afterwards, I moved on to the R codebase. There was an existing R project, but it was for a much older version of MONA, so I started from scratch. MONA uses an atypical CSV output format so I first made a parser for it.</p>
+              <p>I started my work MONA by making test cases for the existing codebase. It was mostly data analysis on various inputs, confirming theories with a bioinformatics statistician at Moffitt, and making appropriate changes to the Python code. Afterwards, I moved on to the R codebase. There was an existing R project, but it was for a much older version of MONA, so I started from scratch. MONA uses an atypical CSV output format so I first made a parser for it.</p>
 
-              <p>For the data visualization, I decided to use the Shiny framework. RShiny is useful for quickly creating interactive web applications that incorporate R functionality. I experimented with several different visualization packages before settling on the visNetwork package. Since it created graphs that updated in real-time and could be pulled around by the user, it was a natural choice for large-scale data. It's also fun to use! Just look at the gif below:</p>
+              <p>For the data visualization, I decided to use the Shiny framework. RShiny is useful for quickly creating interactive web applications that incorporate R functionality. I experimented with several different visualization packages before settling on the <a href="https://cran.r-project.org/web/packages/visNetwork/vignettes/Introduction-to-visNetwork.html">visNetwork</a> package. Since it created graphs that updated in real-time and could be pulled around by the user, it was a natural choice for large-scale data. It's also fun to use! Just look at the gif below:</p>
 
-              <p>While my internship has officially ended in December 2017, I am continuing work on MONA as a developer and contributor to the upcoming paper. My current work is a mix of adding features and testing MONA with different cancer research experiment data.</p>
+              <p>While my internship has officially ended in December 2017, I am continuing work on MONA as a developer and contributor to the upcoming paper. I spend most of the time adding features and testing MONA with different experiment datasets.</p>
               
               <h3 class="mb-0">NOTE:</h3>
               <p>This project is property of Moffitt Cancer Center and is currently unpublished. I'll update this after publication and add the link to the paper!</p>
