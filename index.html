@@ -51,7 +51,10 @@
             <a class="nav-link js-scroll-trigger" href="#gabClass">Genetic Algorithm Environment in C++</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#water1">Real-Time Dynamic Water</a>
+            <a class="nav-link js-scroll-trigger" href="#water1">Dynamic Water Simulation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#wind1">Displacement Shaders for Hurricane Winds</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#game1">Unity3D Action Game</a>
@@ -60,17 +63,17 @@
             <a class="nav-link js-scroll-trigger" href="#hair1">Real-Time Hair Physics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#procAnim1">Procedural Animation for Unity3D Spiders</a>
+            <a class="nav-link js-scroll-trigger" href="#spider1">Procedural Spider Animation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#wordSearch">Word Search Game for Amblyopia Therapy</a>
+            <a class="nav-link js-scroll-trigger" href="#wordSearch">Word Search Game for Amblyopia Eye Therapy</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#musicGA">Genetic Algorithm for Evolving Music</a>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#composedMusic">Composed Music</a>
-          </li>
+          </li>-->
           <!--<li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#smallProjects">Small Projects</a>
           </li>-->
@@ -88,18 +91,29 @@
           <!--<div class="subheading mb-5">Address · Address · Phone ·
             <a href="mailto:name@email.com">name@email.com</a>
           </div>-->
-          <h3 class="mb-0">NOTE: This website is a work-in-progress!</h3>
-          <p>Welcome to my online portfolio. Most of my work is in game development, medical research, and machine learning. This is a collection of my favorite programming and math projects, as well as some experiments in 3D art and music composition.</p>
-          <p>Enjoy!</p>
-          <!--<p>Currently, I'm using this as a job-search aid. Here's my professional skill stack:</p>
+          
+          <p>Hello! I'm a recent Computer Science BS grad, with a previous BS in Mathematics. Most of my work is in game development, medical research, machine learning (genetic algorithms), and physics simulation.</p>
+          <p>I like data science and mixing object oriented principles with component-based architectures like what Unity3D provides. This is a collection of my favorite programming and math projects.</p>
+          <p>In my spare time, I like to read mind-blowing books, play volleyball, rock climb, scuba dive, go indoor/outdoor skydiving, and volunteer with kids.</p>
+          
+          <p><strong><u>Professional skill stack:</u></strong></p>
           <ul>
-            <li>C#, C++, Python, JavaScript, R</li>
-            <li>OOP and component-based architectures, SQL, Linux, Rocks HPC, Git, Agile</li>
-            <li>Visual Studios 2015, Unity3D</li>
-            <li>Hobbyist experience with Blender3D, sound design, audio processing, and live/studio recording environments using Logic 8, Cubase 9, and Cakewalk SONAR</li>
-            <li>AFAA certified group exercise instructor (side job in college, focusing on cardio/strength formats)</li>
-            <li>Academic experience with Hadoop, Apache Pig, and Java</li>
-          </ul>-->
+            <li>C++, C#.NET, Python, JavaScript, R</li>
+            <li>Data analysis with NumPy, SciPy, Pandas, SQL, Rocks HPC Cluster</li>
+            <li>Win/Linux, git, Agile</li>
+            <li>Visual Studio 2015, Unity3D</li>
+            <li>HLSL/Cg shader development with DirectX 9 and 11</li>
+            <li>Academic experience with Hadoop, Apache Pig, AWS, and Docker</li>
+            <li>Working knowledge of Blender3D modeling (with Rigify), UV mapping, rigging, and animation</li>
+            <li>Working knowledge of sound design, audio processing, music theory, live sound, and studio recording using Logic 8, Cubase 9, Cakewalk SONAR, and EastWest synthesizers</li>
+            <li>Working knowledge of texture design with GIMP 2 and Inkscape</li>
+            <li>Earth-shaking customer service as a AFAA certified group exercise and paddleboard instructor, focusing on cardio/strength formats</li>
+          </ul>
+
+          <p>If you're going to interview me, I'm happy to talk about any of those.</p>
+
+          <p>Enjoy!</p>
+          
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
               <a href="https://LinkedIn.com/in/Bryan-Franz-147061155">
@@ -134,27 +148,32 @@
             <div class="resume-content mr-auto">
               
               <h3 class="mb-0">Project Description</h3>
-              <p>During my year-long internship at Moffitt Cancer Center, I was lucky to be working in the Bioinformatics Core on one of their new research programs, MONA. MONA was originally conceived for the purpose of finding new interactions between genes and metabolites associated with lung cancer, but the flexible approach lends it toward anything involving genes, metabolites, proteins, micro RNA, etc.</p>
-              <p>Aside from its network-based approach for integrative data analysis, it has a customizable feature for using weighted correlations to add speculative interactions between expressors (genes and metabolites) which aren't currently annotated.</p>
-              <p>The end goal is to give researchers a way to identify likely interactions to do further study on.</p>
+              <p>During my year-long internship at <a href="https://moffitt.org/">Moffitt Cancer Center</a>, I was lucky to be working in the Bioinformatics Core on one of their new research programs, MONA. MONA is a novel data analysis program that finds speculative interactions between genes and metabolites which may not be annotated yet. This gives researchers another tool to identify likely interactions to do further study on.</p>
+              <p>MONA was originally conceived to deal with lung cancer, but its flexible approach lends it toward anything involving genes, metabolites, proteins, and micro RNA.</p>
 
+              <h3 class="mb-0">Features</h3>
+              <ul>
+                <li>Real-time force directed graph viewer</li>
+                <li>Pathway enrichment for network combinations</li>
+                <li>Network output in CSV and XGMML formats</li>
+                <li><strong>Unique Features:</strong>
+                  <ul>
+                    <li>Network-based approach for integrative data analysis</li>
+                    <li>Uses weighted correlations to find possible interactions in experiment data</li>
+                  </ul>
+                </li>
+              </ul>
+              
+              <h3 class="mb-0">My Contributions</h3>
+              <p>I started my work MONA by making test cases for the existing codebase. It was mostly data analysis on various inputs, confirming theories with a bioinformatics statistician at Moffitt, and making appropriate changes to the Python code.</p>
+              <p>Afterwards, I moved on to the R codebase. There was an existing R project, but it was for a much older version of MONA, so I started from scratch. MONA uses an atypical CSV output format so I first made a parser for it.</p>
 
+              <p>For the data visualization, I decided to use the Shiny framework. RShiny is useful for quickly creating interactive web applications that incorporate R functionality. I experimented with several different visualization packages before settling on the visNetwork package. Since it created graphs that updated in real-time and could be pulled around by the user, it was a natural choice for large-scale data. It's also fun to use! Just look at the gif below:</p>
 
-              <h3 class="mb-0">Core Analysis</h3>
-              <p>(describe)</p>
-
-
-
-              <h3 class="mb-0">Interactive Network Visualization</h3>
-              <p>For the data visualization, I used the statistics-focused R language. R was a natural choice because of how easily it could handle structured data and the availability of the Shiny framework. RShiny is useful for quickly creating interactive web applications that incorporate R functionality.</p>
-              <p>I experimented with several different visualization packages before settling on the visNetwork package. Since it created graphs that updated in real-time and could be pulled around by the user, it was a natural choice for large-scale data, and fun to use.</p>
-              <p>MONA incorporates a network-based approach for integrative data analysis, using empirical correlations to make edges with expressors that aren’t previously annotated.</p>
-
-
-
-              <h3 class="mb-0">FUTURE PLANS:</h3>
               <p>While my internship has officially ended in December 2017, I am continuing work on MONA as a developer and contributor to the upcoming paper. My current work is a mix of adding features and testing MONA with different cancer research experiment data.</p>
-              <p><strong>NOTE:</strong> This project is property of Moffitt Cancer Center and is currently unpublished. I'll update this after publication and add the link to the paper!</p>
+              
+              <h3 class="mb-0">NOTE:</h3>
+              <p>This project is property of Moffitt Cancer Center and is currently unpublished. I'll update this after publication and add the link to the paper!</p>
             </div>
           </div>
         </div>
@@ -165,21 +184,22 @@
           <h2 class="mb-0">Genetic Algorithm Environment</h2>
           <div class="row">
             <div class="col-md-6"><div class="subheading mb-3">Language: C++</div></div>
-            <div class="col-md-6"><div class="subheading mb-3">Visual Studio 2015</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Visual Studio 2015, Doxygen</div></div>
           </div>
           <br>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Project Description</h3>
-              <p>I often have ideas for ways to apply genetic algorithms, but usually end up not implementing them due to the time required to get them working. GAB-Class is designed to make it as fast as possible to get genetic algorithms working in C++.</p>
-              <p>The project includes a GeneticAlgorithm class which holds the data and runs each generation, a Chromosome abstract class that provides common methods, and two static libraries for crossover and mutation methods.</p>
-              <p>With this setup, it only takes roughly 15 minutes to create a new genetic algorithm and get started writing the fitness function.</p>
-              <p>Here is the link to the project source code: <a href="https://github.com/BFranz51/GAB-Class">GitHub Link</a></p>
+              <p>I often have ideas for ways to apply genetic algorithms, but usually end up not implementing them due to the time required to get them working. GAB-Class is designed to allow users to set up a new genetic algorithm and start writing the fitness function within 15 minutes.</p>
+              <p>GAB-Class controls the fundamental genetic algorithm workflow, implements crossover and mutation phases with flexible settings, and provides easy-to-use static libraries for common GA methods. Everything is commented in Doxygen style so that users don't have to open the code.</p>
+              <p>Here is the link to the project source code, which has a more complete description: <a href="https://github.com/BFranz51/GAB-Class">GitHub Source Code</a></p>
 
               <h3 class="mb-0">Features</h3>
               <ul>
-                <li>Mutation Settings
+                <li><strong>Automatic advancement of each generation according to GA workflow</strong></li>
+                <li><strong>Detection and handling of common GA problems to prevent exceptions</strong></li>
+                <li><strong>Mutation Settings</strong>
                   <ul>
                     <li>Mutations occur on "blocks" of sequential bits according to user settings. The user can define the block size, percentage chance of any bit being toggled, and restrict by bit/byte/value.</li>
                     <li>Examples of what can be done:</li>
@@ -192,28 +212,23 @@
                     </ul>
                   </ul>
                 </li>
-                <li>Crossover Features
+                <li><strong>Crossover Features</strong>
                   <ul>
-                    <li>COPY - Volatile data is directly copied from elite parents</li>
-                    <li>SHUFFLE - Volatile data is copied from 2 elite parents, with each byte being chosen from a random parent</li>
-                    <li>N-SPLIT - Volatile data is copied in (N + 1) sequential chunks from 2 elite parents</li>
+                    <li>Users can set the number of each crossover to perform each generation</li>
+                    <li><strong>COPY</strong> - Volatile data is directly copied from elite parents</li>
+                    <li><strong>SHUFFLE</strong> - Volatile data is copied from 2 elite parents, with each byte being chosen from a random parent</li>
+                    <li><strong>N-SPLIT</strong> - Volatile data is copied in (N + 1) sequential chunks from 2 elite parents</li>
                   </ul>
                 </li>
-                <li>Encoding Supported
+                <li><strong>Encoding Supported</strong>
                   <ul>
                     <li>Any primitive</li>
-                    <li>Numeric vectors</li>
+                    <li>Numeric vectors, including floats and doubles</li>
                     <li>Boolean vectors</li>
                   </ul>
                 </li>
-                <li>Input/Output
-                  <ul>
-                    <li>Simple output to console</li>
-                    <li>Binary files</li>
-                    <li>CSV files</li>
-                  </ul>
-                </li>
-                <li>Examples included
+                <li><strong>Input/Output in binary and CSV format</strong></li>
+                <li><strong>Example Algorithms</strong>
                   <ul>
                     <li>Knapsack problem</li>
                     <li>Sudoku puzzle</li>
@@ -222,7 +237,7 @@
                 </li>
               </ul>
 
-              <h3 class="mb-0">What is a Genetic Algorithm?</h3>
+              <!--<h3 class="mb-0">What is a Genetic Algorithm?</h3>
               <p>Genetic algorithms (GAs) are optimization algorithms that use the principles of evolution and natural selection to solve problems. GAs are useful for problems with the following properties:</p>
               <ul>
                 <li>Large or infinite number of possible solutions</li>
@@ -234,15 +249,17 @@
                 <li><strong>Selection Phase</strong> - each solution is scored according to a fitness function</li>
                 <li><strong>Crossover Phase</strong> – lower scored solutions are replaced with combinations of higher scored solutions</li>
                 <li><strong>Mutation Phase</strong> – solutions are randomly changed</li>
-              </ul>
-              <p>Terms:</p>
+              </ul>-->
+              <!--<h3 class="mb-0">Terms</h3>
               <ul>
                 <li>"Individual" / "Chromosome" = A possible solution to the GA problem</li>
                 <li>"Elite" = high scoring individual that is not crossed over or mutated</li>
                 <li>"Volatile" = any non-elite individual</li>
-              </ul>
+                <li>"Crossover" = creating new individuals from previously tested individuals</li>
+                <li>"Mutation" = randomly changing an individual</li>
+              </ul>-->
 
-              <h3 class="mb-0">Implementation</h3>
+              <!--<h3 class="mb-0">Implementation</h3>
               <p>GAB-Class is the combination of several classes:</p>
               <ul>
                 <li>GeneticAlgorithm class
@@ -275,11 +292,7 @@
                     <li>Math methods such as returning a vector of random unique numbers</li>
                   </ul>
                 </li>
-              </ul>
-
-              <p>The biggest problem I encountered in this project was that the bulk of the work was still being done in the derived classes. Ideally, users should spend their time on the fitness function and let GAB-Class handle the crossover and mutation phases. GAB-Class needed some way to modify arbitrary data contained in the derived classes. I decided to encode the data into long string variables.</p>
-
-              <p>The crossover and mutation phases are handled by GAB-Class and performed on the encoded strings. Afterwards, they are decoded back into data that the fitness function can work with.</p>
+              </ul>-->
 
 
             </div>
@@ -291,7 +304,7 @@
         <div class="my-auto">
           <h2 class="mb-0">Real-Time Dynamic Water</h2>
           <div class="row">
-            <div class="col-md-6"><div class="subheading mb-3">Languages: JavaScript</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Languages: C#</div></div>
             <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
           </div>
           <br>
@@ -321,23 +334,62 @@
 
         </div>
       </section>
+      
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="wind1">
+        <div class="my-auto">
+          <h2 class="mb-0">Displacement Shaders for Hurricane Winds</h2>
+          <div class="row">
+            <div class="col-md-6"><div class="subheading mb-3">Languages: HLSL, Cg</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
+          </div>
+          <br>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Current Features</h3>
+              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
+              <ul>
+                <li>Inputs for wind direction and force</li>
+                <li>"Normal" and "Extreme" settings allow control over how much the main tree trunk bends</li>
+                <li>Automatic wind variations based on user settings</li>
+                <li>Works with both static and dynamic wind inputs</li>
+              </ul>
+              <p></p>
+              <!--<img class="img-fluid img-profile mx-auto mb-2" src="img/water1/justShader.gif" alt="">-->
+              <h3 class="mb-0">Design Choices</h3>
+              <p>In order to allow for large numbers of trees being rendered, I decided to preserve <a href="https://docs.unity3d.com/Manual/DrawCallBatching.html">static and dynamic batching</a>. This meant that I couldn't modify the original mesh data for individual trees. To get around this problem, I left the meshes alone and created shaders with vertex displacement functions.</p>
+              <p>This created some new limitations. The problem was almost stateless, with the only inputs being the unmodified vertex positions in local space and the time since startup, and no way to store vertex data like velocity. To get around this, I decided to make every function deterministic and continuous, while adding as many factors as possible in order to break up the motion according to tree position and time.</p>
+              
+            </div>
+          </div>
+
+        </div>
+      </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="game1">
         <div class="my-auto">
           <h2 class="mb-0">Unity3D Action Game</h2>
           <div class="row">
             <div class="col-md-6"><div class="subheading mb-3">Languages: JavaScript, C#</div></div>
-            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D, Audacity, Cakewalk SONAR, Cubase 9, GIMP 2, Inkscape, Processing (for pre-rendered graphics)</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D, Rigify, Audacity, Cakewalk SONAR, Cubase 9, GIMP 2, Inkscape, Processing (for pre-rendered graphics)</div></div>
           </div>
           <br>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Project Description</h3>
+              <h3 class="mb-0">Technical Features</h3>
               <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
-              <p>This is a work-in-progress game I've been working on as a hobby. The basic combat is inspired by Dark Souls.</p>
+              <ul>
+                <li>5 boss battles (more in testing phase)</li>
+                <li>AI includes FSM and attack combo system</li>
+                <li>HLSL shader library</li>
+                <li>Player controls with dodging, attack combos, stamina, poise, and custom physics controller</li>
+                <li>Custom hit detection system using geometry rather than ray traces (for increased speed and scalability)</li>
+              </ul>
+              <h3 class="mb-0">Project Description</h3>
+              <p>This is my main hobby project. The basic combat is inspired by Dark Souls and I experimented with new mechanics like altering combat with dynamic water. Many of my portfolio projects are large modules that I use for this game.</p>
               <!--<img class="img-fluid img-profile mx-auto mb-2" src="img/procAnim1/keyframes1.jpg" alt="">-->
-              <p>(info)</p>
+              <p></p>
 
             </div>
           </div>
@@ -357,7 +409,7 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Project Description</h3>
-              <p>I had previously experimented with making hair in Blender for my Unity3D game, but as the combat become more action-packed, I wanted the hair to act as a flag and emphasize the movement.</p>
+              <p>I had previously experimented with modeling hair in Blender for my Unity3D game, but as the combat become more action-packed, I wanted the hair to act as a flag and emphasize the movement.</p>
               <p>The following video shows each feature being added:</p>
               <p>(Video)</p>
             </div>
@@ -366,9 +418,9 @@
       </section>
 
       <!-- PROCEDURAL ANIMATION -->
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="procAnim1">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="spider1">
         <div class="my-auto">
-          <h2 class="mb-0">Procedural Animation for Humanoids and Spiders</h2>
+          <h2 class="mb-0">Procedural Spider Animation</h2>
           <div class="row">
             <div class="col-md-6"><div class="subheading mb-3">Language: JavaScript</div></div>
             <div class="col-md-6"><div class="subheading mb-3">Unity3D, Blender3D</div></div>
@@ -378,8 +430,14 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Project Description</h3>
-              <p>I created this project to support my hobby game, Sword Iownit.  The animations I had created by myself were useful for testing, but lacked the impact and weight that other combat games had. Since I wanted to spend most of my time programming, I turned to procedural solutions.</p>
-              <p>This video shows the results in action</p>
+              <p>I created this project to support my hobby game in order to maximize the impact and weight of animations. I enjoyed using Blender3D with Rigify but still wanted to spend most of my time programming, so I turned to procedural solutions.</p>
+
+              <h3 class="mb-0">Features</h3>
+              <ul>
+                <li>Fast approximation of foot IK for spiders</li>
+                <li>Flexible impact reaction system for spiders and other monsters</li>
+                <li>Momentum shifts usable for all actors (humanoids, spiders, monsters...)</li>
+              </ul>
               <!--<p><iframe width="560" height="315" src="https://www.youtube.com/embed/YT92d2eqSE4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>-->
               <!--<p><strong>NOTE:</strong> After doing this project, I started experimenting with using Rigify to create smoother keyframed animations that used IK.</p>-->
             </div>
@@ -403,9 +461,9 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="wordSearch">
         <div class="my-auto">
-          <h2 class="mb-0">Word Search Game for Amblyopia Therapy</h2>
+          <h2 class="mb-0">Word Search Game for Amblyopia Eye Therapy</h2>
           <div class="row">
-            <div class="col-md-6"><div class="subheading mb-3">Language: JavaScript</div></div>
+            <div class="col-md-6"><div class="subheading mb-3">Language: C#</div></div>
             <div class="col-md-6"><div class="subheading mb-3">Unity3D, Amblyopia research</div></div>
           </div>
           <br>
@@ -413,22 +471,20 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">What is Amblyopia?</h3>
-              <p>Ambylopia is an eye problem where a person has a weakened eye. In many cases, the person favors their strongest eye, and the weak eye can begin to wander. This is commonly known as having a "lazy eye."</p>
-              <p>According to Lazyeyegames.com, almost 3% of people have this problem. One of my family members has it, and I decided to recreate her favorite word search game with a color-scheme designed to help her eye if she used red-blue glasses while playing it.</p>
-              <p>According to my main reference, Lazyeyegames.com, amblyopia involves the brain ignoring a certain amount of input from the weak eye. In order to improve, the brain must be forced to use both eyes simultaneously. This point affected the game design and steered me away from making a game that simply "exercised" the weak eye, and toward a game design that required the player to use both eyes at the same time.</p>
+              <p>Ambylopia is an eye problem where a person has a weakened eye. In many cases, the person favors their strongest eye, and the weak eye can begin to wander. According to <a href = "http://www.lazyeyegames.com/">Lazyeyegames.com</a>, almost 3% of people have this problem, and it involves the brain ignoring a certain amount of input from the weak eye.</p>
+              <p>In order to improve, the brain must be forced to use both eyes simultaneously. This point affected the game design and steered me away from making a game that simply exercised the weak eye, and toward a game design that required the player to use both eyes at the same time.</p>
               <p>To accomplish this, I decided to create a handful of minigames using the idea behind a popular word search game. Being a game where the player searches for words among random letters, the players’ eyes must be watching many things simultaneously and looking for patterns.</p>
               
               <h3 class="mb-0">How is the game set up to use both eyes?</h3>
               <p>The player wears red-blue glasses. The game colors are tweaked so that the red aligns with the red lens and the blue with the blue lens. When letters in these colors are drawn on a black screen, the player sees a different image in each eye. The game is set up so that letters are randomly assigned to be blue or red.</p>
               <img class="img-fluid img-profile mx-auto mb-2" src="img/wordSearch/layout.jpg" alt="">
-              <p>Through experimentation, I found that viewing other colors through the glasses was disorienting and stressful. This was due to the colors looking very different in each eye, and being able to see both colors simultaneously. However, yellow and purple were fairly neutral, so I used those to convey information to the player quickly.</p>
-              <p>For example, the score was shown in a neutral color so that the player could quickly glance at it before returning to the red/blue letters. Also, the amount of time left each round was indicated by a large box that shrank in size. Giving it a neutral color and a basic shape made it easier to see in peripheral vision.</p>
+              <p>Through experimentation, I found that viewing other colors through the glasses was disorienting and stressful. This was due to the colors looking very different in each eye, and being able to see both colors simultaneously. However, yellow and purple were fairly neutral, so I used those to convey information to the player quickly and kept the visual design simple.</p>
 
               <h3 class="mb-0">Implementation</h3>
               <p>To handle so many words in a quick manner, I loaded 235,886 words into a dictionary. Since the data did not include plurals, the game automatically assumes that valid words with an “S” at the end are also valid. Furthermore, if a word is rejected, the player can press a key to have it added to a secondary dictionary of custom words.</p>
 
               <h3 class="mb-0">Game modes</h3>
-              <p>I added 8 game modes total. Here is a sampling:</p>
+              <p>I added 8 game modes total. Here are a few:</p>
               <br>
               <img class="img-fluid img-profile mx-auto mb-2" src="img/wordSearch/explore.jpg" alt="">
               <br><br>
@@ -450,7 +506,7 @@
 
 
               <h3 class="mb-0">Making it fun and responsive!</h3>
-              <p>It is difficult for people with amblyopia to use their eyes together and sometimes they will get headaches while doing so. To make the game less stressful, I included settings for letter size and the speed of the game so players could adjust the game to their comfort level.</p>
+              <p>It's difficult for people with amblyopia to use their eyes together and sometimes they will get headaches while doing so. To make the game less stressful, I included settings for letter size and the speed of the game so players could adjust the game to their comfort level.</p>
               <p>I also wanted to make the game as enjoyable as possible, so people would do their therapy regularly. This was fairly challenging because I couldn't use techniques like screenshake and particle bursts. The visuals needed to be simple and extremely clear at all times. In the end, I decided to add these features:</p>
               <lu>
                 <li>Letters briefly expand when selected, with a satisfying sound</li>
@@ -462,12 +518,14 @@
               <br>
               <h3 class="mb-0">Conclusion</h3>
               <p>It was an amazing experience being able to work on this project. Technology can be a powerful new tool for dealing with medical conditions and games can offer a way to make it a more fun and enjoyable experience.</p>
-              <p><strong>FUTURE PLANS:</strong> I'm in contact with the USF professor who oversaw the project for getting medical approval. I don't think it will happen soon, but it would be nice as there aren't many games out there for Amblyopia. (Maybe because of the medical approval?)</p>
+              <p><strong>FUTURE PLANS:</strong> I'm in contact with the USF professor who oversaw the project for getting medical approval. We need a larger sample size before applying for FDA approval. I don't think it will happen soon, but it would be nice as there aren't many games out there for Amblyopia.</p>
 
             </div>
           </div>
         </div>
       </section>
+
+
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="musicGA">
         <div class="my-auto">
@@ -483,22 +541,17 @@
 
 
               <h3 class="mb-0">Preparation Phase</h3>
-              <p>The program started by generating a pseudo-random chord progression in C Major. This didn't have a direct effect on the notes, but influenced the fitness function.</p>
-              <p>The 2nd preparation phase was deciding where notes would occur for each instrument. I wrote a GA for this</p>
-              <p>I separated these phases from the main GA because it would let my laptop not die when performing calculations, and it allowed me to keep the same chord progressions and note locations across several iterations of the GA. This gave me a clearer picture of how the GA was developing.</p>
-              <p>This is why some of the samples have such a similar sound - they were evolving based on the same chord progressions and/or note locations.</p>
+              <p>The program started by generating a pseudo-random chord progression. This didn't have a direct effect on the notes, but influenced the fitness function. The 2nd preparation phase was deciding where notes would occur for each instrument. I wrote a short GA for this.</p>
 
 
 
               <h3 class="mb-0">Evolving the Notes</h3>
-              <p>This was the most important and processor-heavy part of the project. The GA started by filling in the previously-assigned note locations with completely random pitches in the ranges of each instrument. It then created 99 copies so there were 100 total quartet passages, or "chromosomes" (in GA terms).</p>
+              <p>This was the most important and processor-heavy part of the project. The GA started by filling in the previously-assigned note locations with completely random pitches in the ranges of each instrument. It then created 99 copies so there were 100 total quartet passages, or "individuals" (in GA terms).</p>
 
 
 
-              <h3 class="mb-0">Selection Phase</h3>
-              <p>Each generation, the chromosomes were scored according to a fitness function meant to reflect how "good" they should sound.</p>
-              <p>Research has shown that popular songs tend to flow the way the brain expects them to, but also have a small, important level of unexpectedness. I used that principle by recording how much variance there was in each chromosome and combining that with a score of how well it fit music theory and the intended chord progression.</p>
-              <p>This was done in several passes:</p>
+              <h3 class="mb-0">Fitness Function</h3>
+              <p>Each generation, the chromosomes were scored according to a fitness function meant to reflect how "good" they should sound. Research has shown that popular songs tend to flow the way the brain expects them to, but also have a small, important level of unexpectedness. I used that principle by recording how much variance there was in each chromosome and combining that with a score of how well it fit music theory and the intended chord progression. This was done in several passes:</p>
 
               <p><div class="subheading mb-3"><u>NOTE LEVEL:</u></div></p>
               <p>Each note was evaluated based on how it flowed into and out of the notes around it (based on intervals), and the harmonies it created with the notes the other instruments were playing. It also accounted for the time since those other notes were started - playing notes simultaneously made their harmony score/penalty more pronounced than one note playing over other notes being held.</p>
@@ -510,12 +563,6 @@
               <p>I used statistical analysis to encourage chromosomes with interesting distributions. This helped solve a few problems. Withit this factor, chromosomes were overusing "safe" notes and sticking to the same intervals.</p>
 
               <p>All this was taken into account for the final score.</p>
-
-
-
-              <h3 class="mb-0">Copy Phase</h3>
-              <p>Normally there is a Crossover Phase, where low scoring chromosomes are recreated from crossed-over data from high scoring ones. I don't remember where I learned what a GA was, but I didn't know about crossovers.</p>
-              <p>So I just copied the top scoring chromosome directly to all the others. It was essentially a GA set up with extreme elitism and low diversity.</p>
 
 
 
@@ -540,14 +587,6 @@
               <p>Finally, I got a piece that had some interesting melodies and countermelodies! It sounds like it really wants to build up to something great - before getting slightly confused.</p>
               <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197511647&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
 
-              <br>
-              <br>
-              <br>
-              <h3 class="mb-0">FUTURE PLANS</h3>
-              <p>I plan to translate the project to C# and take advantage of having a faster PC than I did back in 2012, as well as my increased knowledge of genetic algorithms. The obvious improvement is to incorporate crossovers.</p>
-              <p>I'd also like to experiment with detecting when results become stagnant, and splitting the GA population for a set number of generations. Elite individuals will apply simulated annealing in an attempt to converge on a better solution while non-elite (I like to call them "volatile") individuals have an increased mutation rate and switch to using rank selection.</p>
-              <p>(Non-GA translation) This would give the best individuals a chance to further prove themselves, while giving other solutions a chance. At least, it would be fun to try!</p>
-
 
             </div>
           </div>
@@ -555,7 +594,7 @@
       </section>
 
       <!-- MUSIC!!! -->
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="composedMusic">
+      <!--<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="composedMusic">
         <div class="my-auto">
           <h2 class="mb-0">Composed Music</h2>
           <div class="row">
@@ -566,7 +605,6 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <!--<h3 class="mb-0">Recent Compositions</h3>-->
               
               <br><br>
               <p><strong>Shadowdancer:</strong> A strings piece.</p>
@@ -587,12 +625,11 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Past Albums</h3>
-              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
               <p></p>
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <!--<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="smallProjects">
         <div class="my-auto">
