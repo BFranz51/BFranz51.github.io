@@ -130,32 +130,36 @@
             </li>
           </ul>
 
+          <!--<h2 class="mb-0">Project Highlights:</h2>-->
+
           <!-- Gallery of sorts -->
           <div class="row">
-
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <a class="nav-link js-scroll-trigger" href="#wind1">
-                  <img src="img/trees/hurricane.gif" alt="(Image not found)" style="width:100%">
-                  <div class="caption">
-                    <p>HLSL wind shaders</p>
-                  </div>
-                </a>
-              </div>
-            </div>
 
             <div class="col-md-4">
               <div class="thumbnail">
                 <a class="nav-link js-scroll-trigger" href="#water1">
                   <img src="img/water1/sand1.gif" alt="(Image not found)" style="width:100%">
                   <div class="caption">
-                    <p>Unity3D dynamic water</p>
+                    <p>Project: Dynamic water</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="nav-link js-scroll-trigger" href="#wind1">
+                  <img src="img/trees/hurricane.gif" alt="(Image not found)" style="width:100%">
+                  <div class="caption">
+                    <p>Project: HLSL wind shaders</p>
                   </div>
                 </a>
               </div>
             </div>
 
           </div>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/2x4NXXKKNhI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
           
         </div>
@@ -434,6 +438,9 @@
                 <li>Player controls with dodging, attack combos, stamina, poise, and custom physics controller</li>
                 <li>Custom hit detection system using geometry rather than ray traces (for increased speed and scalability)</li>
               </ul>
+
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/2x4NXXKKNhI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
               <h3 class="mb-0">Project Description</h3>
               <p>This is my main hobby project. The basic combat is inspired by Dark Souls and I experimented with new mechanics like altering combat with dynamic water. Many of my portfolio projects are large modules that I use for this game.</p>
               <!--<img class="img-fluid img-profile mx-auto mb-2" src="img/procAnim1/keyframes1.jpg" alt="">-->
@@ -454,12 +461,12 @@
           </div>
           <br>
 
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YT92d2eqSE4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Project Description</h3>
               <p>I had previously experimented with modeling hair in Blender for my Unity3D game, but as the combat become more action-packed, I wanted the hair to act as a flag and emphasize the movement.</p>
-              <p>The following video shows each feature being added:</p>
-              <p>(Video)</p>
             </div>
           </div>
         </div>
@@ -475,31 +482,20 @@
           </div>
           <br>
 
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YT92d2eqSE4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Project Description</h3>
-              <p>I created this project to support my hobby game in order to maximize the impact and weight of animations. I enjoyed using Blender3D with Rigify but still wanted to spend most of my time programming, so I turned to procedural solutions.</p>
+              <p>I created this project to support my hobby game in order to maximize the impact and weight of animations. The Blender3D plugin <a href="https://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Rigging/Rigify">Rigify</a> helped a lot with animation, but I wanted to use procedural techniques on top of it to make characters lean into momentum changes, and to react dynamically when hit from any angle.</p>
 
               <h3 class="mb-0">Features</h3>
               <ul>
-                <li>Fast approximation of foot IK for spiders</li>
-                <li>Flexible impact reaction system for spiders and other monsters</li>
+                <li>Fast, smooth approximation of foot IK for spiders</li>
+                <li>Impact reaction system for spiders and other monsters that handles impacts from all angles</li>
                 <li>Momentum shifts usable for all actors (humanoids, spiders, monsters...)</li>
               </ul>
-              <!--<p><iframe width="560" height="315" src="https://www.youtube.com/embed/YT92d2eqSE4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>-->
-              <!--<p><strong>NOTE:</strong> After doing this project, I started experimenting with using Rigify to create smoother keyframed animations that used IK.</p>-->
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
               
-              <h3 class="mb-0">Basic Keyframed Animation</h3>
-              <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
-              <p>One of the most popular animation techniques for hobbyist game devs is using keyframed animations to block out every action. In the figure below, the dots on the left represent bone rotations at certain times during a looping jog animation. These are called keyframes.</p>
-              <img class="img-fluid img-profile mx-auto mb-2" src="img/procAnim1/keyframes1.jpg" alt="">
-              <p>Keyframed animations offer great control over specific poses during actions. In a run cycle, it is easy to define the reaching/passing points. However, it tends to create stiff animations where the actor looks like they are moving to the beat of a metronome.</p>
-              <p>Adding intermediate keyframes and shifting the timing of keyframes can help mitigate this, but it is a time-consuming process and makes it difficult to modify the animations later. I often found myself tweaking part of an animation to make it smoother, only to find that it ruined the animation 6 frames later.</p>
             </div>
           </div>
 
@@ -531,7 +527,7 @@
               <h3 class="mb-0">Implementation</h3>
               <p>To handle so many words in a quick manner, I loaded 235,886 words into a dictionary. Since the data did not include plurals, the game automatically assumes that valid words with an “S” at the end are also valid. Furthermore, if a word is rejected, the player can press a key to have it added to a secondary dictionary of custom words.</p>
 
-              <h3 class="mb-0">Game modes</h3>
+              <h3 class="mb-0">Best game modes</h3>
               <p>I added 8 game modes total. Here are a few:</p>
               <br>
               <img class="img-fluid img-profile mx-auto mb-2" src="img/wordSearch/explore.jpg" alt="">
@@ -683,7 +679,7 @@
 
 
               <h3 class="mb-0">Fitness Function</h3>
-              <p>Each generation, the chromosomes were scored according to a fitness function meant to reflect how "good" they should sound. Research has shown that popular songs tend to flow the way the brain expects them to, but also have a small, important level of unexpectedness. I used that principle by recording how much variance there was in each chromosome and combining that with a score of how well it fit music theory and the intended chord progression. This was done in several passes:</p>
+              <p>Each generation, the individuals were scored according to a fitness function meant to reflect how "good" they should sound. Research has shown that popular songs tend to flow the way the brain expects them to, but also have a small, important level of unexpectedness. I used that principle by recording how much variance there was in each individual and combining that with a score of how well it fit music theory and the intended chord progression. This was done in several passes:</p>
 
               <p><div class="subheading mb-3"><u>NOTE LEVEL:</u></div></p>
               <p>Each note was evaluated based on how it flowed into and out of the notes around it (based on intervals), and the harmonies it created with the notes the other instruments were playing. It also accounted for the time since those other notes were started - playing notes simultaneously made their harmony score/penalty more pronounced than one note playing over other notes being held.</p>
@@ -692,17 +688,17 @@
               <p>The notes in each measure were evaluated based on factors such as how well they represented the chord progression, and whether "unexpected" notes were in proper locations (ie. notes that would act as "leading tones" into a chord change).</p>
 
               <p><div class="subheading mb-3"><u>SONG LEVEL:</u></div></p>
-              <p>I used statistical analysis to encourage chromosomes with interesting distributions. This helped solve a few problems. Withit this factor, chromosomes were overusing "safe" notes and sticking to the same intervals.</p>
+              <p>I used statistical analysis to encourage individuals with interesting distributions. This helped solve a few problems. Withit this factor, individuals were overusing "safe" notes and sticking to the same intervals.</p>
 
               <p>All this was taken into account for the final score.</p>
 
 
 
               <h3 class="mb-0">Mutation Phase</h3>
-              <p>Each generation, all but the top scoring chromosome were mutated randomly. The mutations ranged from "take the 47th cello note and move it down 3 semitones" to "grab 6 notes and pull them up/down a measure."</p>
-              <p>I found that the mutations had a huge influence on how long the GA had to run before getting a good result. For example: A melody could suddenly jump 2 octaves higher, stay there for a few notes, and then return to the normal range. This is obviously bad, but anytime a single note would randomly move downward, it would make the chromosome even worse. This is why I used so many types of mutations - including ones that would move entire sections of neighboring notes.</p>
+              <p>Each generation, all but the top scoring individuals were mutated randomly. The mutations ranged from "take the 47th cello note and move it down 3 semitones" to "grab 6 notes and pull them up/down a measure."</p>
+              <p>I found that the mutations had a huge influence on how long the GA had to run before getting a good result. For example: A melody could suddenly jump 2 octaves higher, stay there for a few notes, and then return to the normal range. This is obviously bad, but anytime a single note would randomly move downward, it would make the individual even worse. This is why I used so many types of mutations - including ones that would move entire sections of neighboring notes.</p>
 
-              <h3 class="mb-0">First Results</h3>
+              <!--<h3 class="mb-0">First Results</h3>
               <p>Things started out pretty randomly... The algorithm had a long ways to go.</p>
               <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197510982&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
               <br>
@@ -718,50 +714,14 @@
               <h3 class="mb-0">Best Result</h3>
               <p>Finally, I got a piece that had some interesting melodies and countermelodies! It sounds like it really wants to build up to something great - before getting slightly confused.</p>
               <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197511647&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-
+              -->
 
             </div>
           </div>
         </div>
       </section>
 
-      <!-- MUSIC!!! -->
-      <!--<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="composedMusic">
-        <div class="my-auto">
-          <h2 class="mb-0">Composed Music</h2>
-          <div class="row">
-            <div class="col-md-6"><div class="subheading mb-3">Logic 8 with EastWest Synthesizers</div></div>
-            <div class="col-md-6"><div class="subheading mb-3"></div></div>
-          </div>
-          <br>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              
-              <br><br>
-              <p><strong>Shadowdancer:</strong> A strings piece.</p>
-              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/258999221&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-
-              <br><br>
-              <p><strong>Winterswept:</strong> An eerie piece about ghost stories.</p>
-              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/200701545&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-
-              <br><br>
-              <p><strong>Greensleeves Arrangement:</strong> Piano with a violin lead.</p>
-              <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/29555701&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-              
-              
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Past Albums</h3>
-              <p></p>
-            </div>
-          </div>
-        </div>
-      </section>-->
+      
 
       <!--<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="smallProjects">
         <div class="my-auto">
