@@ -224,8 +224,8 @@
               <ul>
                 <li>Combines ocean waves with waves created by moving objects</li>
                 <li>Special ripples for huge impacts</li>
-                <li>Shallow water flow handling</li>
-                <li>Reactive gerstner waves</li>
+                <li>Shallow water flow handling to avoid edge artifacts</li>
+                <li>Gerstner waves that react to depth and water motion</li>
                 <li>Custom water shader with DirectX 11 tessellation, vertex displacement, depth-based opacity, and automatic foam</li>
               </ul>
               <p>This is a water system I'm working on for boss battles in my hobby game so that the bosses can push the water around as they move.</p>
@@ -235,9 +235,18 @@
 
                 <div class="col-md-6">
                   <div class="thumbnail">
-                    <h3 class="mb-0">1. Gerstner waves via shader</h3>
+                    <h3 class="mb-0">1. Gentle gerstner waves</h3>
                     <a href="img/water1/gerstnerWaves.gif">
                       <img src="img/water1/gerstnerWaves.gif" alt="(Image not found)" style="width:100%">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="thumbnail">
+                    <h3 class="mb-0">2. Choppy gerstner waves</h3>
+                    <a href="img/water1/choppy.gif">
+                      <img src="img/water1/choppy.gif" alt="(Image not found)" style="width:100%">
                     </a>
                   </div>
                 </div>
@@ -658,7 +667,7 @@
               <br>
               <h3 class="mb-0">Design Choices</h3>
               <p>In order to allow for large numbers of trees being rendered, I decided to preserve <a href="https://docs.unity3d.com/Manual/DrawCallBatching.html">static and dynamic batching</a>. This meant that I couldn't modify the original mesh data for individual trees. To get around this problem, I left the meshes alone and created shaders with vertex displacement functions.</p>
-              <p>This created some new limitations. The problem was almost stateless, with the only inputs being the unmodified vertex positions in local space and the time since startup, and no way to store vertex data like velocity. To get around this, I decided to make every function deterministic and continuous, while adding as many factors as possible in order to break up the motion according to tree position and time.</p>
+              <p>This created some new limitations. The problem was almost stateless, with the only inputs being the unmodified vertex positions in local space and the time since startup, and no way to store vertex data like velocity. To get around this, I made every function deterministic and continuous, while adding as many factors as possible in order to break up the motion.</p>
               
             </div>
           </div>
@@ -676,8 +685,7 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Project Description</h3>
-              <p>This project served as my senior project while getting a math degree. I only knew VB6 at the time and decided to use VBA in Excel. I had it output the music to an Excel sheet mimicing a piano roll, which I would then play on my MIDI keyboard.</p>
-              <p>That took a very long time (I play guitar, not piano), so for most of the development, I wasn't able to actually hear the music.</p>
+              <p>This project served as my senior project while getting a math degree. I only knew VB6 at the time and decided to use VBA in Excel. I had it output the music to an Excel sheet mimicing a piano roll, which I would then play on my MIDI keyboard. I'm not really a piano player, so for most of the development, I wasn't able to actually hear the music.</p>
 
 
               <h3 class="mb-0">Preparation Phase</h3>
