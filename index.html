@@ -93,7 +93,7 @@
           </div>-->
           
           <p>Hello! I'm a recent Computer Science BS grad, with a previous BS in Mathematics. Most of my work is in game development, medical research, machine learning (genetic algorithms), and physics simulation.</p>
-          <p>I like data science and mixing object oriented principles with component-based architectures like what Unity3D provides. In my spare time, I read mind-blowing books, play volleyball, scuba dive, go indoor/outdoor skydiving, and volunteer with kids.</p>
+          <p>I like data science and mixing object oriented principles with component-based architectures like Unity3D. In my spare time, I read mind-blowing books, play volleyball, scuba dive, go indoor/outdoor skydiving, and volunteer with kids.</p>
           
           <h3 class="mb-0">Professional skill stack:</h3>
           <p><strong><u></u></strong></p>
@@ -140,7 +140,7 @@
                 <a class="nav-link js-scroll-trigger" href="#water1">
                   <img src="img/water1/sand1.gif" alt="(Image not found)" style="width:100%">
                   <div class="caption">
-                    <p>Project: Water simulation</p>
+                    <p>Project: Water simulation in C#</p>
                   </div>
                 </a>
               </div>
@@ -195,10 +195,10 @@
               </div>
 
               <br>
-              <h3 class="mb-0">Project Description</h3>
+              <h3 class="mb-0">Project Description:</h3>
               <p>During my year-long internship at <a href="https://moffitt.org/">Moffitt Cancer Center</a>, I was on a small software development team in the Bioinformatics Core, working on their new research program, MONA. MONA is a data analysis program that finds speculative interactions between genes and metabolites which may not be annotated yet. This gives researchers another tool to identify likely interactions to do further study on. MONA was originally designed for lung cancer research, but its flexible approach lends it toward anything involving genes, metabolites, proteins, and micro RNA.</p>
 
-              <h3 class="mb-0">Features</h3>
+              <h3 class="mb-0">Main Features:</h3>
               <ul>
                 <li>Real-time, interactive force directed graph</li>
                 <li>Pathway enrichment for network combinations</li>
@@ -211,7 +211,7 @@
                 </li>
               </ul>
 
-              <h3 class="mb-0">My Contributions</h3>
+              <h3 class="mb-0">My Contributions:</h3>
               <p>I started my work MONA by making test cases for the existing codebase. It was mostly data analysis on various inputs, confirming theories with a bioinformatics statistician at Moffitt, and making appropriate changes to the Python code. Afterwards, I moved on to the R codebase. There was an existing R project, but it was for a much older version of MONA, so I started from scratch. MONA uses an atypical CSV output format so I first made a parser for it.</p>
 
               <p>For the data visualization, I decided to use the Shiny framework. RShiny is useful for quickly creating interactive web applications that incorporate R functionality. I experimented with several different visualization packages before settling on the <a href="https://cran.r-project.org/web/packages/visNetwork/vignettes/Introduction-to-visNetwork.html">visNetwork</a> package. Since it created graphs that updated in real-time and could be pulled around by the user, it was a natural choice for large-scale data. It's also fun to use! Just look at the gif below:</p>
@@ -273,14 +273,21 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Current Features</h3>
+              <h3 class="mb-0">Main Features:</h3>
               <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
               <ul>
                 <li>Combines ocean waves with waves created by any number of moving objects</li>
                 <li>Special ripples for huge impacts</li>
                 <li>Shallow water flow handling to minimize edge artifacts</li>
                 <li>Gerstner waves with turbulence that reacts to depth and water motion</li>
-                <li>HLSL/Cg surface shader with DirectX 11 tessellation, vertex displacement, depth-based opacity, and automatic foam + whitecaps</li>
+                <li>HLSL/Cg surface shader:
+                  <ul>
+                    <li>DirectX 11 tessellation</li>
+                    <li>Gerstner wave vertex displacement</li>
+                    <li>Depth-based opacity</li>
+                    <li>Automatic foam + whitecaps</li>
+                  </ul>
+                </li>
               </ul>
               <p>This is a water system I'm working on for boss battles in my hobby game so that the bosses can push the water around as they move.</p>
 
@@ -347,6 +354,11 @@
 
               </div>
 
+              <br><br>
+              <h3 class="mb-0">Design Choices:</h3>
+              <p>The core simulation is done in C# with a grid-based model that handles the large-scale waves. It combines input from moving objects with transverse waves, and handles flow between neighboring grid points. It outputs depth and water force for any point, and also calculates extra data like how "turbulent" each point is, which it sends to the shader via vertex colors.</p>
+              <p>The mesh was dense enough for gameplay, but I wanted more detailed visuals. So I added DirectX 11 tessellation to the HLSL shader and wrote a vertex displacement function that overlaid 6 gerstner waves onto the tessellated mesh. The gerstner waves have different amplitudes and lacunarities based on the "turbulence" set by the C# simulation. This allowed me to keep shallow areas relatively gentle, and have the water become choppy for a while after large waves.</p>
+
 
             </div>
           </div>
@@ -365,12 +377,12 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Project Description</h3>
+              <h3 class="mb-0">Project Description:</h3>
               <p>I often have ideas for ways to apply genetic algorithms, but usually end up not implementing them due to the time required to get them working. GAB-Class is designed to allow users to set up a new genetic algorithm and start writing the fitness function within 15 minutes.</p>
               <p>GAB-Class controls the fundamental genetic algorithm workflow, implements crossover and mutation phases with flexible settings, and provides easy-to-use static libraries for common GA methods. Everything is commented in Doxygen style so that users don't have to open the code.</p>
               <p>Here is the link to the project source code, which has a more complete description: <a href="https://github.com/BFranz51/GAB-Class">GitHub Source Code</a></p>
 
-              <h3 class="mb-0">Features</h3>
+              <h3 class="mb-0">Main Features:</h3>
               <ul>
                 <li><strong>Automatic advancement of each generation according to GA workflow</strong></li>
                 <li><strong>Detection and handling of common GA problems to prevent exceptions</strong></li>
@@ -486,7 +498,7 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Technical Features</h3>
+              <h3 class="mb-0">Technical Features:</h3>
               <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
               <ul>
                 <li>5 boss battles (more in testing phase)</li>
@@ -499,7 +511,7 @@
               <iframe width="560" height="315" src="https://www.youtube.com/embed/2x4NXXKKNhI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               <br><br>
-              <h3 class="mb-0">Project Description</h3>
+              <h3 class="mb-0">Project Description:</h3>
               <p>This is my main hobby project. The basic combat is inspired by Dark Souls and I experimented with new mechanics like altering combat with dynamic water. Many of my portfolio projects are large modules that I use for this game.</p>
               
 
@@ -523,7 +535,7 @@
           <br><br>
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Project Description</h3>
+              <h3 class="mb-0">Project Description:</h3>
               <p>I had previously experimented with modeling hair in Blender for my Unity3D game, but as the combat become more action-packed, I wanted the hair to act as a flag and emphasize the movement.</p>
             </div>
           </div>
@@ -545,10 +557,10 @@
           <br><br>
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Project Description</h3>
+              <h3 class="mb-0">Project Description:</h3>
               <p>I created this project to support my hobby game in order to maximize the impact and weight of animations. The Blender3D plugin <a href="https://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Rigging/Rigify">Rigify</a> helped a lot with animation, but I wanted to use procedural techniques on top of it to make characters lean into momentum changes, and to react dynamically when hit from any angle.</p>
 
-              <h3 class="mb-0">Features</h3>
+              <h3 class="mb-0">Main Features:</h3>
               <ul>
                 <li>Fast, smooth approximation of foot IK for spiders</li>
                 <li>Impact reaction system for spiders and other monsters that handles impacts from all angles</li>
@@ -640,7 +652,7 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Current Features</h3>
+              <h3 class="mb-0">Current Features:</h3>
               <!--<div class="subheading mb-3">Shout! Media Productions</div>-->
               <ul>
                 <li>Inputs for wind direction and force</li>
@@ -709,7 +721,7 @@
               
               
               <br>
-              <h3 class="mb-0">Design Choices</h3>
+              <h3 class="mb-0">Design Choices:</h3>
               <p>In order to allow for large numbers of trees being rendered, I decided to preserve <a href="https://docs.unity3d.com/Manual/DrawCallBatching.html">static and dynamic batching</a>. This meant that I couldn't modify the original mesh data for individual trees. To get around this problem, I left the meshes alone and created shaders with vertex displacement functions.</p>
               <p>This created some new limitations. The problem was almost stateless, with the only inputs being the unmodified vertex positions in local space and the time since startup, and no way to store vertex data like velocity. To get around this, I made every function deterministic and continuous, while adding as many factors as possible in order to break up the motion.</p>
               
@@ -735,21 +747,21 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Project Description</h3>
+              <h3 class="mb-0">Project Description:</h3>
               <p>This project served as my senior project while getting a math degree. I only knew VB6 at the time and decided to use VBA in Excel. I had it output the music to an Excel sheet mimicing a piano roll, which I would then play on my MIDI keyboard. I'm not really a piano player, so for most of the development, I wasn't able to actually hear the music.</p>
 
 
-              <h3 class="mb-0">Preparation Phase</h3>
+              <h3 class="mb-0">Preparation Phase:</h3>
               <p>The program started by generating a pseudo-random chord progression. This didn't have a direct effect on the notes, but influenced the fitness function. The 2nd preparation phase was deciding where notes would occur for each instrument. I wrote a short GA for this.</p>
 
 
 
-              <h3 class="mb-0">Evolving the Notes</h3>
+              <h3 class="mb-0">Evolving the Notes:</h3>
               <p>This was the most important and processor-heavy part of the project. The GA started by filling in the previously-assigned note locations with completely random pitches in the ranges of each instrument. It then created 99 copies so there were 100 total quartet passages, or "individuals" (in GA terms).</p>
 
 
 
-              <h3 class="mb-0">Fitness Function</h3>
+              <h3 class="mb-0">Fitness Function:</h3>
               <p>Each generation, the individuals were scored according to a fitness function meant to reflect how "good" they should sound. Research has shown that popular songs tend to flow the way the brain expects them to, but also have a small, important level of unexpectedness. I used that principle by recording how much variance there was in each individual and combining that with a score of how well it fit music theory and the intended chord progression. This was done in several passes:</p>
 
               <p><div class="subheading mb-3"><u>NOTE LEVEL:</u></div></p>
@@ -765,7 +777,7 @@
 
 
 
-              <h3 class="mb-0">Mutation Phase</h3>
+              <h3 class="mb-0">Mutation Phase:</h3>
               <p>Each generation, all but the top scoring individuals were mutated randomly. The mutations ranged from "take the 47th cello note and move it down 3 semitones" to "grab 6 notes and pull them up/down a measure."</p>
               <p>I found that the mutations had a huge influence on how long the GA had to run before getting a good result. For example: A melody could suddenly jump 2 octaves higher, stay there for a few notes, and then return to the normal range. This is obviously bad, but anytime a single note would randomly move downward, it would make the individual even worse. This is why I used so many types of mutations - including ones that would move entire sections of neighboring notes.</p>
 
