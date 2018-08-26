@@ -15,16 +15,17 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://d3js.org/d3.v4.min.js"></script>
-		<script src="http://marvl.infotech.monash.edu/webcola/cola.min.js"></script>
 
 		<!--<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.5" integrity="sha384-E/+1ci0VPB8A5v/ouQWJMlsC63Nu+e/Dsp3KT27K5h1HrvCXvsfiXQKVwg9/cnjA" crossorigin="anonymous"></script>-->
 
 		<script src="scripts/tempData.js"></script>
+		<script src="scripts/determineChords.js"></script>
 		<script src="scripts/factorRoot.js"></script>
 		<script src="scripts/simpleCompromise.js"></script>
 		<script src="scripts/mood.js"></script>
 		<script src="scripts/scores.js"></script>
 		<script src="scripts/modevis.js"></script>
+		<script src="scripts/d3graph.js"></script>
 		<script src="scripts/loadTemplates.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
@@ -80,6 +81,7 @@
         var keySelVis =		    [false, false, false, false, false, false, false, false, false, false, false];
         var mouseOverKey = -1;
         var keyMouseOverVis =	[false, false, false, false, false, false, false, false, false, false, false];
+        var modeDict = {};
 
         // Create settings
         var createSettings = () => {
@@ -187,6 +189,7 @@
             let mode = {};
             mode.label = "- YOUR SCALE";
             mode.isUser = true;
+            mode.type = 0;
             mode.key = rootSel;
             mode.name = GetNoteName(mode.key) + ' ' + mode.label;
             mode.n = [];
@@ -234,7 +237,7 @@
         });
 
         var runStartingGraph = () => {
-            const graph = {"nodes":[{"id":"C - YOUR SCALE","group":0,"fixed":"TRUE","x":44.625585606422405,"y":99.59265800994483},{"id":"C Harmonic Minor","group":1,"fixed":"TRUE","x":683.862759242227,"y":178.4558637344394},{"id":"C Iwato","group":1,"fixed":"TRUE","x":408.2609213032847,"y":370.43395583666756},{"id":"C Pelog (approx)","group":1,"fixed":"TRUE","x":330.30839016824694,"y":284.29867061793965},{"id":"C Harmonic Minor Dom 7th","group":1,"fixed":"TRUE","x":1175.5352514306344,"y":303.567203857736},{"id":"C Vader Theme","group":1,"fixed":"TRUE","x":601.5950049353427,"y":17.42704362870475},{"id":"C Balinese","group":1,"fixed":"TRUE","x":790.5265563836828,"y":47.957651321398956},{"id":"C Minor Pentatonic","group":1,"fixed":"TRUE","x":1032.374896868262,"y":368.6934120326095},{"id":"C Melodic Minor","group":1,"fixed":"TRUE","x":1361.3353142189762,"y":473.72385444980483},{"id":"C Spanish (8 tone)","group":1,"fixed":"TRUE","x":976.6096008145173,"y":661.9439429209473},{"id":"C Hemitonic Pentatonic 3","group":1,"fixed":"TRUE","x":1116.8155892190136,"y":329.12921193683684},{"id":"C Neapolitan Minor","group":1,"fixed":"TRUE","x":716.8445647088251,"y":49.31583927195948},{"id":"C Hungarian Minor","group":2,"fixed":"TRUE","x":797.8333475042024,"y":266.596517753677},{"id":"C Mystic Minor","group":2,"fixed":"TRUE","x":1283.155418676922,"y":455.7649155623027},{"id":"C Blues","group":2,"fixed":"TRUE","x":203.30016432838525,"y":183.43473376101198},{"id":"C Diminished","group":2,"fixed":"TRUE","x":1183.9977434530365,"y":489.3685778069936}],"links":[{"source":"C Harmonic Minor","target":"C - YOUR SCALE","value":1,"weight":1,"alpha":1},{"source":"C Iwato","target":"C - YOUR SCALE","value":0.1170981904380342,"weight":0.1170981904380342,"alpha":1},{"source":"C Pelog (approx)","target":"C - YOUR SCALE","value":0.16984953703703703,"weight":0.16984953703703703,"alpha":1},{"source":"C Harmonic Minor Dom 7th","target":"C - YOUR SCALE","value":0.20745000000000002,"weight":0.20745000000000002,"alpha":1},{"source":"C Vader Theme","target":"C - YOUR SCALE","value":0.47262019894722335,"weight":0.47262019894722335,"alpha":1},{"source":"C Balinese","target":"C - YOUR SCALE","value":0.20787311990485074,"weight":0.20787311990485074,"alpha":1},{"source":"C Minor Pentatonic","target":"C - YOUR SCALE","value":0.2573167841410306,"weight":0.2573167841410306,"alpha":1},{"source":"C Melodic Minor","target":"C - YOUR SCALE","value":0.17938983008975073,"weight":0.17938983008975073,"alpha":1},{"source":"C Spanish (8 tone)","target":"C - YOUR SCALE","value":0.13134310266888888,"weight":0.13134310266888888,"alpha":1},{"source":"C Hemitonic Pentatonic 3","target":"C - YOUR SCALE","value":0.4598603649923594,"weight":0.4598603649923594,"alpha":1},{"source":"C Neapolitan Minor","target":"C - YOUR SCALE","value":0.6941253156562301,"weight":0.6941253156562301,"alpha":1},{"source":"C Hemitonic Pentatonic 3","target":"C Harmonic Minor Dom 7th","value":0.9030326321088871,"weight":0.9030326321088871,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Neapolitan Minor","value":0.6941253156562301,"weight":0.6941253156562301,"alpha":0.6},{"source":"C Harmonic Minor Dom 7th","target":"C Vader Theme","value":0.68221875,"weight":0.68221875,"alpha":0.6},{"source":"C Pelog (approx)","target":"C Balinese","value":0.5855537479906426,"weight":0.5855537479906426,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Vader Theme","value":0.5759369893557598,"weight":0.5759369893557598,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Vader Theme","value":0.5653079403382577,"weight":0.5653079403382577,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Hemitonic Pentatonic 3","value":0.5500457161079984,"weight":0.5500457161079984,"alpha":0.6},{"source":"C Minor Pentatonic","target":"C Pelog (approx)","value":0.4530191525112973,"weight":0.4530191525112973,"alpha":0.6},{"source":"C Hemitonic Pentatonic 3","target":"C Vader Theme","value":0.4428453947368421,"weight":0.4428453947368421,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Harmonic Minor Dom 7th","value":0.4018465909090909,"weight":0.4018465909090909,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Balinese","value":0.40184481387695903,"weight":0.40184481387695903,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Harmonic Minor Dom 7th","value":0.3976125,"weight":0.3976125,"alpha":0.6},{"source":"C Pelog (approx)","target":"C Spanish (8 tone)","value":0.3772830624163833,"weight":0.3772830624163833,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Hemitonic Pentatonic 3","value":0.34715569516503303,"weight":0.34715569516503303,"alpha":0.6},{"source":"C Iwato","target":"C Pelog (approx)","value":0.34377857256749894,"weight":0.34377857256749894,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Minor Pentatonic","value":0.30778037329181884,"weight":0.30778037329181884,"alpha":0.6},{"source":"C Balinese","target":"C Vader Theme","value":0.3044178283292483,"weight":0.3044178283292483,"alpha":0.6},{"source":"C Minor Pentatonic","target":"C Neapolitan Minor","value":0.30064420319402657,"weight":0.30064420319402657,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Pelog (approx)","value":0.2515133088211155,"weight":0.2515133088211155,"alpha":0.6},{"source":"C Hungarian Minor","target":"C Vader Theme","value":0.5719771475649257,"weight":0.5719771475649257,"alpha":0.45},{"source":"C Mystic Minor","target":"C Neapolitan Minor","value":0.28937965611898,"weight":0.28937965611898,"alpha":0.45},{"source":"C Blues","target":"C Pelog (approx)","value":0.37020016834998937,"weight":0.37020016834998937,"alpha":0.45},{"source":"C Harmonic Minor","target":"C Blues","value":0.2515133088211155,"weight":0.2515133088211155,"alpha":0.45},{"source":"C Harmonic Minor","target":"C Diminished","value":0.5379171397331511,"weight":0.5379171397331511,"alpha":0.45},{"source":"C Blues","target":"C Iwato","value":0.3411001649901443,"weight":0.3411001649901443,"alpha":0.45},{"source":"C Hungarian Minor","target":"C Diminished","value":0.4377077527543295,"weight":0.4377077527543295,"alpha":0.35}]};
+            const graph = {"nodes":[{"id":"G - YOUR SCALE","group":0,"type":0,"fixed":"TRUE","x":178.9522421395139,"y":616.8655506650324},{"id":"G Ionian","group":1,"type":1,"fixed":"TRUE","x":37.73368335260856,"y":375.7795952083115},{"id":"G Acoustic","group":1,"type":2,"fixed":"TRUE","x":1173.11829456031,"y":527.0166879426815},{"id":"G Scottish","group":1,"type":2,"fixed":"TRUE","x":1203.4381989627561,"y":155.34636833139282},{"id":"G Tritone Scale","group":1,"type":2,"fixed":"TRUE","x":1150.8569224180687,"y":35.0677077843903},{"id":"G Lydian","group":1,"type":1,"fixed":"TRUE","x":572.449474853146,"y":440.5196655323541},{"id":"G Double Harmonic Major","group":1,"type":2,"fixed":"TRUE","x":925.6875814797824,"y":400.7900177494152},{"id":"G Overtone","group":1,"type":2,"fixed":"TRUE","x":183.55606057423205,"y":264.97639025274367},{"id":"G Elektra (Chord)","group":1,"type":3,"fixed":"TRUE","x":1192.258275037317,"y":422.25122598302437},{"id":"G Major Bebop","group":1,"type":2,"fixed":"TRUE","x":544.2601255429474,"y":96.89495745958277},{"id":"G Hirajoshi","group":1,"type":2,"fixed":"TRUE","x":66.08552542546403,"y":377.506406289061},{"id":"G Phrygian Dominant","group":1,"type":2,"fixed":"TRUE","x":1213.2425496515198,"y":195.6230244050998},{"id":"G Mixolydian","group":1,"type":1,"fixed":"TRUE","x":363.99035231553745,"y":0.7027006935658053},{"id":"G Bebop Dominant","group":1,"type":2,"fixed":"TRUE","x":656.4909027383125,"y":25.73555586888048},{"id":"G Hindu","group":2,"type":2,"fixed":"TRUE","x":491.4408110869242,"y":390.6954574508244},{"id":"G Major Pentatonic","group":2,"type":2,"fixed":"TRUE","x":57.68125212549453,"y":351.1389461919109},{"id":"G New Pentatonic","group":2,"type":2,"fixed":"TRUE","x":313.10285345463456,"y":49.370969025649615},{"id":"G Pentatonic Variation","group":2,"type":2,"fixed":"TRUE","x":84.10540363011667,"y":482.04302870323124},{"id":"G Harmonic Major","group":2,"type":1,"fixed":"TRUE","x":662.3792527202897,"y":268.7494929299502}],"links":[{"source":"G Scottish","target":"G - YOUR SCALE","value":0.03745312499999998,"weight":0.03745312499999998,"alpha":1},{"source":"G Double Harmonic Major","target":"G - YOUR SCALE","value":0.09800173912519287,"weight":0.09800173912519287,"alpha":1},{"source":"G Phrygian Dominant","target":"G - YOUR SCALE","value":0.09962160258180763,"weight":0.09962160258180763,"alpha":1},{"source":"G Overtone","target":"G - YOUR SCALE","value":0.17592705620659727,"weight":0.17592705620659727,"alpha":1},{"source":"G Ionian","target":"G Acoustic","value":0.2515133088211155,"weight":0.2515133088211155,"alpha":0.6},{"source":"G Lydian","target":"G Mixolydian","value":0.2515133088211155,"weight":0.2515133088211155,"alpha":0.6},{"source":"G Major Bebop","target":"G Acoustic","value":0.25329137978601635,"weight":0.25329137978601635,"alpha":0.6},{"source":"G Tritone Scale","target":"G Acoustic","value":0.253492070928503,"weight":0.253492070928503,"alpha":0.6},{"source":"G Acoustic","target":"G New Pentatonic","value":0.2784225260718372,"weight":0.2784225260718372,"alpha":0.45},{"source":"G Tritone Scale","target":"G - YOUR SCALE","value":0.2797647659866898,"weight":0.2797647659866898,"alpha":1},{"source":"G Harmonic Major","target":"G Double Harmonic Major","value":0.2885160509130181,"weight":0.2885160509130181,"alpha":0.45},{"source":"G Tritone Scale","target":"G Overtone","value":0.2920225390625001,"weight":0.2920225390625001,"alpha":0.6},{"source":"G Tritone Scale","target":"G Elektra (Chord)","value":0.31008337520401,"weight":0.31008337520401,"alpha":0.6},{"source":"G Acoustic","target":"G Elektra (Chord)","value":0.35154595454182735,"weight":0.35154595454182735,"alpha":0.6},{"source":"G Hirajoshi","target":"G Acoustic","value":0.35331746271141107,"weight":0.35331746271141107,"alpha":0.6},{"source":"G Lydian","target":"G Elektra (Chord)","value":0.35748571722807854,"weight":0.35748571722807854,"alpha":0.6},{"source":"G Lydian","target":"G Major Pentatonic","value":0.4065356093696862,"weight":0.4065356093696862,"alpha":0.45},{"source":"G Lydian","target":"G - YOUR SCALE","value":0.4071293402777777,"weight":0.4071293402777777,"alpha":1},{"source":"G Acoustic","target":"G - YOUR SCALE","value":0.4140082465277777,"weight":0.4140082465277777,"alpha":1},{"source":"G Major Bebop","target":"G Major Pentatonic","value":0.4220089285714285,"weight":0.4220089285714285,"alpha":0.45},{"source":"G Major Pentatonic","target":"G Bebop Dominant","value":0.4220089285714285,"weight":0.4220089285714285,"alpha":0.45},{"source":"G Bebop Dominant","target":"G Pentatonic Variation","value":0.4262740384615385,"weight":0.4262740384615385,"alpha":0.45},{"source":"G Lydian","target":"G Major Bebop","value":0.4343423835357992,"weight":0.4343423835357992,"alpha":0.6},{"source":"G Lydian","target":"G Bebop Dominant","value":0.4343423835357992,"weight":0.4343423835357992,"alpha":0.6},{"source":"G Elektra (Chord)","target":"G - YOUR SCALE","value":0.4362821767601172,"weight":0.4362821767601172,"alpha":1},{"source":"G Hirajoshi","target":"G - YOUR SCALE","value":0.43770175000337136,"weight":0.43770175000337136,"alpha":1},{"source":"G Major Pentatonic","target":"G Pentatonic Variation","value":0.45468749999999997,"weight":0.45468749999999997,"alpha":0.35},{"source":"G Acoustic","target":"G Bebop Dominant","value":0.4749213370987806,"weight":0.4749213370987806,"alpha":0.6},{"source":"G Ionian","target":"G Lydian","value":0.5095486111111112,"weight":0.5095486111111112,"alpha":0.6},{"source":"G Mixolydian","target":"G Acoustic","value":0.5095486111111112,"weight":0.5095486111111112,"alpha":0.6},{"source":"G Overtone","target":"G Hindu","value":0.5095486111111112,"weight":0.5095486111111112,"alpha":0.45},{"source":"G Lydian","target":"G Hirajoshi","value":0.5759369893557598,"weight":0.5759369893557598,"alpha":0.6},{"source":"G Ionian","target":"G - YOUR SCALE","value":0.59925,"weight":0.59925,"alpha":1},{"source":"G Major Bebop","target":"G - YOUR SCALE","value":0.605625,"weight":0.605625,"alpha":1},{"source":"G Bebop Dominant","target":"G - YOUR SCALE","value":0.605625,"weight":0.605625,"alpha":1},{"source":"G Mixolydian","target":"G - YOUR SCALE","value":0.6093749999999999,"weight":0.6093749999999999,"alpha":1},{"source":"G Double Harmonic Major","target":"G Phrygian Dominant","value":0.6840228247067156,"weight":0.6840228247067156,"alpha":0.6},{"source":"G Harmonic Major","target":"G Hindu","value":0.6840228247067156,"weight":0.6840228247067156,"alpha":0.35},{"source":"G Ionian","target":"G Mixolydian","value":0.6941253156562301,"weight":0.6941253156562301,"alpha":0.6},{"source":"G Lydian","target":"G Acoustic","value":0.6941253156562301,"weight":0.6941253156562301,"alpha":0.6},{"source":"G Mixolydian","target":"G Major Bebop","value":0.699032428029551,"weight":0.699032428029551,"alpha":0.6},{"source":"G Major Bebop","target":"G Bebop Dominant","value":0.7857142857142857,"weight":0.7857142857142857,"alpha":0.6},{"source":"G Ionian","target":"G Major Bebop","value":0.8524061768879738,"weight":0.8524061768879738,"alpha":0.6},{"source":"G Ionian","target":"G Bebop Dominant","value":0.8524061768879738,"weight":0.8524061768879738,"alpha":0.6},{"source":"G Mixolydian","target":"G Bebop Dominant","value":0.9320432373727348,"weight":0.9320432373727348,"alpha":0.6}],"modeDict":{"G - YOUR SCALE":{"label":"- YOUR SCALE","isUser":true,"type":0,"key":7,"name":"G - YOUR SCALE","n":[false,false,true,false,false,false,false,true,false,false,false,true],"c":[true,false,false,false,true,false,false,true,false,false,false,false],"aliases":[]},"G Ionian":{"isUser":false,"key":7,"type":1,"label":"Ionian","name":"G Ionian","c":[true,false,true,false,true,true,false,true,false,true,false,true],"n":[true,false,true,false,true,false,true,true,false,true,false,true]},"G Acoustic":{"isUser":false,"key":7,"type":2,"label":"Acoustic","name":"G Acoustic","c":[true,false,true,false,true,false,true,true,false,true,true,false],"n":[false,true,true,false,true,true,false,true,false,true,false,true]},"G Scottish":{"isUser":false,"key":7,"type":2,"label":"Scottish","name":"G Scottish","c":[true,false,true,false,false,true,false,true,false,true,false,false],"n":[true,false,true,false,true,false,false,true,false,true,false,false]},"G Tritone Scale":{"isUser":false,"key":7,"type":2,"label":"Tritone Scale","name":"G Tritone Scale","c":[true,true,false,false,true,false,true,true,false,false,true,false],"n":[false,true,true,false,false,true,false,true,true,false,false,true]},"G Lydian":{"isUser":false,"key":7,"type":1,"label":"Lydian","name":"G Lydian","c":[true,false,true,false,true,false,true,true,false,true,false,true],"n":[false,true,true,false,true,false,true,true,false,true,false,true]},"G Double Harmonic Major":{"isUser":false,"key":7,"type":2,"label":"Double Harmonic Major","name":"G Double Harmonic Major","c":[true,true,false,false,true,true,false,true,true,false,false,true],"n":[true,false,true,true,false,false,true,true,true,false,false,true]},"G Overtone":{"isUser":false,"key":7,"type":2,"label":"Overtone","name":"G Overtone","c":[true,false,true,false,true,false,true,true,true,false,true,false],"n":[false,true,true,true,false,true,false,true,false,true,false,true]},"G Elektra (Chord)":{"isUser":false,"key":7,"type":3,"label":"Elektra (Chord)","name":"G Elektra (Chord)","c":[true,true,false,false,true,false,false,true,false,true,false,false],"n":[false,false,true,false,true,false,false,true,true,false,false,true]},"G Major Bebop":{"isUser":false,"key":7,"type":2,"label":"Major Bebop","name":"G Major Bebop","c":[true,false,true,false,true,true,false,true,true,true,false,true],"n":[true,false,true,true,true,false,true,true,false,true,false,true]},"G Hirajoshi":{"isUser":false,"key":7,"type":2,"label":"Hirajoshi","name":"G Hirajoshi","c":[true,false,false,false,true,false,true,true,false,false,false,true],"n":[false,true,true,false,false,false,true,true,false,false,false,true]},"G Phrygian Dominant":{"isUser":false,"key":7,"type":2,"label":"Phrygian Dominant","name":"G Phrygian Dominant","c":[true,true,false,false,true,true,false,true,true,false,true,false],"n":[true,false,true,true,false,true,false,true,true,false,false,true]},"G Mixolydian":{"isUser":false,"key":7,"type":1,"label":"Mixolydian","name":"G Mixolydian","c":[true,false,true,false,true,true,false,true,false,true,true,false],"n":[true,false,true,false,true,true,false,true,false,true,false,true]},"G Bebop Dominant":{"isUser":false,"key":7,"type":2,"label":"Bebop Dominant","name":"G Bebop Dominant","c":[true,false,true,false,true,true,false,true,false,true,true,true],"n":[true,false,true,false,true,true,true,true,false,true,false,true]},"G Hindu":{"isUser":false,"key":7,"type":2,"label":"Hindu","name":"G Hindu","c":[true,false,true,false,true,true,false,true,true,false,true,false],"n":[true,false,true,true,false,true,false,true,false,true,false,true]},"G Major Pentatonic":{"isUser":false,"key":7,"type":2,"label":"Major Pentatonic","name":"G Major Pentatonic","c":[true,false,true,false,true,false,false,true,false,true,false,false],"n":[false,false,true,false,true,false,false,true,false,true,false,true]},"G New Pentatonic":{"isUser":false,"key":7,"type":2,"label":"New Pentatonic","name":"G New Pentatonic","c":[true,false,true,false,true,false,true,false,false,true,false,false],"n":[false,true,false,false,true,false,false,true,false,true,false,true]},"G Pentatonic Variation":{"isUser":false,"key":7,"type":2,"label":"Pentatonic Variation","name":"G Pentatonic Variation","c":[true,false,false,false,true,false,false,true,false,true,true,false],"n":[false,false,true,false,true,true,false,true,false,false,false,true]},"G Harmonic Major":{"isUser":false,"key":7,"type":1,"label":"Harmonic Major","name":"G Harmonic Major","c":[true,false,true,false,true,true,false,true,true,false,false,true],"n":[true,false,true,true,false,false,true,true,false,true,false,true]}}};
             createD3Graph(graph);
         }
 
@@ -272,45 +275,43 @@
             var height = +svg.attr("height");
 
             // Graph settings (TODO: move these elsewhere)
-            const edgeStrAdd = 0.00025;
-            const edgeStr = 0.00015;
-            const edgePow = 0.200;
-            const sepStr = 3000;
             const edgeWiMin = 0.5;
-            const edgeWiMax = 30.0;
-            const edgeWiPow = 0.75;
-            const driftToCenter = 0.25;
-            var weightScale = d3.scaleLinear().domain(d3.extent(graph.links, function(d) { return Math.pow(d.weight, edgePow) * edgeStr })).range([.1, 1]);
+            const edgeWiMax = 25.0;
+            const edgeWiPow = 1.0;
+            const d3forces = {
+                edgeStr: 0.20,
+                edgeWeightExtraPull: 0.75,
+                sepStr: 3000,
+                driftToCenter: 0.05,
+            }
+            var weightScale = d3.scaleLinear().domain(d3.extent(graph.links, function(d) { return Math.pow(d.weight, d3forces.edgePow) * d3forces.edgeStr })).range([.1, 1]);
             var colScale = d3.scaleLinear()
-                .domain(d3.ticks(0, 100, 4))
-                .range(["#ff0000", "#8800ff", "#0000cc", "#00ff00"]);
+                .domain(d3.ticks(0, 100, 1))
+                .range(["#3310ef", "#10fcfc"]);
             //var color = d3.scaleOrdinal(d3.schemeCategory20); //["#ffff00", "#0000ff", "#00aaaa"]
+            // 0 = user, 1 = classical, 2 = other, 3 = chords
             var color = d3.scaleOrdinal()
-                .range(["#22dd22", "#2828dd", "#18c6c6"]);
+                .range(["#d6d628", "#3310ef", "#10dcdc", "#c6c618"]);
             var groupRadius = (groupID) => {
                 return 38 - groupID * 8;
             }
 
 
             // Clear the graph and redraw background color
-            svg.empty();
-            svg.selectAll("*").remove();
-            svg.append("rect").attr("x", "0").attr("y", "0").attr("width", "100%").attr("height", "100%").style("fill", "#000000")
+            resetD3Graph(svg);
 
-            /*var simulation = d3.forceSimulation()
-                .force("link", d3.forceLink().strength(function(d){return weightScale(Math.pow(d.weight, edgePow) * edgeStr + edgeStrAdd);}).id(function(d) {
+            // Save mode info
+            modeDict = graph.modeDict;
+
+
+            var simulation = d3.forceSimulation()
+                .force("link", d3.forceLink().strength(function(d){ return d3forces.edgeStr * (1.0 + d3forces.edgeWeightExtraPull * Math.pow(d.weight, 2.0)); }).id(function(d) {
                     return d.id;
                 }))
-                .force("charge", d3.forceManyBody().strength(-sepStr))
-                .force('x', d3.forceX(width * 0.5).strength(0.15))
-                .force('y', d3.forceY(height * 0.5).strength(0.15))
-                //.force("center", d3.forceCenter(width / 2, height / 2).strength(-1))
-                ;*/
-            var simulation = d3.forceSimulation()
-                .force("link", d3.forceLink().id(function(d) { return d.id; }))
-                .force("charge", d3.forceManyBody().strength(-sepStr))
-                .force('x', d3.forceX(width * 0.5).strength(driftToCenter))
-                .force('y', d3.forceY(height * 0.5).strength(driftToCenter));
+                /*.force("link", d3.forceLink().id(function(d) { return d.id; }))*/
+                .force("charge", d3.forceManyBody().strength(-d3forces.sepStr))
+                .force('x', d3.forceX(width * 0.5).strength(d3forces.driftToCenter))
+                .force('y', d3.forceY(height * 0.5).strength(d3forces.driftToCenter));
 
             var link = svg.append("g")
                 .attr("class", "links")
@@ -322,6 +323,12 @@
                 .style("pointer-events", "none")
                 .style("stroke-opacity", function(d) { return d.alpha; });
 
+            // Sort links so larger connections drawn on top
+            var links = d3.selectAll('line.link')
+                .sort(function(a, b) {
+                    return order[a.stroke-width] > order[b.stroke-width] ? -1 : order[b.stroke-width] > order[a.stroke-width] ? 1 : 0;
+                });
+
             var node = svg.append("g")
                 .attr("class", "nodes")
                 .selectAll("foo")
@@ -330,12 +337,17 @@
 
             var circles = node.append("circle")
                 .attr("r", function(d) { return groupRadius(d.group); })
-                .attr("fill", function(d) { return color(d.group); })
+                .style("fill", function(d) { return color(d.group); })
+                .style("stroke", function(d) { return (d.type == 1) ? "#ffff00" : "#dddddd"; })
+                .style("stroke-width", "2.0px");
 
             var labels = node.append("text")
                 .text(function(d) { return d.id; })
                 .attr("class", "node-labels")
                 .attr("text-anchor", "middle")
+
+            node.append("title")
+                .text(function(d) { return d.id; });
 
             // Set up drag and drop
             node.call(d3.drag()
@@ -343,17 +355,17 @@
                     .on("drag", dragged)
                     .on("end", dragended));
 
-            node.append("title")
-                .text(function(d) { return d.id; });
-
             simulation
                 .nodes(graph.nodes)
-                .on("tick", ticked)
-                ;
+                .on("tick", ticked);
 
             simulation.force("link")
-                .links(graph.links)
-                ;
+                .links(graph.links);
+
+            // Add panel showing selected mode
+            createD3Panel(svg, width, height);
+
+
 
             function ticked() {
 
@@ -377,6 +389,18 @@
                 if (!d3.event.active) simulation.alphaTarget(0.3).restart();
                 d.fx = d.x;
                 d.fy = d.y;
+
+                // Display on panel
+                if (d.id in modeDict) {
+                    // Calculate analysis, if haven't yet
+                    // This is info like chord names
+                    if (modeDict[d.id].analysis == null) {
+                        modeDict[d.id].analysis = analyzeModeForPanel(modeDict[d.id]);
+                    }
+
+                    setPanelMode(modeDict[d.id]);
+                }
+
             }
 
             function dragged(d) {
