@@ -25,253 +25,265 @@
 		<script src="scripts/mood.js"></script>
 		<script src="scripts/scores.js"></script>
 		<script src="scripts/modevis.js"></script>
+		<script src="scripts/loadTemplates.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 
 	</head>
 
-<body>
+    <body>
 
-    <div id="constant-upper-section">
-        <div id="collapsible-input-area" class="collapsible-input-area">
-            <table width="1400px"><tr><td>
-                <span class="loadTemplate" value="templates/inputSimilarity.html"></span>
-            </td><td align="center">
-                <span class="loadTemplate" value="templates/largePiano.html" onload="pianoButtons"></span>
-                <span class="loadTemplate" value="templates/instructions.html"></span>
-            </td></tr>
-            <tr><td align="center">
-                <button id="runSim" class="cool-button large">Click here to run!</button>
-            </td><td></td></tr></table>
+        <div id="constant-upper-section">
+            <div id="collapsible-input-area" class="collapsible-input-area">
+                <table width="1400px">
+                <tr><td>
+                    <span class="loadTemplate" value="templates/inputSimilarity.html" onload="sliderButtons"></span>
+                </td>
+                <td align="center">
+                    <span class="loadTemplate" value="templates/largePiano.html" onload="pianoButtons"></span>
+                    <span class="loadTemplate" value="templates/instructions.html"></span>
+                </td>
+                </tr>
+                </table>
 
+            </div>
+            <button id="settings-collapse" class="collapse-toggle-button">Show/Hide Settings</button>
         </div>
-        <button class="collapse-toggle-button active">Show/Hide Menu</button>
-    </div>
-	<svg width="1400" height="700"><rect width="100%" height="100%" fill="black"></rect></svg>
+        <svg width="1400" height="700"><rect width="100%" height="100%" fill="black"></rect></svg>
 
-<script>
-    /* Collapsible input menu */
-    const collapseButton = document.getElementsByClassName("collapse-toggle-button")[0];
-    var isMenuCollapsed = false;
+    <script>
+        /* Collapsible input menu */
+        const collapseButton = document.getElementsByClassName("collapse-toggle-button")[0];
+        var isMenuCollapsed = true;
+        document.getElementById("collapsible-input-area").style.display = "none";
 
-    if (collapseButton) {
-        collapseButton.addEventListener("click", function() {
-            this.classList.toggle("active");
-            isMenuCollapsed = !isMenuCollapsed;
-            const content = document.getElementById("collapsible-input-area");
-            if (isMenuCollapsed) {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
-</script>
-
-<script>
-	// Load HTML templates
-	$(function() {
-		$(".loadTemplate").each(function(){
-			$(this).load($(this).attr('value'), function() {
-				// Call some functions right after loading
-				if ($(this).attr('onload') == "pianoButtons") {
-                    setRootSelectColors();
-                    setPianoInputFunctions();
+        if (collapseButton) {
+            collapseButton.addEventListener("click", function() {
+                this.classList.toggle("active");
+                isMenuCollapsed = !isMenuCollapsed;
+                const content = document.getElementById("collapsible-input-area");
+                if (isMenuCollapsed) {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
                 }
-			});
-
-		});
-	});
-</script>
-
-<script>
-
-	// Shared data
-	var rootSel = 0; // default to key of C
-	var keySel =		[false, false, false, false, false, false, false, false, false, false, false];
-	var keySelVis =		[false, false, false, false, false, false, false, false, false, false, false];
-	var mouseOverKey = -1;
-	var keyMouseOverVis =	[false, false, false, false, false, false, false, false, false, false, false];
-
-	// Create settings
-	var createSettings = () => {
-		// Get inputs
-		let noteSim = 0.75;
-
-		return {
-			datasetID:  				parseInt($("#datasetID").find(":selected").val()),
-			wFactorRootMissing: 		parseFloat($("#rootMissing").val() / 100),
-			wFactorNoteSimilarity: 		parseFloat($("#noteSim").val() / 100),
-			wFactorAdd: 				parseFloat($("#noteAdd").val() / 100),
-			wFactorRemove: 				parseFloat($("#noteRem").val() / 100),
-			wFactorRootOffset: 			parseFloat($("#rootOff").val() / 25),
-			wFactorMoodHappy:   		parseFloat($("#moodEstimHappy").val() / 100),
-			wFactorMoodBittersweet:   	parseFloat($("#moodEstimBittersweet").val() / 100),
-			wFactorIntervalCount: 		parseFloat($("#iCount").val() / 100),
-			wFactorIntervalOpenness: 	parseFloat($("#iOpen").val() / 100),
-			filterResultMax: 			parseInt($("#filterResultMax").val()),
-		};
-	}
-
-	var clickRootSelect = (event) => {
-		const note = event.data.note;
-		rootSel = note;
-
-		setRootSelectColors();
-	}
-
-	var clickKey = (event) => {
-		const note = event.data.note;
-		//alert("Key press id = " + note);
-		keySel[note] = !keySel[note];
-		if (keySel[note] == null) {
-		    keySel[note] = false;
-		}
-
-		setKeyColors();
-	}
-
-	var hoverKeyOn = function() {
-	    mouseOverKey = parseInt($(this).attr('value'));
-        setKeyColors();
-    }
-
-    var hoverKeyOff = function() {
-        if (mouseOverKey === parseInt($(this).attr('value'))) {
-            mouseOverKey = -1;
+            });
         }
-        setKeyColors();
-    }
 
-	var resetAnimation = (elem, animName) => {
-		elem.each(function() {
-			$(this).removeClass(animName).width($(this).width()).addClass(animName);
-		});
+    </script>
 
-	}
+    <script>
 
-	// Update colors for root selection
-	var setRootSelectColors = () => {
-		for (let i = 0; i < 12; ++i) {
-			$('.rootSelect[value="' + i + '"]').find("span").attr('value', (rootSel == i));
-		}
-	}
+        // Shared data
+        var rootSel = 0; // default to key of C
+        var keySel =		    [false, false, false, false, false, false, false, false, false, false, false];
+        var keySelVis =		    [false, false, false, false, false, false, false, false, false, false, false];
+        var mouseOverKey = -1;
+        var keyMouseOverVis =	[false, false, false, false, false, false, false, false, false, false, false];
 
-	// Update colors for keys that have changed
-	var setKeyColors = () => {
-		for (let i = 0; i < 12; ++i) {
-		    if (keySel[i] == null) {
-                keySel[i] = false;
+        // Create settings
+        var createSettings = () => {
+            // Get inputs
+            let noteSim = 0.75;
+
+            return {
+                datasetID:  				parseInt($("#datasetID").find(":selected").val()),
+                wFactorRootMissing: 		parseFloat($("#rootMissing").val() / 100),
+                wFactorNoteSimilarity: 		parseFloat($("#noteSim").val() / 100),
+                wFactorAdd: 				parseFloat($("#noteAdd").val() / 100),
+                wFactorRemove: 				parseFloat($("#noteRem").val() / 100),
+                wFactorRootOffset: 			parseFloat($("#rootOff").val() / 25),
+                wFactorMoodHappy:   		parseFloat($("#moodEstimHappy").val() / 100),
+                wFactorMoodBittersweet:   	parseFloat($("#moodEstimBittersweet").val() / 100),
+                wFactorIntervalCount: 		parseFloat($("#iCount").val() / 100),
+                wFactorIntervalOpenness: 	parseFloat($("#iOpen").val() / 100),
+                filterResultMax: 			parseInt($("#filterResultMax").val()),
+            };
+        }
+
+        var clickRootSelect = (event) => {
+            const note = event.data.note;
+            rootSel = note;
+
+            setRootSelectColors();
+        }
+
+        var clickKey = (event) => {
+            const note = event.data.note;
+            //alert("Key press id = " + note);
+            keySel[note] = !keySel[note];
+            if (keySel[note] == null) {
+                keySel[note] = false;
             }
-			if (keySelVis[i] != keySel[i]) {
-				let color = '';
-				if (keySel[i])
-					color = '#3355ee';
-				else if (i === 1 || i === 3 || i === 6 || i === 8 || i === 10)
-					color = '#222222';
-				else
-					color = '#cccccc';
 
-				// Change color
-				if (keySel[i]) {
-					$(".pianoKey[value=" + i + "]").attr('highlight', 'true');
-					// Trigger animation
-					resetAnimation($('.pianoKey[value="' + i + '"]'), "jitterKey");
-				}
-				else
-					$(".pianoKey[value=" + i + "]").attr('highlight', 'false');
+            setKeyColors();
+        }
 
-				// Remember
-				keySelVis[i] = keySel[i];
-			}
+        var hoverKeyOn = function() {
+            mouseOverKey = parseInt($(this).attr('value'));
+            setKeyColors();
+        }
 
-			// Mouseover
-			const wMouseOver = (mouseOverKey === i) ? true : false;
-			if (keyMouseOverVis[i] != wMouseOver) {
-                keyMouseOverVis[i] = wMouseOver;
-                $(".pianoKey[value=" + i + "]").attr('mouseover', keyMouseOverVis[i]);
-			}
+        var hoverKeyOff = function() {
+            if (mouseOverKey === parseInt($(this).attr('value'))) {
+                mouseOverKey = -1;
+            }
+            setKeyColors();
+        }
 
-		}
-	}
+        var resetAnimation = (elem, animName) => {
+            elem.each(function() {
+                $(this).removeClass(animName).width($(this).width()).addClass(animName);
+            });
 
-	var createUserMode = () => {
-		let mode = {};
-		mode.label = "- YOUR SCALE";
-		mode.isUser = true;
-		mode.key = rootSel;
-		mode.name = GetNoteName(mode.key) + ' ' + mode.label;
-		mode.n = [];
-		for (let i = 0; i < 12; ++i) {
-			mode.n.push(keySel[i]);
-		}
-		// Un-transpose to static version
-		mode.c = [];
-		for (let i = 0; i < 12; ++i) {
-			mode.c.push(mode.n[(i + mode.key) % 12]);
-		}
-		console.log("USER SCALE: (transposed, then static)");
-		console.log(mode.n);
-		console.log(mode.c);
-		mode.aliases = [];
-		return mode;
-	}
+        }
 
-	// Quick slider manip functions
-	var slidersZero = () => { const rememberFilter = $("#filterResultMax").val(); $(".slider").val("0"); $("#filterResultMax").val(rememberFilter); }
-	var slidersMid = () => { const rememberFilter = $("#filterResultMax").val(); $(".slider").val("50"); $("#filterResultMax").val(rememberFilter); }
-	var slidersDefault = () => { const rememberFilter = $("#filterResultMax").val(); $(".slider").each(function() { $(this).val($(this).attr('def')) }); $("#filterResultMax").val(rememberFilter); }
-	var slidersFull = () => { const rememberFilter = $("#filterResultMax").val(); $(".slider").val("100"); $("#filterResultMax").val(rememberFilter); }
+        // Update colors for root selection
+        var setRootSelectColors = () => {
+            for (let i = 0; i < 12; ++i) {
+                $('.rootSelect[value="' + i + '"]').find("span").attr('value', (rootSel == i));
+            }
+        }
 
-	var setPianoInputFunctions = () => {
-        $(".pianoKey").each(function() {
-			$(this).click({ note: parseInt($(this).attr('value')) }, clickKey);
-		});
-		$(".pianoKey").hover(hoverKeyOn, hoverKeyOff);
-		$(".rootSelect").each(function() {
-			$(this).click({ note: parseInt($(this).attr('value')) }, clickRootSelect);
-		});
-	}
+        // Update colors for keys that have changed
+        var setKeyColors = () => {
+            for (let i = 0; i < 12; ++i) {
+                if (keySel[i] == null) {
+                    keySel[i] = false;
+                }
+                if (keySelVis[i] != keySel[i]) {
+                    let color = '';
+                    if (keySel[i])
+                        color = '#3355ee';
+                    else if (i === 1 || i === 3 || i === 6 || i === 8 || i === 10)
+                        color = '#222222';
+                    else
+                        color = '#cccccc';
 
-	$(document).ready(() => {
-		$("#runSim").click(runSim);
-		$("#setSlidersZero").click(slidersZero);
-		$("#setSlidersMid").click(slidersMid);
-		$("#setSlidersDefault").click(slidersDefault);
-		$("#setSlidersFull").click(slidersFull);
-	});
+                    // Change color
+                    if (keySel[i]) {
+                        $(".pianoKey[value=" + i + "]").attr('highlight', 'true');
+                        // Trigger animation
+                        resetAnimation($('.pianoKey[value="' + i + '"]'), "jitterKey");
+                    }
+                    else
+                        $(".pianoKey[value=" + i + "]").attr('highlight', 'false');
 
-	var runSim = () => {
-		settings = createSettings();
-		exa = createUserMode();
+                    // Remember
+                    keySelVis[i] = keySel[i];
+                }
 
-		useGraph = true;
-		if (!useGraph) {
-			// DEBUG: Just print results to console
-			runAnalysis(0.0, settings, exa);
-		}
-		else {
-			// DEBUG: Handle D3 graph
-			var svg = d3.select("svg");
+                // Mouseover
+                const wMouseOver = (mouseOverKey === i) ? true : false;
+                if (keyMouseOverVis[i] != wMouseOver) {
+                    keyMouseOverVis[i] = wMouseOver;
+                    $(".pianoKey[value=" + i + "]").attr('mouseover', keyMouseOverVis[i]);
+                }
+
+            }
+        }
+
+        var createUserMode = () => {
+            let mode = {};
+            mode.label = "- YOUR SCALE";
+            mode.isUser = true;
+            mode.key = rootSel;
+            mode.name = GetNoteName(mode.key) + ' ' + mode.label;
+            mode.n = [];
+            for (let i = 0; i < 12; ++i) {
+                mode.n.push(keySel[i]);
+            }
+            // Un-transpose to static version
+            mode.c = [];
+            for (let i = 0; i < 12; ++i) {
+                mode.c.push(mode.n[(i + mode.key) % 12]);
+            }
+            console.log("USER SCALE: (transposed, then static)");
+            console.log(mode.n);
+            console.log(mode.c);
+            mode.aliases = [];
+            return mode;
+        }
+
+        // Quick slider manip functions
+        var slidersZero = () => { const rememberFilter = $("#filterResultMax").val(); $(".slider").val("0"); $("#filterResultMax").val(rememberFilter); }
+        var slidersMid = () => { const rememberFilter = $("#filterResultMax").val(); $(".slider").val("50"); $("#filterResultMax").val(rememberFilter); }
+        var slidersDefault = () => { const rememberFilter = $("#filterResultMax").val(); $(".slider").each(function() { $(this).val($(this).attr('def')) }); $("#filterResultMax").val(rememberFilter); }
+        var slidersFull = () => { const rememberFilter = $("#filterResultMax").val(); $(".slider").val("100"); $("#filterResultMax").val(rememberFilter); }
+
+        var setSliderInputFunctions = () => {
+            $("#runSim").click(runSim);
+            $("#setSlidersZero").click(slidersZero);
+            $("#setSlidersMid").click(slidersMid);
+            $("#setSlidersDefault").click(slidersDefault);
+            $("#setSlidersFull").click(slidersFull);
+        }
+
+        var setPianoInputFunctions = () => {
+            $(".pianoKey").each(function() {
+                $(this).click({ note: parseInt($(this).attr('value')) }, clickKey);
+            });
+            $(".pianoKey").hover(hoverKeyOn, hoverKeyOff);
+            $(".rootSelect").each(function() {
+                $(this).click({ note: parseInt($(this).attr('value')) }, clickRootSelect);
+            });
+        }
+
+        $(document).ready(() => {
+            runStartingGraph();
+        });
+
+        var runStartingGraph = () => {
+            const graph = {"nodes":[{"id":"C - YOUR SCALE","group":0,"fixed":"TRUE","x":44.625585606422405,"y":99.59265800994483},{"id":"C Harmonic Minor","group":1,"fixed":"TRUE","x":683.862759242227,"y":178.4558637344394},{"id":"C Iwato","group":1,"fixed":"TRUE","x":408.2609213032847,"y":370.43395583666756},{"id":"C Pelog (approx)","group":1,"fixed":"TRUE","x":330.30839016824694,"y":284.29867061793965},{"id":"C Harmonic Minor Dom 7th","group":1,"fixed":"TRUE","x":1175.5352514306344,"y":303.567203857736},{"id":"C Vader Theme","group":1,"fixed":"TRUE","x":601.5950049353427,"y":17.42704362870475},{"id":"C Balinese","group":1,"fixed":"TRUE","x":790.5265563836828,"y":47.957651321398956},{"id":"C Minor Pentatonic","group":1,"fixed":"TRUE","x":1032.374896868262,"y":368.6934120326095},{"id":"C Melodic Minor","group":1,"fixed":"TRUE","x":1361.3353142189762,"y":473.72385444980483},{"id":"C Spanish (8 tone)","group":1,"fixed":"TRUE","x":976.6096008145173,"y":661.9439429209473},{"id":"C Hemitonic Pentatonic 3","group":1,"fixed":"TRUE","x":1116.8155892190136,"y":329.12921193683684},{"id":"C Neapolitan Minor","group":1,"fixed":"TRUE","x":716.8445647088251,"y":49.31583927195948},{"id":"C Hungarian Minor","group":2,"fixed":"TRUE","x":797.8333475042024,"y":266.596517753677},{"id":"C Mystic Minor","group":2,"fixed":"TRUE","x":1283.155418676922,"y":455.7649155623027},{"id":"C Blues","group":2,"fixed":"TRUE","x":203.30016432838525,"y":183.43473376101198},{"id":"C Diminished","group":2,"fixed":"TRUE","x":1183.9977434530365,"y":489.3685778069936}],"links":[{"source":"C Harmonic Minor","target":"C - YOUR SCALE","value":1,"weight":1,"alpha":1},{"source":"C Iwato","target":"C - YOUR SCALE","value":0.1170981904380342,"weight":0.1170981904380342,"alpha":1},{"source":"C Pelog (approx)","target":"C - YOUR SCALE","value":0.16984953703703703,"weight":0.16984953703703703,"alpha":1},{"source":"C Harmonic Minor Dom 7th","target":"C - YOUR SCALE","value":0.20745000000000002,"weight":0.20745000000000002,"alpha":1},{"source":"C Vader Theme","target":"C - YOUR SCALE","value":0.47262019894722335,"weight":0.47262019894722335,"alpha":1},{"source":"C Balinese","target":"C - YOUR SCALE","value":0.20787311990485074,"weight":0.20787311990485074,"alpha":1},{"source":"C Minor Pentatonic","target":"C - YOUR SCALE","value":0.2573167841410306,"weight":0.2573167841410306,"alpha":1},{"source":"C Melodic Minor","target":"C - YOUR SCALE","value":0.17938983008975073,"weight":0.17938983008975073,"alpha":1},{"source":"C Spanish (8 tone)","target":"C - YOUR SCALE","value":0.13134310266888888,"weight":0.13134310266888888,"alpha":1},{"source":"C Hemitonic Pentatonic 3","target":"C - YOUR SCALE","value":0.4598603649923594,"weight":0.4598603649923594,"alpha":1},{"source":"C Neapolitan Minor","target":"C - YOUR SCALE","value":0.6941253156562301,"weight":0.6941253156562301,"alpha":1},{"source":"C Hemitonic Pentatonic 3","target":"C Harmonic Minor Dom 7th","value":0.9030326321088871,"weight":0.9030326321088871,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Neapolitan Minor","value":0.6941253156562301,"weight":0.6941253156562301,"alpha":0.6},{"source":"C Harmonic Minor Dom 7th","target":"C Vader Theme","value":0.68221875,"weight":0.68221875,"alpha":0.6},{"source":"C Pelog (approx)","target":"C Balinese","value":0.5855537479906426,"weight":0.5855537479906426,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Vader Theme","value":0.5759369893557598,"weight":0.5759369893557598,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Vader Theme","value":0.5653079403382577,"weight":0.5653079403382577,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Hemitonic Pentatonic 3","value":0.5500457161079984,"weight":0.5500457161079984,"alpha":0.6},{"source":"C Minor Pentatonic","target":"C Pelog (approx)","value":0.4530191525112973,"weight":0.4530191525112973,"alpha":0.6},{"source":"C Hemitonic Pentatonic 3","target":"C Vader Theme","value":0.4428453947368421,"weight":0.4428453947368421,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Harmonic Minor Dom 7th","value":0.4018465909090909,"weight":0.4018465909090909,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Balinese","value":0.40184481387695903,"weight":0.40184481387695903,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Harmonic Minor Dom 7th","value":0.3976125,"weight":0.3976125,"alpha":0.6},{"source":"C Pelog (approx)","target":"C Spanish (8 tone)","value":0.3772830624163833,"weight":0.3772830624163833,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Hemitonic Pentatonic 3","value":0.34715569516503303,"weight":0.34715569516503303,"alpha":0.6},{"source":"C Iwato","target":"C Pelog (approx)","value":0.34377857256749894,"weight":0.34377857256749894,"alpha":0.6},{"source":"C Harmonic Minor","target":"C Minor Pentatonic","value":0.30778037329181884,"weight":0.30778037329181884,"alpha":0.6},{"source":"C Balinese","target":"C Vader Theme","value":0.3044178283292483,"weight":0.3044178283292483,"alpha":0.6},{"source":"C Minor Pentatonic","target":"C Neapolitan Minor","value":0.30064420319402657,"weight":0.30064420319402657,"alpha":0.6},{"source":"C Neapolitan Minor","target":"C Pelog (approx)","value":0.2515133088211155,"weight":0.2515133088211155,"alpha":0.6},{"source":"C Hungarian Minor","target":"C Vader Theme","value":0.5719771475649257,"weight":0.5719771475649257,"alpha":0.45},{"source":"C Mystic Minor","target":"C Neapolitan Minor","value":0.28937965611898,"weight":0.28937965611898,"alpha":0.45},{"source":"C Blues","target":"C Pelog (approx)","value":0.37020016834998937,"weight":0.37020016834998937,"alpha":0.45},{"source":"C Harmonic Minor","target":"C Blues","value":0.2515133088211155,"weight":0.2515133088211155,"alpha":0.45},{"source":"C Harmonic Minor","target":"C Diminished","value":0.5379171397331511,"weight":0.5379171397331511,"alpha":0.45},{"source":"C Blues","target":"C Iwato","value":0.3411001649901443,"weight":0.3411001649901443,"alpha":0.45},{"source":"C Hungarian Minor","target":"C Diminished","value":0.4377077527543295,"weight":0.4377077527543295,"alpha":0.35}]};
+            createD3Graph(graph);
+        }
+
+        var runSim = () => {
+            // Trigger collapse settings
+            $('#settings-collapse').trigger('click');
+
+            settings = createSettings();
+            exa = createUserMode();
+
+            useGraph = true;
+            if (!useGraph) {
+                // DEBUG: Just print results to console
+                runAnalysis(0.0, settings, exa);
+            }
+            else {
+                // DEBUG: Handle D3 graph
+                const svg = d3.select("svg");
+                const width = +svg.attr("width");
+                const height = +svg.attr("height");
+
+                const results = runAnalysis(0.025, settings, exa);
+                const graph = convertAnalysisToGraph(results.modes, results.pairs, 2, width, height, settings);
+                //console.log(JSON.stringify(graph));
+
+                createD3Graph(graph);
+
+
+            } // end useGraph
+        } // end runSim
+
+        var createD3Graph = (graph) => {
+            var svg = d3.select("svg");
             var width = +svg.attr("width");
-			var height = +svg.attr("height");
-
-			const results = runAnalysis(0.025, settings, exa);
-			const graph = convertAnalysisToGraph(results.modes, results.pairs, 2, width, height, settings);
+            var height = +svg.attr("height");
 
             // Graph settings (TODO: move these elsewhere)
             const edgeStrAdd = 0.00025;
-			const edgeStr = 0.00015;
-			const edgePow = 0.200;
-			const sepStr = 3000;
-			const edgeWiMin = 0.5;
-			const edgeWiMax = 30.0;
-			const edgeWiPow = 0.75;
-			const driftToCenter = 0.25;
-			var weightScale = d3.scaleLinear().domain(d3.extent(graph.links, function(d) { return Math.pow(d.weight, edgePow) * edgeStr })).range([.1, 1]);
-			var colScale = d3.scaleLinear()
-				.domain(d3.ticks(0, 100, 4))
-				.range(["#ff0000", "#8800ff", "#0000cc", "#00ff00"]);
+            const edgeStr = 0.00015;
+            const edgePow = 0.200;
+            const sepStr = 3000;
+            const edgeWiMin = 0.5;
+            const edgeWiMax = 30.0;
+            const edgeWiPow = 0.75;
+            const driftToCenter = 0.25;
+            var weightScale = d3.scaleLinear().domain(d3.extent(graph.links, function(d) { return Math.pow(d.weight, edgePow) * edgeStr })).range([.1, 1]);
+            var colScale = d3.scaleLinear()
+                .domain(d3.ticks(0, 100, 4))
+                .range(["#ff0000", "#8800ff", "#0000cc", "#00ff00"]);
             //var color = d3.scaleOrdinal(d3.schemeCategory20); //["#ffff00", "#0000ff", "#00aaaa"]
             var color = d3.scaleOrdinal()
                 .range(["#22dd22", "#2828dd", "#18c6c6"]);
@@ -280,27 +292,26 @@
             }
 
 
-			// Clear the graph and redraw background color
-			svg.empty();
-			svg.selectAll("*").remove();
-			svg.append("rect").attr("x", "0").attr("y", "0").attr("width", "100%").attr("height", "100%").style("fill", "#000000")
+            // Clear the graph and redraw background color
+            svg.empty();
+            svg.selectAll("*").remove();
+            svg.append("rect").attr("x", "0").attr("y", "0").attr("width", "100%").attr("height", "100%").style("fill", "#000000")
 
-			/*var simulation = d3.forceSimulation()
-				.force("link", d3.forceLink().strength(function(d){return weightScale(Math.pow(d.weight, edgePow) * edgeStr + edgeStrAdd);}).id(function(d) {
-					return d.id;
-				}))
-				.force("charge", d3.forceManyBody().strength(-sepStr))
-				.force('x', d3.forceX(width * 0.5).strength(0.15))
-				.force('y', d3.forceY(height * 0.5).strength(0.15))
-				//.force("center", d3.forceCenter(width / 2, height / 2).strength(-1))
-				;*/
+            /*var simulation = d3.forceSimulation()
+                .force("link", d3.forceLink().strength(function(d){return weightScale(Math.pow(d.weight, edgePow) * edgeStr + edgeStrAdd);}).id(function(d) {
+                    return d.id;
+                }))
+                .force("charge", d3.forceManyBody().strength(-sepStr))
+                .force('x', d3.forceX(width * 0.5).strength(0.15))
+                .force('y', d3.forceY(height * 0.5).strength(0.15))
+                //.force("center", d3.forceCenter(width / 2, height / 2).strength(-1))
+                ;*/
             var simulation = d3.forceSimulation()
                 .force("link", d3.forceLink().id(function(d) { return d.id; }))
                 .force("charge", d3.forceManyBody().strength(-sepStr))
                 .force('x', d3.forceX(width * 0.5).strength(driftToCenter))
                 .force('y', d3.forceY(height * 0.5).strength(driftToCenter));
 
-            if (1 == 1) {
             var link = svg.append("g")
                 .attr("class", "links")
                 .selectAll("line")
@@ -310,14 +321,6 @@
                 .style("stroke", function(d) { return colScale(d.value * 100.0); })
                 .style("pointer-events", "none")
                 .style("stroke-opacity", function(d) { return d.alpha; });
-            } else {
-            var link = svg.append("g")
-                .attr("class", "links")
-                .selectAll("line")
-                .data(graph.links)
-                .enter().append("line")
-                .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
-            }
 
             var node = svg.append("g")
                 .attr("class", "nodes")
@@ -328,16 +331,14 @@
             var circles = node.append("circle")
                 .attr("r", function(d) { return groupRadius(d.group); })
                 .attr("fill", function(d) { return color(d.group); })
-                .call(d3.drag()
-                    .on("start", dragstarted)
-                    .on("drag", dragged)
-                    .on("end", dragended));
 
             var labels = node.append("text")
                 .text(function(d) { return d.id; })
                 .attr("class", "node-labels")
                 .attr("text-anchor", "middle")
-                .call(d3.drag()
+
+            // Set up drag and drop
+            node.call(d3.drag()
                     .on("start", dragstarted)
                     .on("drag", dragged)
                     .on("end", dragended));
@@ -372,26 +373,25 @@
 
             }
 
-			function dragstarted(d) {
-				if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-				d.fx = d.x;
-				d.fy = d.y;
-			}
+            function dragstarted(d) {
+                if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
 
-			function dragged(d) {
-				d.fx = d3.event.x;
-				d.fy = d3.event.y;
-			}
+            function dragged(d) {
+                d.fx += d3.event.dx;
+                d.fy += d3.event.dy;
+            }
 
-			function dragended(d) {
-				if (!d3.event.active) simulation.alphaTarget(0);
-				d.fx = null;
-				d.fy = null;
-			}
-		} // end useGraph
-	} // end runSim
+            function dragended(d) {
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        }
 
-</script>
+    </script>
 
-</body>
+    </body>
 </html>
