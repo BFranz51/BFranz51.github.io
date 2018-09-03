@@ -1,9 +1,16 @@
 <html>
+    <!-- Button: Cancel -->
+    <div class="rightAlignContents">
+        <button id="cancelSettings" class="cool-button small-x">X</button>
+    </div>
+    
 	<div class="sliderContainer" style="padding: 7px;">
 	    <div style="background: #9540ef; border-radius: 10px; margin-top: 3px;">
 	        <h3 style="padding: 0; margin: 0; text-align: center;">Note Comparisons:</h3>
             <table width="100%" cellpadding = "0" style="table-layout: fixed; padding: 2px 10px 0px 10px;">
-                <col width="40%">
+                <colgroup>
+                    <col width="40%" />
+                </colgroup>
                 <tr><td style = "text-indent: 10px;"><label>Shared notes</label>
                 <!--<div id="showHide_0" style="font-size: 12px;">Blah blah blah blah blah blah blah<br />blah blah blah blah blah blah blah blah blah blah blah blah</div>-->
                 </td><td>
@@ -28,7 +35,9 @@
 	    <div style="background: #d9b060; border-radius: 10px; margin-top: 3px;">
 	        <h3 style="padding: 0; margin: 0; text-align: center;">Importance of Roots:</h3>
             <table width="100%" cellpadding = "0" style="table-layout: fixed; padding: 2px 10px 0px 10px;">
-                <col width="40%">
+                <colgroup>
+                    <col width="40%" />
+                </colgroup>
                 <tr><td style = "text-indent: 10px;"><label>Penalty for having different roots</label></td>
                 <td>
                 <span class="range-label left">No penalty</span>
@@ -46,7 +55,9 @@
 	    <div style="background: #60d9b0; border-radius: 10px; margin-top: 3px;">
 	        <h3 style="padding: 0; margin: 0; text-align: center;">Intervals:</h3>
             <table width="100%" cellpadding = "0" style="table-layout: fixed; padding: 2px 10px 0px 10px;">
-                <col width="40%">
+                <colgroup>
+                    <col width="40%" />
+                </colgroup>
                 <tr><td style = "text-indent: 10px;"><label>Interval statistics factor</label></td>
                 <td>
                 <span class="range-label left">Doesn't matter</span>
@@ -64,7 +75,9 @@
 	    <div style="background: #60b0d9; border-radius: 10px; margin-top: 3px;">
 	        <h3 style="padding: 0; margin: 0; text-align: center;">Mood Estimation:</h3>
             <table width="100%" cellpadding = "0" style="table-layout: fixed; padding: 2px 10px 0px 10px;">
-                <col width="40%">
+                <colgroup>
+                    <col width="40%" />
+                </colgroup>
                 <tr><td style = "text-indent: 10px;"><label>Mood - happiness</label></td>
                 <td>
                 <span class="range-label left">Doesn't matter</span>
@@ -82,7 +95,9 @@
         <div style="background: #ddd0d0; border-radius: 10px; margin-top: 3px;">
 	        <h3 style="padding: 0; margin: 0; text-align: center;">Processing:</h3>
             <table width="100%" cellpadding = "0" style="table-layout: fixed; padding: 2px 10px 0px 10px;">
-                <col width="40%">
+                <colgroup>
+                    <col width="40%" />
+                </colgroup>
                 <tr>
                     <td style = "text-indent: 10px;"><label>Dataset:</label></td>
                     <td><select id="datasetID" value="1">
@@ -113,7 +128,7 @@
         <button id="setSlidersMid" class="cool-button medium">Set sliders to middle</button>
         <button id="setSlidersDefault" class="cool-button medium">Set sliders to default</button>
         <button id="setSlidersFull" class="cool-button medium">Set sliders to full!</button>
-        <button id="runSim" class="cool-button large">Click here to run!</button>
+        <button id="runFromSettings" class="cool-button large">Run analysis!</button>
     </div>
 
 </html>
