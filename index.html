@@ -477,17 +477,16 @@ node.call(d3.drag()
 
 // Attach circles to nodes to make them visible
 // Circle colors and sizes are determined by node groups
-var circles = node.append("circle")
+node.append("circle")
+	.attr("class", "node-circles")
 	.attr("r", function(d) { return groupRadius(d.group); })
 	.style("fill", function(d) { return color(d.group); })
-	.style("stroke", function(d) { return (d.type == 1) ? "#ffff00" : "#dddddd"; })
-	.style("stroke-width", "2.0px");
+	.style("stroke", function(d) { return (d.type == 1) ? "#ffff00" : "#dddddd"; });
 
 // Add labels to nodes
-var labels = node.append("text")
-	.text(function(d) { return d.id; })
+node.append("text")
 	.attr("class", "node-labels")
-	.attr("text-anchor", "middle");
+	.text(function(d) { return d.id; });
 
 // Tell simulation what the nodes are
 simulation
