@@ -140,6 +140,10 @@ p {
 	width: 100%;
 }
 
+.galleryImage:hover {
+	border: 1px solid #eee;
+}
+
 .nonGalleryImage {
 	border-radius: 6px;
 	border: 1px solid #1b2d44;

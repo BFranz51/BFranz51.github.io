@@ -68,17 +68,17 @@
 								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#about">About Me</div></li>
 								
 								<li class="li-type-label fadeInSlow veryWhiteText noselect">Apps</li>
-								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#wordSearchAmblyopia">Word Search Game for Amblyopia Eye Therapy</div></li>
-								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#musicVis1">Music Theory Graph Search</div></li>
+								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#wordSearchAmblyopia">C# Word Search Game for Android and WebGL</div></li>
+								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#musicVis1">D3 Music Analysis and Graph</div></li>
 								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#mona">MONA (Moffitt Cancer Center)</div></li>
 
 								<li class="li-type-label fadeInSlow veryWhiteText noselect">Technology</li>
-								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#waterSimulation1">3D Water Simulation</div></li>
-								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#hairPhysics1">Real-Time Hair Physics</div></li>
-								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#windShaders1">Displacement Shaders for Hurricane Winds</div></li>
-								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#spiderAnimation1">Procedural Animation</div></li>
+								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#waterSimulation1">C# Water Simulation</div></li>
+								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#hairPhysics1">C# Hair Physics</div></li>
+								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#windShaders1">Cg Displacement Shaders for Hurricane Winds</div></li>
+								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#spiderAnimation1">C# Procedural Animation</div></li>
 								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#unityAction1">3D Combat System</div></li>
-								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#gabClass">Genetic Algorithm Environment in C++</div></li>
+								<li class="nav-li"><div class="nav-button-start-invis nav-click noselect" value="#gabClass">C++ Genetic Algorithm Environment</div></li>
 								
 								<!--<li class="nav-li" data-toggle="collapse" data-target="#other-projects"><div class="nav-button-start-invis nav-click noselect" value="">Other Projects<span class="arrow"></span></div></li>
 								<ul class="sub-menu collapse" id="other-projects">
@@ -111,22 +111,22 @@
 						<div class="row display-flex" style="margin: 10px">
 							<div class="col-md-3 col-sm-6 col-xs-6" style="padding: 0">
 								<div class="nav-click noselect" value="#windShaders1">
+									<img src="img/TreeShaders1/hurricane.gif" alt="(Image not found)" class="galleryImage">
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-6" style="padding: 0">
+								<div class="nav-click noselect" value="#hairPhysics1">
 									<img src="img/HairPhysics1/final2.gif" alt="(Image not found)" class="galleryImage">
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 col-xs-6" style="padding: 0">
-								<div class="nav-click noselect" value="#windShaders1">
+								<div class="nav-click noselect" value="#waterSimulation1">
+									<img src="img/WaterPhysics1/flux.gif" alt="(Image not found)" class="galleryImage">
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-6" style="padding: 0">
+								<div class="nav-click noselect" value="#spiderAnimation1">
 									<img src="img/ProceduralAnimation1/spider2.gif" alt="(Image not found)" class="galleryImage">
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6" style="padding: 0">
-								<div class="nav-click noselect" value="#windShaders1">
-									<img src="img/WaterPhysics1/sand1.gif" alt="(Image not found)" class="galleryImage">
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6" style="padding: 0">
-								<div class="nav-click noselect" value="#windShaders1">
-									<img src="img/TreeShaders1/hurricane.gif" alt="(Image not found)" class="galleryImage">
 								</div>
 							</div>
 
@@ -226,19 +226,9 @@
 
 						<h3>Features:</h3>
 						<ul>
-							<li><span class="boldText">4 game modes</span>
-								<!-- Fast GIFs of them -->
-							</li>
+							<li><span class="boldText">4 game modes</span></li>
 							<li><span class="boldText">Adjustable 4-tone color palette</span></li>
-							<li><span class="boldText">Platforms</span>
-								<ul>
-									<li>Android (req. keyboard attachment)</li>
-									<li>WebGL</li>
-									<li>Windows</li>
-									<li>Linux</li>
-									<li>OSX (untested)</li>
-								</ul>
-							</li>
+							<li><span class="boldText">Platforms: Android (with keyboard), WebGL, Windows, Linux</span></li>
 						</ul>
 
 						<!-- Gallery of sorts -->
@@ -627,6 +617,7 @@ simulation
 							<div class="col-md-6">
 								<div class="thumbnail">
 									<h3 class="imageCaption">1. Gentle gerstner waves</h3>
+									<br />
 									<a href="img/WaterPhysics1/gerstnerWaves.gif">
 										<img src="img/WaterPhysics1/gerstnerWaves.gif" alt="(Image not found)" class="galleryImage">
 									</a>
@@ -816,6 +807,7 @@ inline float3 gerstnerDisplacement(float2 vertPos, float2 D, float W, float Q, f
 								<br />
 								<div class="thumbnail">
 									<h3 class="imageCaption">Figure 1: Small fluctuations</h3>
+									<br />
 									<a href="img/TreeShaders1/flux.gif">
 										<img src="img/TreeShaders1/flux.gif" alt="(Image not found)" class="galleryImage">
 										
@@ -849,7 +841,8 @@ inline float3 gerstnerDisplacement(float2 vertPos, float2 D, float W, float Q, f
 								<br />
 								<div class="thumbnail">
 									<h3 class="imageCaption">Figure 4: Extreme wind</h3>
-									<a href="img/TreeShaders1/hurriane.gif">
+									<br />
+									<a href="img/TreeShaders1/hurricane.gif">
 										<img src="img/TreeShaders1/hurricane.gif" alt="(Image not found)" class="galleryImage">
 									</a>
 								</div>
@@ -904,6 +897,7 @@ inline float3 gerstnerDisplacement(float2 vertPos, float2 D, float W, float Q, f
 							<div class="col-md-6">
 								<div class="thumbnail">
 									<h3 class="imageCaption">Figure 2: Hit reaction</h3>
+									<br />
 									<a href="img/ProceduralAnimation1/spider2.gif">
 										<img src="img/ProceduralAnimation1/spider2.gif" alt="(Image not found)" class="galleryImage">
 									</a>
