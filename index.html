@@ -359,12 +359,7 @@ public class Mode_Classic : GameMode {
 		settings.letterDifficulty = 1;
 
 		// Define board size
-		if (Random.Range(0,1000) < 500) {
-			settings.sizeX = 4;
-		}
-		else {
-			settings.sizeX = 5;
-		}
+		settings.sizeX = Random.Range(4, 6);
 		settings.sizeY = 4;
 
 		return settings;
@@ -380,7 +375,7 @@ public class Mode_Classic : GameMode {
 						</div>
 
 						<br />
-						<h3>UI/UX:</h3>
+						<h3>UI/UX with Events:</h3>
 
 						<p>I used Unity's built in UI system for the menus and created a collection of scripts under a namespace called SimpleUI. The methods knew nothing about the rest of the project, but could communicate using Unity events. I chose this approach over C# delegates in order to be able to connect the events in the Unity3D editor.</p>
 
@@ -418,7 +413,7 @@ public void ButtonClickEvent() {
 						</div>
 
 						<h3>Conclusion</h3>
-						<p>It was a great experience working on this project. Technology can be a powerful new tool for dealing with medical conditions and games can offer a way to make it a fun and enjoyable experience.</p>
+						<p>It was a great experience working on this project. Technology can be a powerful new tool for dealing with medical conditions and games can make it fun for users.</p>
 					</section>
 
 
@@ -760,7 +755,7 @@ simulation
 						</div>
 
 						<br />
-						<h3>Design Choices:</h3>
+						<h3>Design choices:</h3>
 						
 						<p>The core simulation is done in C# with a grid-based model that handles the large-scale waves. It combines input from moving objects with transverse waves, and handles flow between neighboring grid points. It outputs depth and water force for any point, and also calculates extra data like how "turbulent" each point is, which it sends to the shader via vertex colors.</p>
 
