@@ -331,7 +331,9 @@
 						<br />
 						<h3>UI/UX with Events:</h3>
 
-						<p>I used Unity's built in UI system for the menus and created a collection of scripts under a namespace called SimpleUI. The methods knew nothing about the rest of the project, but could communicate using Unity events. I chose this approach over C# delegates in order to be able to connect the events in the Unity3D editor.</p>
+						<p>I used Unity's built in UI system for the menus and created a collection of scripts under a namespace called SimpleUI. These UI scripts needed to communicate with my other scripts to handle button presses, SFX when the user hovers over buttons, etc.</p>
+
+						<p>I wanted the SimpleUI module to be easily imported to other projects, so my communication options were SendMessage(), Unity events, and C# delegates. I chose Unity events because they allowed me to set everything up in the Unity3D editor.</p>
 
 						<!-- Code block! -->
 						<div class="indented">
@@ -366,8 +368,12 @@ public void ButtonClickEvent() {
 							</pre>
 						</div>
 
-						<h3>Conclusion</h3>
+						<h3>Conclusion:</h3>
+
+						<p>As with most of the games I've worked on, testing was invaluable. One tester said: "I was only using the mouse in the menus and didn't know I had to switch to the keyboard when the game started."</p>
+
 						<p>It was a great experience working on this project. Technology can be a powerful new tool for dealing with medical conditions and games can make it fun for users.</p>
+
 					</section>
 
 
@@ -401,14 +407,14 @@ public void ButtonClickEvent() {
 
 						<p>Modes themselves are stored as objects with a boolean array of size 12 defining whether notes are included or not.</p>
 
-						<h3>D3 visualization:</h3>
+						<h3>D3.js visualization:</h3>
 
-						<p>D3.js is a great JavaScript library for creating data-driven SVG visualizations. The flexible graph setup shown below let me quickly get the graph working and focus on extra features like adding a function that detects common chords in the selected mode and displays them to the screen.</p>
+						<p>D3 is a great JavaScript library for creating data-driven SVG visualizations. The flexible graph setup shown below let me quickly get the graph working and focus on extra features like adding a function that detects common chords in the selected mode and displays them to the screen.</p>
 
 						<!-- Code block! -->
 						<div class="indented">
 							<pre>
-								<code class="language-csharp" >
+								<code class="language-javascript" >
 // (Previous code...)
 
 // Add nodes to SVG
