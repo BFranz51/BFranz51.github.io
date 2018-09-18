@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"word",
+				"wordSearchAmblyopia"
+			],
+			[
 				"_",
 				"_blank"
 			],
@@ -35,7 +39,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 39719,
+				"buffer_size": 42783,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -44,7 +48,7 @@
 			"file": "styles/custom_styles.css",
 			"settings":
 			{
-				"buffer_size": 11584,
+				"buffer_size": 11649,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -82,9 +86,7 @@
 	},
 	"expanded_folders":
 	[
-		"/G/_PROJECTS/New-Portfolio",
-		"/G/_PROJECTS/New-Portfolio/prismjs",
-		"/G/_PROJECTS/New-Portfolio/scripts"
+		"/G/_PORTFOLIO/BFranz51.github.io"
 	],
 	"file_history":
 	[
@@ -181,6 +183,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Design Choices",
+			"dynamic",
 			"figure",
 			"try",
 			"HLSL",
@@ -220,6 +224,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Design choices",
 			"nav-click noselect",
 			"<div class=\"row display-flex\">",
 			"h3",
@@ -266,7 +271,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -275,15 +280,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 39719,
+						"buffer_size": 42783,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7173,
-								7173
+								33350,
+								33350
 							]
 						],
 						"settings":
@@ -292,7 +297,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2211.0,
+						"translation.y": 16125.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -304,15 +309,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11584,
+						"buffer_size": 11649,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8465,
-								8465
+								1579,
+								1579
 							]
 						],
 						"settings":
@@ -322,10 +327,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7401.0,
+						"translation.y": 1749.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -370,7 +375,7 @@
 	"project": "OnlinePortfolio.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 73.0
 	},
 	"save_all_on_build": true,
 	"select_file":

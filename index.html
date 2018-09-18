@@ -316,62 +316,16 @@
 
 						<p>At first, I blended all the game modes together, adding code to methods like "if (mode == MODE.zombieOutbreak) { DoCoolFunction(); }". This quickly got out of hand, so I created a class for each game mode. Each game mode inherited from the same abstract class.</p>
 
-						<!-- Code block! -->
-						<div class="indented">
-							<pre>
-								<code class="language-csharp" >
-/*
-	Classic mode where player has a regular board
-	and tries to find as many words before time is up.
-
-	Inherits from GameMode abstract class
-*/
-public class Mode_Classic : GameMode {
-
-	/*
-		Defines settings for this game mode
-	*/
-	public override GameModeSettings GetSettings() {
-		GameModeSettings settings = new GameModeSettings();
-
-		settings.gameOverMessage = "Game Over";
-		settings.shuffleUsedWords = false;
-		settings.allowReuseWords = false;
-		settings.useTimeWarning = true;
-		
-		return settings;
-	}
-
-	/*
-		Defines settings for next round
-		Can include randomness
-	*/
-	public override RoundSettings GetNewRoundSettings() {
-		RoundSettings settings = new RoundSettings();
-		
-		// Time allowed this round
-		settings.timeMax = Random.Range(20.0f, 40.0f);
-
-		// Include blank letters sometimes
-		settings.nullLettersOnBoard = Random.Range(0, 2);
-
-		// Use regular difficulty
-		settings.letterDifficulty = 1;
-
-		// Define board size
-		settings.sizeX = Random.Range(4, 6);
-		settings.sizeY = 4;
-
-		return settings;
-	}
-
-	public override void ModifyNewBoard() {}
-
-	/* (Other methods omitted from this sample...) */
-
-}
-								</code>
-							</pre>
+						<div class="row display-flex">
+							<div class="col-lg-8 col-md-10 col-sm-12">
+								<br />
+								<div class="thumbnail">
+									<h3 class="imageCaption">Figure 5: Game mode class hierarchy</h3>
+									<a href="img/WordSearch1/GameModeClasses.jpg">
+										<img src="img/WordSearch1/GameModeClasses.jpg" alt="(Image not found)" class="galleryImage">
+									</a>
+								</div>
+							</div>
 						</div>
 
 						<br />
