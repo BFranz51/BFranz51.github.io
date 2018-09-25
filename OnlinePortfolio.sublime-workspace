@@ -39,7 +39,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 42783,
+				"buffer_size": 42333,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -280,15 +280,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 42783,
+						"buffer_size": 42333,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								33350,
-								33350
+								18879,
+								18879
 							]
 						],
 						"settings":
@@ -297,7 +297,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 16125.0,
+						"translation.y": 7635.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
