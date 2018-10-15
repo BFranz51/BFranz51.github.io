@@ -39,7 +39,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 42333,
+				"buffer_size": 42644,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -86,7 +86,7 @@
 	},
 	"expanded_folders":
 	[
-		"/G/_PORTFOLIO/BFranz51.github.io"
+		"/G/Career/Port51.github.io"
 	],
 	"file_history":
 	[
@@ -183,6 +183,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"This in in Cg",
+			"this in in cg",
 			"Design Choices",
 			"dynamic",
 			"figure",
@@ -280,15 +282,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 42333,
+						"buffer_size": 42644,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								18879,
-								18879
+								23575,
+								23575
 							]
 						],
 						"settings":
@@ -297,7 +299,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7635.0,
+						"translation.y": 6416.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
