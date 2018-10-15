@@ -158,7 +158,7 @@
 
 						<p style="margin-top: 40px">Hello! I'm a software developer working remotely as a contractor in the <span class="italicText">Bioinformatics and Biostatistics Core</span> of <a href="https://moffitt.org/" target="_blank">Moffitt Cancer Center</a>.</p>
 
-						<p>I enjoy learning all types of new tech, but have the most experience working in Unity3D with C#, doing data analysis in Python, and front end visualizations in JavaScript. In my spare time, I like to write neoclassical music, rock climb, and read sci fi books (mostly Brandon Sanderson books lately).</p>
+						<p>I enjoy learning all types of new tech, but have the most experience working in Unity3D with C#, doing data analysis in Python, and front end visualizations using JavaScript and D3.js. In my spare time, I like to write neoclassical music, rock climb, and read sci fi books (mostly Brandon Sanderson books lately).</p>
 
 						<h3>Education:</h3>
 						<table style="margin-left: 50px; border-collapse: separate; border-spacing: 15px 10px;">
@@ -200,6 +200,7 @@
 								<ul style="list-style: none; float: right;">
 									<li class="skillList">Unity3D</li>
 									<li class="skillList">Blender3D</li>
+									<li class="skillList">Android</li>
 									<li class="skillList">D3.js</li>
 									<li class="skillList">Rigify</li>
 									<li class="skillList">DirectX 9 and 11 shaders</li>
@@ -208,7 +209,7 @@
 									<li class="skillList">Bootstrap</li>
 									<li class="skillList">GIMP 2</li>
 									<li class="skillList">Cubase 9 + Audacity</li>
-									<li class="skillList">Win7 + Ubuntu</li>
+									<li class="skillList">Win7 + Ubuntu (Linux)</li>
 								</ul>
 							</div>
 						</div>
@@ -219,6 +220,8 @@
 						<a class="button-a" href="https://htmlpreview.github.io/?https://github.com/BFranz51/WordGameWebGL/blob/master/index.html" target="_blank"><div class="nav-button-rounded" style="width: 350px">Word Search Game</div></a>
 
 						<a class="button-a" href="https://htmlpreview.github.io/?https://github.com/BFranz51/D3-Music-Theory-Analyzer/blob/master/modevis.html" target="_blank"><div class="nav-button-rounded" style="width: 350px">D3 Graph Analysis</div></a>
+
+						<br />
 
 						
 
@@ -252,7 +255,13 @@
 						<ul>
 							<li><span class="boldText">4 game modes</span></li>
 							<li><span class="boldText">Adjustable 4-tone color palette</span></li>
-							<li><span class="boldText">Platforms: Android (with keyboard), WebGL, Windows, Linux</span></li>
+							<li><span class="boldText">Platforms:
+								<ul>
+									<li>Android (with keyboard)</li>
+									<li>WebGL</li>
+									<li>Windows</li>
+									<li>Linux</li>
+								</ul>
 						</ul>
 
 						<!-- Gallery of sorts -->
@@ -381,7 +390,7 @@ public void ButtonClickEvent() {
 							</div>
 							
 							<div class="col-md-6">
-								<span class="skill right">CSS Animation</span>
+								<span class="skill right">CSS Animations</span>
 								<span class="skill right">SVG</span>
 								<span class="skill right">jQuery</span>
 								<span class="skill right">D3.js</span>
@@ -403,7 +412,7 @@ public void ButtonClickEvent() {
 
 						<h3>D3.js visualization:</h3>
 
-						<p>D3 is a great JavaScript library for creating data-driven SVG visualizations. The flexible graph setup shown below let me quickly get the graph working and focus on extra features like adding a function that detects common chords in the selected mode and displays them to the screen.</p>
+						<p><a href="https://d3js.org/" target="_blank">D3</a> is an amazing JavaScript library for creating data-driven SVG visualizations. The flexible graph setup shown below let me quickly get the graph working and focus on extra features like adding a function that detects common chords in the selected mode and displays them to the screen.</p>
 
 						<!-- Code block! -->
 						<div class="indented">
@@ -715,14 +724,16 @@ simulation
 
 						<p>The mesh was dense enough for gameplay, but I wanted more detailed visuals. So I added DirectX 11 tessellation to the shader and wrote a vertex displacement function that overlaid 6 <a href="https://en.wikipedia.org/wiki/Trochoidal_wave" target="_blank">gerstner waves</a> onto the tessellated mesh. The gerstner waves have different amplitudes and lacunarities based on the "turbulence" set by the C# simulation. This allowed me to keep shallow areas relatively gentle, and have the water become choppy for a while after large waves.</p>
 
-						<p>Below is the vertex function used to create a single gerstner wave:</p>
+						<p>The main advantage of running the gerstner waves on the GPU is that the tessellation is scaled based on camera distance, allowing the closest waves to be very high resolution. Also, the resolution can be scaled based on user settings without affecting the simulation itself.</p>
+
+						<p>Below is the vertex function used to create a single gerstner wave on the GPU:</p>
 
 						<!-- Code block! -->
 						<div class="indented">
 							<pre>
 								<code class="language-c" >
 // Returns vertex displacement due to gernster wave
-// (This is in Cg and run on the GPU)
+// (This is in Cg and runs on the GPU)
 inline float3 gerstnerDisplacement(float2 vertPos, float2 D, float W, float Q, float T, float amplitude)
 {
 	float trigVal = dot(W * D, vertPos) + T * _Time.x;
