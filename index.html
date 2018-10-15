@@ -200,11 +200,11 @@
 								<ul style="list-style: none; float: right;">
 									<li class="skillList">Unity3D</li>
 									<li class="skillList">Blender3D</li>
+									<li class="skillList">D3.js</li>
 									<li class="skillList">Rigify</li>
 									<li class="skillList">DirectX 9 and 11 shaders</li>
 									<li class="skillList">NumPy + SciPy</li>
 									<li class="skillList">MatPlotLib</li>
-									<li class="skillList">D3.js</li>
 									<li class="skillList">Bootstrap</li>
 									<li class="skillList">GIMP 2</li>
 									<li class="skillList">Cubase 9 + Audacity</li>
@@ -722,6 +722,7 @@ simulation
 							<pre>
 								<code class="language-c" >
 // Returns vertex displacement due to gernster wave
+// (This is in Cg and run on the GPU)
 inline float3 gerstnerDisplacement(float2 vertPos, float2 D, float W, float Q, float T, float amplitude)
 {
 	float trigVal = dot(W * D, vertPos) + T * _Time.x;
