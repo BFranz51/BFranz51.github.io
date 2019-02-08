@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Static1 Site 2</title>
-    <link>file:///G:/Career/Port51_New/public/posts/</link>
+    <link>https://port51.github.io/posts/</link>
     <description>Recent content in Posts on Static1 Site 2</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 18 Dec 2018 10:25:44 -0500</lastBuildDate>
     
-	<atom:link href="file:///G:/Career/Port51_New/public/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://port51.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blog0</title>
-      <link>file:///G:/Career/Port51_New/public/posts/blog0/</link>
+      <link>https://port51.github.io/posts/blog0/</link>
       <pubDate>Tue, 18 Dec 2018 10:25:44 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/posts/blog0/</guid>
+      <guid>https://port51.github.io/posts/blog0/</guid>
       <description>This is a blog post
  Figure 1: Etc. C#     BLOG POSTS: How I got Android to work in Unity Unmanaged C++ speed comparisons for water physics Porting hair physics to C++</description>
     </item>

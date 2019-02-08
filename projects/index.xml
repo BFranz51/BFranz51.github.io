@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Static1 Site 2</title>
-    <link>file:///G:/Career/Port51_New/public/projects/</link>
+    <link>https://port51.github.io/projects/</link>
     <description>Recent content in Projects on Static1 Site 2</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 18 Dec 2018 13:44:43 -0500</lastBuildDate>
     
-	<atom:link href="file:///G:/Career/Port51_New/public/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://port51.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Composing Utility</title>
-      <link>file:///G:/Career/Port51_New/public/projects/modevis/</link>
+      <link>https://port51.github.io/projects/modevis/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/projects/modevis/</guid>
+      <guid>https://port51.github.io/projects/modevis/</guid>
       <description>How did this start? I learning what modes were, and wanted to use them all the time! So The algorithm Scales are compared according to the following criteria:
  Are the roots the same? If not, are they at least contained in the other scale? What notes are gained? What notes are lost? How similar are the note &#34;regions&#34; (2nds, 3rds, etc.) What intervals are available in each for melodies? What is the estimated happiness of each?</description>
     </item>
     
     <item>
       <title>Displacement Shaders for Hurricane Winds</title>
-      <link>file:///G:/Career/Port51_New/public/projects/hair/</link>
+      <link>https://port51.github.io/projects/hair/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/projects/hair/</guid>
+      <guid>https://port51.github.io/projects/hair/</guid>
       <description>What is it?
 How was it made?
 What did I learn?
@@ -36,10 +36,10 @@ Features:  Gravity Friction Momentum dispersed through strands  Gallery: Figure 
     
     <item>
       <title>Displacement Shaders for Hurricane Winds</title>
-      <link>file:///G:/Career/Port51_New/public/projects/mona/</link>
+      <link>https://port51.github.io/projects/mona/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/projects/mona/</guid>
+      <guid>https://port51.github.io/projects/mona/</guid>
       <description>What is it?
 How was it made?
 What did I learn?
@@ -49,10 +49,10 @@ MONA is a Python app that creates networks of differentially expressed &#34;omic
     
     <item>
       <title>Displacement Shaders for Hurricane Winds</title>
-      <link>file:///G:/Career/Port51_New/public/projects/wind/</link>
+      <link>https://port51.github.io/projects/wind/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/projects/wind/</guid>
+      <guid>https://port51.github.io/projects/wind/</guid>
       <description>What is it?
 How was it made?
 What did I learn?
@@ -62,10 +62,10 @@ In order to allow for large numbers of trees with minimal draw calls, I decided 
     
     <item>
       <title>Genetic Algorithm Environment</title>
-      <link>file:///G:/Career/Port51_New/public/projects/gabclass/</link>
+      <link>https://port51.github.io/projects/gabclass/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/projects/gabclass/</guid>
+      <guid>https://port51.github.io/projects/gabclass/</guid>
       <description>What is it?
 How was it made?
 What did I learn?
@@ -75,20 +75,20 @@ The main class controls the fundamental genetic algorithm workflow, implements c
     
     <item>
       <title>Lazy Eye Therapy Word Search</title>
-      <link>file:///G:/Career/Port51_New/public/projects/ambly/</link>
+      <link>https://port51.github.io/projects/ambly/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/projects/ambly/</guid>
+      <guid>https://port51.github.io/projects/ambly/</guid>
       <description>What is it? This is a game I made as a birthday present for my sister. She has ambylopia, a neurological problem where the brain tries to ignore input from one eye. Inspired by LazyEyeGames.com, I designed the game to be played with red-blue glasses. The red and blue elements are only seen by one eye at a time, which trains the brain to use both eyes simultaneously.
 How was it made?</description>
     </item>
     
     <item>
       <title>Sword Iownit</title>
-      <link>file:///G:/Career/Port51_New/public/projects/si/</link>
+      <link>https://port51.github.io/projects/si/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/projects/si/</guid>
+      <guid>https://port51.github.io/projects/si/</guid>
       <description>What is it?
 How was it made?
 What did I learn?
@@ -98,10 +98,10 @@ Features:  AI includes FSM and attack combo system Cg shader library using DX9 a
     
     <item>
       <title>Water Simulation</title>
-      <link>file:///G:/Career/Port51_New/public/projects/water/</link>
+      <link>https://port51.github.io/projects/water/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
-      <guid>file:///G:/Career/Port51_New/public/projects/water/</guid>
+      <guid>https://port51.github.io/projects/water/</guid>
       <description>This is a water system I made for boss battles in my action game. It adds a layer of complication to player movement and gives extra impact to whatever the bosses do. Attacks that the player dodges can still be a problem due to the waves they create.
 Features:  Waves created from sources:  Transverse ocean waves Large objects moving Impact events   Special ripples for extra huge impacts Special handling for shallow water flow to minimize edge artifacts Tesellated gerstner waves with turbulence that reacts to depth and water motion Cg surface shader:  DirectX 11 tessellation Gerstner wave vertex displacement Depth-based opacity Automatic foam + whitecaps    Design choices: The core simulation is done in C# with a grid-based model that handles the large-scale waves.</description>
     </item>
