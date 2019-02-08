@@ -1,0 +1,222 @@
+
+
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bryan Franz Portfolio</title>
+    <link rel="stylesheet" href=/G:/Career/Port51_New/public/css/styles.css>
+    <link rel="stylesheet" href=/G:/Career/Port51_New/public/css/prism.css>
+</head>
+<body>
+    <div id="main-container">
+
+
+
+
+
+
+
+
+
+  <div class="project-content-container">
+    <div class="project-title">Composing Utility</div>
+
+    
+    <div>
+      
+<div class="item-tag-container">
+
+    
+        <div class="item-tag-text-language">JavaScript</div>
+    
+
+
+    
+        <div class="item-tag-text-tech">D3.js</div>
+    
+        <div class="item-tag-text-tech">SVG</div>
+    
+        <div class="item-tag-text-tech">CSS Animation</div>
+    
+
+</div>
+
+    </div>
+    <div class="clearfix" style="height: 20px;"></div>
+
+    
+
+    
+    <h1>How did this start?</h1>
+
+<p>I learning what modes were, and wanted to use them all the time! So </p>
+
+<h1>The algorithm</h1>
+
+<p>Scales are compared according to the following criteria:</p>
+
+<ul>
+    <li>Are the roots the same?</li>
+    <li>If not, are they at least contained in the other scale?</li>
+    <li>What notes are gained?</li>
+    <li>What notes are lost?</li>
+    <li>How similar are the note "regions" (2nds, 3rds, etc.)</li>
+    <li>What intervals are available in each for melodies?</li>
+    <li>What is the estimated happiness of each?</li>
+    <li>What is the estimated bittersweetness of each?</li>
+</ul>
+
+<!--<h3>Representing scales/modes</h3>
+
+<p>Scales are represented as JS objects, with 2 different arrays to show where notes are. The actual arrays only have true/false values, but I'll use numbers to show which interval the notes represent. 1 = tonic, 2 = 2nd, etc. Dashes mean the note is not a part of the scale.</p>
+
+<table class="project-table">
+    <tr class="project-table-header-row">
+        <td>Array</td>
+        <td>Description</td>
+        <td>C major</td>
+        <td>D major</td>
+        <td>D minor</td>
+    </tr>
+    <tr>
+        <td>Constant Array</td>
+        <td>Notes relative to the nearest C.</td>
+        <td>1-2-34-5-6-7</td>
+        <td>-71-2-34-5-6</td>
+        <td>7-1-23-4-56-</td>
+    </tr>
+    <tr>
+        <td>Relative Array</td>
+        <td>Notes relative to the root. The 1st entry will always be the root.</td>
+        <td>1-2-34-5-6-7</td>
+        <td>1-2-34-5-6-7</td>
+        <td>1-23-4-56-7-</td>
+    </tr>
+</table>-->
+
+<h3>Note Difference Penalty</h3>
+
+<p>First, there is a penalty based on the number of shared notes. The basic formula is:</p>
+
+<p>DifferencePenalty = loseFactor * max(0, notesLost - loseThreshold) + gainFactor * max(0, notesGained - gainThreshold) ^ 1.5</p>
+
+<h3>Topology Similarity</h3>
+
+<p>Next, the algorithm compares regions in the relative arrays, looking for whether the scales have the same notes contained. The regions are separated into "tiers", which are scored differently.</p>
+
+<ul>
+    <li>Tier I: 3rd</li>
+    <li>Tier II: 4th + 5th, 7th</li>
+    <li>Tier III: 2nd, 6th</li>
+</ul>
+
+<p>It's set up very generally, as some scales have no thirds or both major and minor 3rds.</p>
+
+<h3>Melodic Possibilities Similarity</h3>
+
+<p>Afterwards, all the possible intervals are counted up. There's some extra math to account for small scales, but the basic formula is:</p>
+
+<p>AveragePercentDifference = (sum_i(abs(intervalPercentage[i, a] - intervalPercentage[i, b])) / numNotes)</p>
+<p>Score = e ^ -(AveragePercentDifference / K)</p>
+
+<h3>Mood Similarity</h3>
+
+<p>Lastly, I made a simple equation for estimating how happy and/or bittersweet modes are. Happiness starts at 0.5, and I add/subtract from that based on simple rules like "flat 3rd" = sad and "major 3rd with flat 5" = bittersweet.</p>
+
+<h1>D3.js visualization:</h1>
+
+<p><a href="https://d3js.org/" target="_blank">D3</a> is an amazing JavaScript library for data visualizations, and let me focus on the algorithm.</p>
+
+
+    
+    
+
+    
+    
+
+
+
+
+    
+        <a class="no-underline" href="musicapp/index.html" target="_blank">
+            
+            <div class="nav-button-rounded-highlight">
+            
+                Try Web Demo
+            </div>
+        </a>
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+    <a class="no-underline" href=/G:/Career/Port51_New/public/index.html>
+        <div class="nav-button-rounded">
+            Main Portfolio
+        </div>
+    </a>
+
+
+
+    
+    
+
+    
+    
+    
+
+<div class="item-status-container">
+    <div class="item-status-text"><span class="bold italic">Released</span></div>
+</div>
+
+
+  </div>
+
+
+
+    <footer>
+        
+    </footer>
+
+    
+    <script src=/G:/Career/Port51_New/public/lib/prism.js></script>
+    
+    </div>
+
+    <script>
+        
+        (function() {
+            document.getElementById("posts_show_more")
+                .addEventListener("click", () => {
+                    
+                    document.getElementById("posts_recent").style.display = "none";
+                    
+                    document.getElementById("posts_all").style.display = "block";
+                    
+                    document.getElementById("posts_show_more").style.display = "none";
+                    document.getElementById("posts_show_less").style.display = "block";
+                });
+            document.getElementById("posts_show_less")
+                .addEventListener("click", () => {
+                    
+                    document.getElementById("posts_recent").style.display = "block";
+                    
+                    document.getElementById("posts_all").style.display = "none";
+                    
+                    document.getElementById("posts_show_more").style.display = "block";
+                    document.getElementById("posts_show_less").style.display = "none";
+                });
+        })();
+    </script>
+
+</body>
+</html>

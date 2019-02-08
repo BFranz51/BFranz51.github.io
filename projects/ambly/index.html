@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bryan Franz Portfolio</title>
+    <link rel="stylesheet" href=/G:/Career/Port51_New/public/css/styles.css>
+    <link rel="stylesheet" href=/G:/Career/Port51_New/public/css/prism.css>
+</head>
+<body>
+    <div id="main-container">
+
+
+
+
+
+
+
+
+
+  <div class="project-content-container">
+    <div class="project-title">Lazy Eye Therapy Word Search</div>
+
+    
+    <div>
+      
+<div class="item-tag-container">
+
+    
+        <div class="item-tag-text-language">C#</div>
+    
+
+
+    
+        <div class="item-tag-text-tech">Unity3D</div>
+    
+        <div class="item-tag-text-tech">Android</div>
+    
+        <div class="item-tag-text-tech">WebGL</div>
+    
+
+</div>
+
+    </div>
+    <div class="clearfix" style="height: 20px;"></div>
+
+    
+
+    
+    <h1>What is it?</h1>
+
+<p>This is a game I made as a birthday present for my sister. She has ambylopia, a neurological problem where the brain tries to ignore input from one eye. Inspired by <a href="www.lazyeyegames.com" target="_blank">LazyEyeGames.com</a>, I designed the game to be played with red-blue glasses. The red and blue elements are only seen by one eye at a time, which trains the brain to use both eyes simultaneously.</p>
+
+<h1>How was it made?</h1>
+
+<p>In testing, I found that yellow and purple colors looked most natural through the glasses, so I used those for UI elements.</p>
+
+<p>I loaded a file with 235,886 words into a HashSet. Players can also add their own words by pressing SPACE instead of ENTER.</p>
+
+<p>At first, I blended all the game modes together, adding code to methods like "if (mode == MODE.zombieOutbreak) { DoCoolFunction(); }". This quickly got out of hand, so I created a class for each game mode. Each game mode inherited from the same abstract class.</p>
+
+<h3>UI/UX with Events:</h3>
+
+<p>I used Unity's built in UI system for the menus and created a collection of scripts under a namespace called SimpleUI. These UI scripts needed to communicate with my other scripts to handle button presses, SFX when the user hovers over buttons, etc.</p>
+
+<p>I wanted the SimpleUI module to be easily imported to other projects, so my communication options were SendMessage(), Unity events, and C# delegates. I chose Unity events because they allowed me to set everything up in the Unity3D editor.</p>
+
+<!-- Code block! -->
+
+<div class="indented">
+    <pre>
+        <code class="language-csharp" >
+/*
+Connect these events in the editor to other components
+*/
+public IntEvent buttonAction;
+public UnityEvent buttonHover;
+public UnityEvent buttonClick;
+
+/*
+Send event messages from UI components to other scripts
+*/
+
+// Sends int as action code
+public void OnButtonAction(int actionID) {
+buttonAction.Invoke(actionID);
+}
+
+// Sends hover event
+public void ButtonHoverEvent() {
+buttonHover.Invoke();
+}
+
+// Sends click event
+public void ButtonClickEvent() {
+buttonClick.Invoke();
+}
+        </code>
+    </pre>
+</div>
+
+<h1>What did I learn?</h1>
+
+<p>As with most of the games I've worked on, testing was invaluable. One tester said: "I was only using the mouse in the menus and didn't know I had to switch to the keyboard when the game started."</p>
+
+
+    
+    
+
+    
+    
+
+
+
+
+    
+        <a class="no-underline" href="wordgame/index.html" target="_blank">
+            
+            <div class="nav-button-rounded-highlight">
+            
+                Try WebGL Demo!
+            </div>
+        </a>
+    
+
+
+
+
+
+
+
+
+
+
+    <a class="no-underline" href=/G:/Career/Port51_New/public/index.html>
+        <div class="nav-button-rounded">
+            Main Portfolio
+        </div>
+    </a>
+
+
+
+    
+    
+
+    
+    
+    
+
+<div class="item-status-container">
+    <div class="item-status-text"><span class="bold italic">Finished</span></div>
+</div>
+
+
+  </div>
+
+
+
+    <footer>
+        
+    </footer>
+
+    
+    <script src=/G:/Career/Port51_New/public/lib/prism.js></script>
+    
+    </div>
+
+    <script>
+        
+        (function() {
+            document.getElementById("posts_show_more")
+                .addEventListener("click", () => {
+                    
+                    document.getElementById("posts_recent").style.display = "none";
+                    
+                    document.getElementById("posts_all").style.display = "block";
+                    
+                    document.getElementById("posts_show_more").style.display = "none";
+                    document.getElementById("posts_show_less").style.display = "block";
+                });
+            document.getElementById("posts_show_less")
+                .addEventListener("click", () => {
+                    
+                    document.getElementById("posts_recent").style.display = "block";
+                    
+                    document.getElementById("posts_all").style.display = "none";
+                    
+                    document.getElementById("posts_show_more").style.display = "block";
+                    document.getElementById("posts_show_less").style.display = "none";
+                });
+        })();
+    </script>
+
+</body>
+</html>

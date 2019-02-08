@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Static1 Site 2</title>
+    <link>file:///G:/Career/Port51_New/public/projects/</link>
+    <description>Recent content in Projects on Static1 Site 2</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Dec 2018 13:44:43 -0500</lastBuildDate>
+    
+	<atom:link href="file:///G:/Career/Port51_New/public/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Composing Utility</title>
+      <link>file:///G:/Career/Port51_New/public/projects/modevis/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>file:///G:/Career/Port51_New/public/projects/modevis/</guid>
+      <description>How did this start? I learning what modes were, and wanted to use them all the time! So The algorithm Scales are compared according to the following criteria:
+ Are the roots the same? If not, are they at least contained in the other scale? What notes are gained? What notes are lost? How similar are the note &#34;regions&#34; (2nds, 3rds, etc.) What intervals are available in each for melodies? What is the estimated happiness of each?</description>
+    </item>
+    
+    <item>
+      <title>Displacement Shaders for Hurricane Winds</title>
+      <link>file:///G:/Career/Port51_New/public/projects/hair/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>file:///G:/Career/Port51_New/public/projects/hair/</guid>
+      <description>What is it?
+How was it made?
+What did I learn?
+I had previously experimented with modeling hair in Blender for my Unity3D game, but as the combat became more action-packed, I wanted the hair to act as a flag and emphasize the movement. So I created a simulation for it and used line renderers to draw the hair along the simulated points.
+Features:  Gravity Friction Momentum dispersed through strands  Gallery: Figure 1: Hair physics!</description>
+    </item>
+    
+    <item>
+      <title>Displacement Shaders for Hurricane Winds</title>
+      <link>file:///G:/Career/Port51_New/public/projects/mona/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>file:///G:/Career/Port51_New/public/projects/mona/</guid>
+      <description>What is it?
+How was it made?
+What did I learn?
+MONA was my first project at Moffitt Cancer Center. I began as an intern, and continued work after accepting a software developer position. Currently, we are doing sensitivity analysis and preparing the manuscript for publication.
+MONA is a Python app that creates networks of differentially expressed &#34;omics&#34; data. It inputs experiment data and combines that with a known universe of interactions, using correlations above a threshold to add speculative network edges.</description>
+    </item>
+    
+    <item>
+      <title>Displacement Shaders for Hurricane Winds</title>
+      <link>file:///G:/Career/Port51_New/public/projects/wind/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>file:///G:/Career/Port51_New/public/projects/wind/</guid>
+      <description>What is it?
+How was it made?
+What did I learn?
+This is a set of shaders for trees blowing in harsh winds. They use vertex displacement in order to simulate both large-scale bending and small fluctuations.
+In order to allow for large numbers of trees with minimal draw calls, I decided to preserve static and dynamic batching. This meant that the mesh data and material settings had to be identical for each type of tree.</description>
+    </item>
+    
+    <item>
+      <title>Genetic Algorithm Environment</title>
+      <link>file:///G:/Career/Port51_New/public/projects/gabclass/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>file:///G:/Career/Port51_New/public/projects/gabclass/</guid>
+      <description>What is it?
+How was it made?
+What did I learn?
+This is a set of scripts designed to allow users to set up a new genetic algorithm and start writing the fitness function within 15 minutes.
+The main class controls the fundamental genetic algorithm workflow, implements crossover and mutation phases with flexible settings, and provides easy-to-use static libraries for common GA methods. Everything is commented in Doxygen style so that users don&#39;t have to open the code.</description>
+    </item>
+    
+    <item>
+      <title>Lazy Eye Therapy Word Search</title>
+      <link>file:///G:/Career/Port51_New/public/projects/ambly/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>file:///G:/Career/Port51_New/public/projects/ambly/</guid>
+      <description>What is it? This is a game I made as a birthday present for my sister. She has ambylopia, a neurological problem where the brain tries to ignore input from one eye. Inspired by LazyEyeGames.com, I designed the game to be played with red-blue glasses. The red and blue elements are only seen by one eye at a time, which trains the brain to use both eyes simultaneously.
+How was it made?</description>
+    </item>
+    
+    <item>
+      <title>Sword Iownit</title>
+      <link>file:///G:/Career/Port51_New/public/projects/si/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>file:///G:/Career/Port51_New/public/projects/si/</guid>
+      <description>What is it?
+How was it made?
+What did I learn?
+This is a hobby project I&#39;ve been working on in my spare time. The basic combat is inspired by Dark Souls and it incorporates technology used in my other projects, like the dynamic water.
+Features:  AI includes FSM and attack combo system Cg shader library using DX9 and DX11 Player controls with dodging, attack combos, stamina, poise, and custom physics controller Custom hit detection system using geometry rather than ray traces (for increased speed and scalability)</description>
+    </item>
+    
+    <item>
+      <title>Water Simulation</title>
+      <link>file:///G:/Career/Port51_New/public/projects/water/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>file:///G:/Career/Port51_New/public/projects/water/</guid>
+      <description>This is a water system I made for boss battles in my action game. It adds a layer of complication to player movement and gives extra impact to whatever the bosses do. Attacks that the player dodges can still be a problem due to the waves they create.
+Features:  Waves created from sources:  Transverse ocean waves Large objects moving Impact events   Special ripples for extra huge impacts Special handling for shallow water flow to minimize edge artifacts Tesellated gerstner waves with turbulence that reacts to depth and water motion Cg surface shader:  DirectX 11 tessellation Gerstner wave vertex displacement Depth-based opacity Automatic foam + whitecaps    Design choices: The core simulation is done in C# with a grid-based model that handles the large-scale waves.</description>
+    </item>
+    
+  </channel>
+</rss>

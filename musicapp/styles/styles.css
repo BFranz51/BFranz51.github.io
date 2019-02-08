@@ -1,0 +1,596 @@
+* {
+	color: #eedede;
+	cursor: default;
+}
+
+*:not(.canSelect) {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+					  supported by Chrome and Opera */
+}
+
+tr {
+	padding: 0;
+	margin: 0;
+}
+
+td {
+	padding: 0;
+	margin: 0;
+}
+
+.full {
+	width: 100%;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.fadedText {
+	color: #9b7777;
+	font-size: 0.75em;
+}
+
+.indented {
+	margin-left: 30px;
+}
+
+.subheader {
+	font-size: 1.15em;
+	font-weight: bold;
+	font-style: italic;
+}
+
+tr.inputHoverRow {
+	background: #000000;
+	-webkit-transition: background: 1.25s;
+	transition: background: 1.25s;
+}
+
+tr.inputHoverRow:hover {
+	background: #101018;
+	-webkit-transition: background: 0.25s;
+	transition: background: 0.25s;
+}
+
+.credits-container {
+	color: black;
+	padding-left: 15px;
+}
+
+.credits {
+	color: black;
+}
+
+.credits a {
+	color: blue;
+}
+
+.svg-container {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding-bottom: 47.5%;
+	vertical-align: top;
+	overflow: hidden;
+	background: black;
+}
+
+.svg-content {
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+}
+
+.modal-window {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto; /* scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-content {
+	background-color: #000000;
+	padding: 20px;
+	border: 2px solid #888;
+	border-radius: 10px;
+}
+/* Piano */
+.modal-content.modal-0 {
+	margin: 2% auto; /* center it, and position Y */
+	width: auto;
+	width: 900px !important; /* piano container is 500px wide */
+}
+.modal-content.modal-1 {
+	margin: 4% auto; /* center it, and position Y */
+	width: auto;
+	width: 850px !important; /* piano container is 500px wide */
+}
+.modal-content.modal-2 {
+	margin: 4% auto; /* center it, and position Y */
+	width: auto;
+	width: 700px !important; /* piano container is 500px wide */
+}
+
+
+
+
+.centerContents {
+	text-align: center;
+}
+
+.rightAlignContents {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.links line {
+	stroke: #ff0;
+	stroke-opacity: 1.0;
+}
+
+.nodes circle {
+	stroke: #fff;
+	stroke-width: 1.5px;
+	/*-webkit-filter: drop-shadow(0px 0px 10px #fffbd8);
+	-filter: drop-shadow(0px 0px 10px #fffbd8);*/
+}
+
+/* Highlight around node */
+.nodeSelection {
+	fill: #fffbd8;
+	-webkit-filter: drop-shadow(0px 0px 20px #fffbd8);
+	-filter: drop-shadow(0px 0px 20px #fffbd8);
+	animation-name: pulseSelectedNode;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes pulseSelectedNode {
+	0% {
+		-webkit-filter: drop-shadow(0px 0px 8px #fffbd8);
+		-filter: drop-shadow(0px 0px 8px #fffbd8);
+	}
+	90% {
+		-webkit-filter: drop-shadow(0px 0px 40px #fffbd8);
+		-filter: drop-shadow(0px 0px 40px #fffbd8);
+	}
+	100% {
+		-webkit-filter: drop-shadow(0px 0px 8px #fffbd8);
+		-filter: drop-shadow(0px 0px 8px #fffbd8);
+	}
+}
+
+.node-labels {
+	text-anchor: middle;
+	font-size: 15px;
+	font-weight: bold;
+	pointer-events: "none";
+	fill: #fff;
+	/* Disable selection */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.node-circles {
+	stroke-width: 2px;
+}
+
+.centered {
+	margin: auto;
+}
+
+.svg-piano-key {
+	fill: rgba(17, 51, 136, 0.3);
+	-webkit-transition: fill 1s ease;
+	transition: fill 1s ease;
+}
+
+
+
+
+select,
+input[type=select],
+input[type=text] {
+	background: #000000;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 5px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 8px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 8px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 6.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 8px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+.range-label {
+	font-size: 9px;
+}
+.range-label.left {
+	float: left;
+}
+.range-label.right {
+	float: right;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+.cool-button {
+	position: relative;
+	border-radius: 7px;
+	color: #111;
+	background: #eee; /*#4081c9*/
+	/*border: 1.75px solid #010101;*/
+	/* Set transition for box shadow */
+	-webkit-transition: border-radius 1.0s,
+		box-shadow 0.5s;
+	transition: border-radius 1.0s,
+		box-shadow 0.5s;
+}
+.cool-button.small-x {
+	width: 35px;
+	height: 35px;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0px 10px;
+}
+.cool-button.medium {
+	width: 100px;
+	height: 40px;
+	font-size: 13px;
+	margin: 0px 10px;
+}
+.cool-button.large {
+	width: 120px;
+	height: 50px;
+	font-size: 17px;
+	margin: 0px 2px 16px 16px; /* top, bottom, L/R */
+}
+.cool-button:hover {
+	/*transform: rotate(45deg);*/
+	color: #dddddd;
+	background: #3071a9;
+	border-radius: 12px;
+	-webkit-transition: border-radius 0.25s,
+		box-shadow 0.2s;
+	transition: border-radius 0.25s,
+		box-shadow 0.2s;
+	box-shadow: 0 0 1px 2px rgba(240, 240, 240, 0.10), /*rgba(64, 129, 201, 0.15)*/
+		0 0 1px 4px rgba(240, 240, 240, 0.05),
+		0 0 1px 6px rgba(240, 240, 240, 0.025);
+}
+
+.rootCircle {
+	height: 20px;
+	width: 20px;
+	background: #444400;
+	border-radius: 50%;
+	display: inline-block;
+	border: 1.75px solid #353530;
+	/* Set transition for box shadow */
+	transition: box-shadow 125ms cubic-bezier(.2,0,.7,1), transform 80ms cubic-bezier(.2,0,.7,1);
+}
+.rootCircle[value=true] {
+	background: #ee2;
+	border: 1.75px solid #992;
+	box-shadow: 0 0 1px 4px rgba(255, 255, 40, 0.15),
+		0 0 1px 6px rgba(255, 255, 40, 0.1),
+		0 0 1px 10px rgba(255, 255, 40, 0.05);
+}
+.rootCircle[value=false]:hover {
+	background: #dd1;
+	border: 1.75px solid #881;
+	box-shadow: 0 0 1px 3px rgba(255, 255, 40, 0.1),
+		0 0 1px 5px rgba(255, 255, 40, 0.067),
+		0 0 1px 9px rgba(255, 255, 40, 0.033);
+}
+
+
+
+
+
+
+.piano-etched-text {
+	color: #211;
+	font-size: 12pt;
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapse-toggle-button {
+	background-color: #fc0;
+	color: #444;
+	cursor: pointer;
+	padding: 9px;
+	width: 100%;
+	border: none;
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapse-toggle-button:hover {
+	background-color: #ff0;
+}
+
+.collapsible-input-area {
+	margin: 0;
+	padding: 0 18px;
+	display: block;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+
+
+.pianoContainer {
+	width: 500px;
+	height: 400px;
+	/*background: #72330e;*/
+	background-image: url(../img/textures/PianoBottom.jpg);
+	-webkit-background-repeat: no-repeat;
+	-webkit-background-size: 100% 100%; /* Stretch image */
+	-moz-background-repeat: no-repeat;
+	-moz-background-size: 100% 100%;
+	-o-background-repeat: no-repeat;
+	-o-background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	align-content: center;
+	/*border-right: 3px solid #92532e;
+	border-bottom: 3px solid #92532e;*/
+	border-radius: 0px 0px 4px 4px;
+}
+
+.pianoContainerTop {
+	width: 100%;
+	height: 100px;
+	/*background: #994a1d;*/
+	background-image: url(../img/textures/PianoTop.jpg);
+	-webkit-background-repeat: no-repeat;
+	-webkit-background-size: 100% 100%; /* Stretch image */
+	-moz-background-repeat: no-repeat;
+	-moz-background-size: 100% 100%;
+	-o-background-repeat: no-repeat;
+	-o-background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	/*border-right: 3px solid #b96a3d;
+	border-bottom: 3px solid #b96a3d;*/
+	border-radius: 0px 0px 4px 4px;
+}
+
+.pianoTable {
+	background: #361e13; /* darkness between keys */
+	border-spacing: 2px 0px;
+	border-collapse: separate;
+}
+
+.pianoKey {
+	-webkit-transition: background 0.65s;
+	-moz-transition: background 0.65s;
+	-o-transition: background 0.65s;
+	transition: background 0.65s;
+	outline: none;
+}
+
+/* Natural colors */
+.pianoWhite {
+	background: #cccccc;
+}
+
+.pianoBlack {
+	background: #202020;
+}
+
+/* Highlighted */
+.pianoKey[mouseover=true] {
+	background: #fff46d !important;
+	border-color: #fcf058 !important;
+	-webkit-transition: background 0.18s;
+	-moz-transition: background 0.18s;
+	-o-transition: background 0.18s;
+	transition: background 0.18s;
+}
+
+/* Selected */
+.pianoKey[highlight=true][mouseover=false] {
+	background: #468cc9 !important; /* #3071a9; */
+	border-color: #4081b9 !important; /* #4081b9; */
+}
+
+.pianoKey:focus {
+	outline: none;
+}
+
+/* White keys are divided into upper and lower sections */
+.pianoWhite.pianoBot {
+	border-right: 3px solid #eeeeee;
+	border-bottom: 3px solid #eeeeee;
+	border-radius: 0px 0px 5px 5px;
+}
+.pianoWhite.pianoBot[highlight=true][mouseover=false] {
+	border-color: #4081b9;
+}
+
+.pianoWhite.pianoTopSmall,
+.pianoWhite.pianoTopExtraSmall {
+	border-right: 3px solid #eeeeee;
+	border-radius: 3px 3px 0px 0px;
+}
+.pianoWhite.pianoTopSmall[highlight=true][mouseover=false],
+.pianoWhite.pianoTopExtraSmall[highlight=true][mouseover=false] {
+	border-color: #4081b9;
+}
+
+.pianoBlack {
+	border-right: 3px solid #484848;
+	border-bottom: 3px solid #484848;
+	border-radius: 3px 3px 5px 5px;
+}
+
+.jitterKey {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	animation-name: jitterTheKey;
+	animation-duration: 0.25s;
+	animation-iteration-count: 2;
+}
+
+.jitterKeySlow {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	animation-name: jitterTheKeySlow;
+	animation-duration: 0.4s;
+	animation-iteration-count: 1;
+}
+
+@keyframes jitterTheKey {
+	0% { left: 0px; top 0px; }
+	15% { left: 2px; top -3px; }
+	33% { left: -2px; top -4px; }
+	66% { left: 1px; top 1px; }
+	85% { left: -1px; top -1px; }
+	100% { left: 0px; top 0px; }
+}
+
+@keyframes jitterTheKeySlow {
+	0% { left: 0px; top 0px; }
+	15% { left: 2px; top -1px; }
+	33% { left: -2px; top -2px; }
+	66% { left: 2px; top 1px; }
+	85% { left: -2px; top 5px; }
+	100% { left: 0px; top 0px; }
+}
+
+.pianoTopSmall {
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 30px;
+	height: 160px !important;
+}
+
+.pianoTopExtraSmall {
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 26px;
+	height: 160px !important;
+}
+
+.pianoTopMed {
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 36px;
+	height: 157px !important;
+}
+
+.pianoBot {
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 57px;
+	height: 107px !important;
+}

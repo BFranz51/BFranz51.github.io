@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bryan Franz Portfolio</title>
+    <link rel="stylesheet" href=/G:/Career/Port51_New/public/css/styles.css>
+    <link rel="stylesheet" href=/G:/Career/Port51_New/public/css/prism.css>
+</head>
+<body>
+    <div id="main-container">
+
+
+
+
+
+
+
+
+
+  <div class="project-content-container">
+    <div class="project-title">Water Simulation</div>
+
+    
+    <div>
+      
+<div class="item-tag-container">
+
+    
+        <div class="item-tag-text-language">C#</div>
+    
+        <div class="item-tag-text-language">Cg</div>
+    
+
+
+    
+        <div class="item-tag-text-tech">Unity3D</div>
+    
+        <div class="item-tag-text-tech">DirectX 11</div>
+    
+        <div class="item-tag-text-tech">Tessellation</div>
+    
+        <div class="item-tag-text-tech">PBR</div>
+    
+
+</div>
+
+    </div>
+    <div class="clearfix" style="height: 20px;"></div>
+
+    
+
+    
+    <p>This is a water system I made for boss battles in my action game. It adds a layer of complication to player movement and gives extra impact to whatever the bosses do. Attacks that the player dodges can still be a problem due to the waves they create.</p>
+
+<h1>Features:</h1>
+
+<ul>
+    <li>Waves created from sources:
+        <ul>
+            <li>Transverse ocean waves</li>
+            <li>Large objects moving</li>
+            <li>Impact events</li>
+        </ul>
+    </li>
+    <li>Special ripples for extra huge impacts</li>
+    <li>Special handling for shallow water flow to minimize edge artifacts</li>
+    <li>Tesellated gerstner waves with turbulence that reacts to depth and water motion</li>
+    <li>Cg surface shader:
+        <ul>
+            <li>DirectX 11 tessellation</li>
+            <li>Gerstner wave vertex displacement</li>
+            <li>Depth-based opacity</li>
+            <li>Automatic foam + whitecaps</li>
+        </ul>
+    </li>
+</ul>
+
+<h1>Design choices:</h1>
+
+<p>The core simulation is done in C# with a grid-based model that handles the large-scale waves. It combines input from moving objects with transverse waves, and handles flow between neighboring grid points. It outputs depth and water force for any point, and also calculates extra data like how "turbulent" each point is, which it sends to the shader via vertex colors.</p>
+
+<p>The mesh was dense enough for gameplay, but I wanted more detailed visuals. So I added DirectX 11 tessellation to the shader and wrote a vertex displacement function that overlaid 6 <a href="https://en.wikipedia.org/wiki/Trochoidal_wave" target="_blank">gerstner waves</a> onto the tessellated mesh. The gerstner waves have different amplitudes and lacunarities based on the "turbulence" set by the C# simulation. This allowed me to keep shallow areas relatively gentle, and have the water become choppy for a while after large waves.</p>
+
+<p>The main advantage of running the gerstner waves on the GPU is that the tessellation is scaled based on camera distance, allowing the closest waves to be very high resolution. Also, the resolution can be scaled based on user settings without affecting the simulation itself.</p>
+
+<p>Below is the vertex function used to create a single gerstner wave on the GPU:</p>
+
+<!-- Code block! -->
+
+<div class="indented">
+    <pre>
+        <code class="language-c" >
+// Returns vertex displacement due to gernster wave
+// (This is in Cg and runs on the GPU)
+inline float3 gerstnerDisplacement(float2 vertPos, float2 D, float W, float Q, float T, float amplitude)
+{
+float trigVal = dot(W * D, vertPos) + T * _Time.x;
+
+// Use sincos() as it's faster than calling both sin() and cos()
+float sinVal, cosVal;
+sincos(trigVal, sinVal, cosVal);
+
+return amplitude * float3(
+Q * D.x * cosVal,
+Q * D.y * cosVal,
+sinVal);
+}
+        </code>
+    </pre>
+</div>
+
+
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <a class="no-underline" href=/G:/Career/Port51_New/public/index.html>
+        <div class="nav-button-rounded">
+            Main Portfolio
+        </div>
+    </a>
+
+
+
+    
+    
+
+    
+    
+    
+
+<div class="item-status-container">
+    <div class="item-status-text"><span class="bold italic">Finished</span></div>
+</div>
+
+
+  </div>
+
+
+
+    <footer>
+        
+    </footer>
+
+    
+    <script src=/G:/Career/Port51_New/public/lib/prism.js></script>
+    
+    </div>
+
+    <script>
+        
+        (function() {
+            document.getElementById("posts_show_more")
+                .addEventListener("click", () => {
+                    
+                    document.getElementById("posts_recent").style.display = "none";
+                    
+                    document.getElementById("posts_all").style.display = "block";
+                    
+                    document.getElementById("posts_show_more").style.display = "none";
+                    document.getElementById("posts_show_less").style.display = "block";
+                });
+            document.getElementById("posts_show_less")
+                .addEventListener("click", () => {
+                    
+                    document.getElementById("posts_recent").style.display = "block";
+                    
+                    document.getElementById("posts_all").style.display = "none";
+                    
+                    document.getElementById("posts_show_more").style.display = "block";
+                    document.getElementById("posts_show_less").style.display = "none";
+                });
+        })();
+    </script>
+
+</body>
+</html>

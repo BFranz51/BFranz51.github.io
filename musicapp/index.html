@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Music Mode Buddy</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Load jQuery and D3 -->
+		<script src="lib/jquery/jquery3.3.1.min.js"></script>
+		<script src="lib/d3js/d3.v4.min.js"></script>
+
+		<!-- Load algorithm score factors -->
+		<script src="scripts/similarityAlgorithm/topologyRegions.js"></script>
+		<script src="scripts/similarityAlgorithm/topologyIntervals.js"></script>
+		<script src="scripts/similarityAlgorithm/noteOverlap.js"></script>
+		<script src="scripts/similarityAlgorithm/mood.js"></script>
+
+		<!-- Load temporary data (front-end app) -->
+		<script src="scripts/data/tempData.js"></script>
+
+		<!-- Load control scripts -->
+		<script src="scripts/dataAnalysis/dataManip.js"></script>
+		<script src="scripts/dataAnalysis/stats.js"></script>
+		<script src="scripts/dataAnalysis/scores.js"></script>
+		<script src="scripts/dataAnalysis/modevis.js"></script>
+
+		<!-- Load graph display scripts -->
+		<script src="scripts/d3graph/filter.js"></script>
+		<script src="scripts/d3graph/graphPreProcess.js"></script>
+		<script src="scripts/d3graph/d3graph.js"></script>
+		<script src="scripts/d3graph/adaptiveSVG.js"></script>
+		<script src="scripts/d3graph/determineChords.js"></script>
+		<script src="scripts/d3graph/textManip.js"></script>
+
+		<!-- Load UI scripts -->
+		<script src="scripts/ui/controls.js"></script>
+		<script src="scripts/ui/loadTemplates.js"></script>
+
+		<!-- Load styles -->
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+	</head>
+
+	<body>
+
+		<!-- Modal window -->
+		<div id="modal-0" class="modal-window">
+			<div class="modal-content modal-0">
+				<span class="loadTemplate" value="templates/largePiano.html" onload="pianoButtons"></span>
+			</div>
+		</div>
+
+		<!-- D3 graph -->
+		<div class="svg-container">
+			<svg class="svg-content" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1440 675"><rect width="100%" height="100%" fill="black"></rect></svg>
+		</div>
+
+		<!-- Credits -->
+		<div class="credits-container">
+			<div class="credits">Uses <a href="https://d3js.org/">D3.js</a>, under the <a href="https://github.com/d3/d3/blob/master/LICENSE">BSD 3-Clause License</a></div>
+			<div class="credits">Uses <a href="https://jquery.com/">jQuery</a>, under this <a href="https://github.com/jquery/jquery/blob/master/LICENSE.txt">MIT License</a></div>
+			<!--<div class="credits">The rest of the app is Copyright &copy 2019 Bryan Franz</div>-->
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bryan Franz Portfolio</title>
+    <link rel="stylesheet" href=/G:/Career/Port51_New/public/css/styles.css>
+    <link rel="stylesheet" href=/G:/Career/Port51_New/public/css/prism.css>
+</head>
+<body>
+    <div id="main-container">
+
+
+
+
+
+
+
+
+
+  <div class="project-content-container">
+    <div class="project-title">Genetic Algorithm Environment</div>
+
+    
+    <div>
+      
+<div class="item-tag-container">
+
+    
+        <div class="item-tag-text-language">C&#43;&#43;</div>
+    
+
+
+</div>
+
+    </div>
+    <div class="clearfix" style="height: 20px;"></div>
+
+    
+
+    
+    <p>What is it?</p>
+
+<p>How was it made?</p>
+
+<p>What did I learn?</p>
+
+<p>This is a set of scripts designed to allow users to set up a new genetic algorithm and start writing the fitness function within 15 minutes.</p>
+<p>The main class controls the fundamental genetic algorithm workflow, implements crossover and mutation phases with flexible settings, and provides easy-to-use static libraries for common GA methods. Everything is commented in Doxygen style so that users don't have to open the code.</p>
+
+<p><br /></p>
+
+<p><h3>Features:</h3>
+<ul>
+    <li><strong>Example Mutation settings</strong>
+        <ul>
+            <li>Toggle a random bit</li>
+            <li>Toggle 20 random disconnected bits</li>
+            <li>Mutate 1 random byte by giving each bit a 78% chance to toggle</li>
+            <li>Mutate between 1 and 4 random values, giving each of their bits a 22% chance to toggle</li>
+            <li>Give every bit a 1% chance of toggling</li>
+        </ul>
+    </li>
+    <li><strong>Crossovers</strong>
+        <ul>
+            <li><strong>COPY</strong> - Volatile data is directly copied from elite parents</li>
+            <li><strong>SHUFFLE</strong> - Volatile data is copied from 2 elite parents, with each byte being chosen from a random parent</li>
+            <li><strong>N-SPLIT</strong> - Volatile data is copied in (N + 1) sequential chunks from 2 elite parents</li>
+        </ul>
+    </li>
+    <li><strong>Encoding Supported</strong>
+        <ul>
+            <li>Any primitive</li>
+            <li>Numeric vectors</li>
+            <li>Boolean vectors</li>
+        </ul>
+    </li>
+    <li><strong>Input/Output in binary and CSV format</strong></li>
+    <li><strong>Tested on:</strong>
+        <ul>
+            <li>Knapsack problem</li>
+            <li>Sudoku puzzle</li>
+            <li>Template derived class for quickly setting up new GAs</li>
+        </ul>
+    </li>
+</ul></p>
+
+<!--<img src="file:///C:/Users/Bryan.Franz/source/testing/Static1/public/img/ea/AmazingPieChart.png" />-->
+
+
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+        <a class="no-underline" href="https://github.com/BFranz51/GAB-Class" target="_blank">
+            <div class="nav-button-rounded">
+                Github Repo
+            </div>
+        </a>
+    
+
+
+
+
+    <a class="no-underline" href=/G:/Career/Port51_New/public/index.html>
+        <div class="nav-button-rounded">
+            Main Portfolio
+        </div>
+    </a>
+
+
+
+    
+    
+
+    
+    
+    
+
+<div class="item-status-container">
+    <div class="item-status-text"><span class="bold italic">Released</span></div>
+</div>
+
+
+  </div>
+
+
+
+    <footer>
+        
+    </footer>
+
+    
+    <script src=/G:/Career/Port51_New/public/lib/prism.js></script>
+    
+    </div>
+
+    <script>
+        
+        (function() {
+            document.getElementById("posts_show_more")
+                .addEventListener("click", () => {
+                    
+                    document.getElementById("posts_recent").style.display = "none";
+                    
+                    document.getElementById("posts_all").style.display = "block";
+                    
+                    document.getElementById("posts_show_more").style.display = "none";
+                    document.getElementById("posts_show_less").style.display = "block";
+                });
+            document.getElementById("posts_show_less")
+                .addEventListener("click", () => {
+                    
+                    document.getElementById("posts_recent").style.display = "block";
+                    
+                    document.getElementById("posts_all").style.display = "none";
+                    
+                    document.getElementById("posts_show_more").style.display = "block";
+                    document.getElementById("posts_show_less").style.display = "none";
+                });
+        })();
+    </script>
+
+</body>
+</html>
