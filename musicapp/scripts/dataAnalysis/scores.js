@@ -23,7 +23,7 @@ SCORES.getScore = (a, b, weightFactors) => {
 	// SETTINGS: [losePenalty, loseLenience, gainPenalty, gainLenience]
 	//	*	Generally good: [0.4, 0.2, 0.1, 0.5]
 	//	*	Fill in scale: [1.0, 0.0, 0.0, 0.5]
-	const debugUseDiffPenalty = false;
+	const debugUseDiffPenalty = true;
 	const settings1 = [0.375 + 0.625 * openness, 0.2 * (1.0 - openness), 0.1 * (1.0 - openness), 0.5];
 
 	const diffPenalty = (debugUseDiffPenalty) ? getNoteDifferencePenalty(a, b, isComparedToUser, settings1[0], settings1[1], settings1[2], settings1[3]) : 0.0;
