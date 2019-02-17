@@ -8,7 +8,6 @@ var numScoresPrinted1 = 0;
 	Calculates score from 0.0 to 1.0 based on how similar two modes are
 */
 SCORES.getScore = (a, b, weightFactors) => {
-	//const debugPrintAll = (a.isUser == b.isUser && (a.label == b.label && a.label == "Chromatic Scale")) && true;
 	const debugPrintAll = (a.isUser != b.isUser) && false;
 	const isComparedToUser = (a.isUser || b.isUser);
 
