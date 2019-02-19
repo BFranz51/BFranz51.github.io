@@ -239,6 +239,11 @@ body {
 	-transition: opacity 0.51s;
     transition-timing-function: cubic-bezier(0.0, 3.0, 0.5, 0.75); /* Burst in! */
     
+    &-small:extend(.nav-button-rounded) {
+        font-size: 0.9em;
+        width: 350px;
+        text-transform: none;
+    }
     &-highlight:extend(.nav-button-rounded) {
         background: #ffff44;
         animation: pulse-button 1.5s infinite;
@@ -248,6 +253,10 @@ body {
     }
 }
 .nav-button-rounded:hover {
+	cursor: pointer !important;
+	opacity: 0.8;
+}
+.nav-button-rounded-small:hover {
 	cursor: pointer !important;
 	opacity: 0.8;
 }
@@ -381,6 +390,7 @@ footer {
 .aboutme-container {
     margin: 5px 25px;
     max-width: 1100px;
+    text-align: left;
 }
 
 .project {
@@ -475,6 +485,11 @@ footer {
         animation-timing-function: ease-in;
         animation-duration: 1.2s;
     }
+}
+
+.td-center {
+    vertical-align: top;
+    text-align: center;
 }
 
 .item {
