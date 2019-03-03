@@ -2,7 +2,7 @@
     VARIABLES
 */
 
-@layout-sidebar-width: 1px;
+@layout-sidebar-width: 0*290px;
 
 @item-width: 495px; 
 @item-height: 700px;
@@ -291,24 +291,33 @@ body {
     }
     /* Keeps main image same height */
     &-main-image-display-container {
-        max-width: @gallery-image-width;
+        /*max-width: @gallery-image-width;
         width: @gallery-image-width;
+        height: @gallery-image-height;
+        */
+        width: 80%;
         height: @gallery-image-height;
         text-align: center;
     }
     /* Keeps preview strip same height */
     &-preview-strip {
         background: #111111;
-        width: @gallery-preview-width;
+        /*width: @gallery-preview-width;*/
+        width: 20%;
         text-align: center;
     }
     &-image {
         &-main {
-            max-width: @gallery-image-width;
+            /*max-width: @gallery-image-width;
+            max-height: @gallery-image-height;*/
+            width: 100%;
             max-height: @gallery-image-height;
         }
         &-preview {
-            max-width: @gallery-preview-width;
+            /*max-width: @gallery-preview-width;
+            max-height: @gallery-preview-height;
+            */
+            width: 100%;
             max-height: @gallery-preview-height;
             opacity: 0.6;
             .uniformBorder(1px, #101010);
@@ -502,7 +511,7 @@ footer {
         float: left;
         margin: 3px;
         position: relative;
-        height: @item-height;
+        min-height: @item-height;
         background: #0a0a0a;
         padding: 10px;
         border-radius: 5px;
