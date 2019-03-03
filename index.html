@@ -2728,10 +2728,9 @@
         }
         
         for (i = 0; i < previews.length; ++i) {
+            previews[i].className = previews[i].className.replace(" selected-image", "");
             if (i == imageIndex) {
                 previews[i].className += " selected-image";
-            } else {
-                previews[i].className = previews[i].className.replace(" selected-image", "");
             }
         }
     }
