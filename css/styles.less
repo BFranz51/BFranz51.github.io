@@ -496,12 +496,12 @@ footer {
 .item {
     color: @white-text;
 
+    
     &-container:extend(.item) {
         /*z-index: -6;*/
         float: left;
         margin: 3px;
         position: relative;
-        width: @item-width;
         height: @item-height;
         background: #0a0a0a;
         padding: 10px;
@@ -711,6 +711,9 @@ footer {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
     body {
         padding-top: 50px;
+    }
+    .item-container {
+        width: 100%;
     }
 }
 
