@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Dangerous Depths VR</title>
+      <link>https://port51.github.io/projects/vrdepths/</link>
+      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
+      
+      <guid>https://port51.github.io/projects/vrdepths/</guid>
+      <description>NOTE: This is a work in progress and the art isn&#39;t very polished yet. -- Light Transmittance through Water As light travels through water, colors of different wavelengths are absorbed at different rates. Red is absorbed fastest, followed by orange, yellow, green, and blue. This can be modeled fairly well by applying exponential decay to the RGB channels. The distance used is the total distance the light travels. For sunlight, that’s a combination of depth and the distance to the camera.</description>
+    </item>
+    
+    <item>
       <title>Displacement Shaders for Hurricane Winds</title>
       <link>https://port51.github.io/projects/hair/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
@@ -48,32 +57,6 @@ MONA is a Python app that creates networks of differentially expressed &#34;omic
     </item>
     
     <item>
-      <title>Displacement Shaders for Hurricane Winds</title>
-      <link>https://port51.github.io/projects/wind/</link>
-      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
-      
-      <guid>https://port51.github.io/projects/wind/</guid>
-      <description>What is it?
-How was it made?
-What did I learn?
-This is a set of shaders for trees blowing in harsh winds. They use vertex displacement in order to simulate both large-scale bending and small fluctuations.
-In order to allow for large numbers of trees with minimal draw calls, I decided to preserve static and dynamic batching. This meant that the mesh data and material settings had to be identical for each type of tree.</description>
-    </item>
-    
-    <item>
-      <title>Genetic Algorithm Environment</title>
-      <link>https://port51.github.io/projects/gabclass/</link>
-      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
-      
-      <guid>https://port51.github.io/projects/gabclass/</guid>
-      <description>What is it?
-How was it made?
-What did I learn?
-This is a set of scripts designed to allow users to set up a new genetic algorithm and start writing the fitness function within 15 minutes.
-The main class controls the fundamental genetic algorithm workflow, implements crossover and mutation phases with flexible settings, and provides easy-to-use static libraries for common GA methods. Everything is commented in Doxygen style so that users don&#39;t have to open the code.</description>
-    </item>
-    
-    <item>
       <title>Lazy Eye Therapy Word Search</title>
       <link>https://port51.github.io/projects/ambly/</link>
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
@@ -81,19 +64,6 @@ The main class controls the fundamental genetic algorithm workflow, implements c
       <guid>https://port51.github.io/projects/ambly/</guid>
       <description>What is it? This is a game I made as a birthday present for my sister. She has ambylopia, a neurological problem where the brain tries to ignore input from one eye. Inspired by LazyEyeGames.com, I designed the game to be played with red-blue glasses. The red and blue elements are only seen by one eye at a time, which trains the brain to use both eyes simultaneously.
 How was it made?</description>
-    </item>
-    
-    <item>
-      <title>Sword Iownit</title>
-      <link>https://port51.github.io/projects/si/</link>
-      <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
-      
-      <guid>https://port51.github.io/projects/si/</guid>
-      <description>What is it?
-How was it made?
-What did I learn?
-This is a hobby project I&#39;ve been working on in my spare time. The basic combat is inspired by Dark Souls and it incorporates technology used in my other projects, like the dynamic water.
-Features:  AI includes FSM and attack combo system Cg shader library using DX9 and DX11 Player controls with dodging, attack combos, stamina, poise, and custom physics controller Custom hit detection system using geometry rather than ray traces (for increased speed and scalability)</description>
     </item>
     
     <item>

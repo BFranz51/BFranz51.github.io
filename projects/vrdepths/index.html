@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Bryan Franz Portfolio</title>
+    <link rel="stylesheet" href=https://port51.github.io/css/styles.css>
+    <link rel="stylesheet" href=https://port51.github.io/css/prism.css>
+    <link rel="stylesheet" href=https://port51.github.io/css/bootstrap-grid.min.css>
+</head>
+<body>
+    <div id="main-container">
+
+
+
+
+
+
+
+
+
+  <div class="project-content-container">
+    <div class="project-title">&#34;Dangerous Depths VR&#34;</div>
+
+    
+    
+    <div class="clearfix" style="height: 20px;"></div>
+
+    
+
+    
+    <!--<p>NOTE: This is a work in progress and the art isn't very polished yet.
+</p>-->
+
+<h1>Light Transmittance through Water</h1>
+
+<p>As light travels through water, colors of different wavelengths are absorbed at different rates. Red is absorbed fastest, followed by orange, yellow, green, and blue. This can be modeled fairly well by applying exponential decay to the RGB channels. The distance used is the total distance the light travels. For sunlight, that’s a combination of depth and the distance to the camera.
+</p>
+
+<!-- Code block! -->
+
+<div class="indented">
+    <pre>
+<code class="language-c" >// HLSL:
+inline half3 GetColorTransmittance(float travelDistance)
+{
+    return exp(travelDistance * float3(-0.0033558, -0.002562, -0.0020622));
+}</code>
+    </pre>
+</div>
+
+<div class="clearfix"></div>
+<p>
+This simple equation formed the basis of all the underwater lighting. Below is the terrain mesh with it applied. The beach at the top gets full lighting, while the depths are essentially pitch black.
+</p>
+
+<div class="col-md-6">
+    <div class="thumbnail">
+        <!--<h3>Light received by terrain</h3>-->
+        <a href="https://port51.github.io/img/WATER/pushWater1_opt.gif">
+            <img src="https://port51.github.io/img/WATER/pushWater1_opt.gif" alt="(Image not found)" class="galleryImage">
+        </a>
+    </div>
+</div>
+
+<h1>Ocean Gradient</h1>
+
+<p>I added a 3-point gradient skybox based on the player's depth. The 3 colors are sampled using the light transmission equation at depths relative to the player. I added a color setting that the result is multiplied by. This allowed me to keep the surrounding water slightly brighter and slightly greener than objects in the foreground, giving them an ominous darkness.
+</p>
+
+<h1>Lighting the Foreground</h1>
+
+<div class="col-md-6">
+    <div class="thumbnail">
+        <h3>Initial scene, with no effects</h3>
+        <a href="https://port51.github.io/img/WATER/pushWater1_opt.gif">
+            <img src="https://port51.github.io/img/WATER/pushWater1_opt.gif" alt="(Image not found)" class="galleryImage">
+        </a>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="thumbnail">
+        <h3>Color shift based on distance travelled</h3>
+        <a href="https://port51.github.io/img/WATER/pushWater1_opt.gif">
+            <img src="https://port51.github.io/img/WATER/pushWater1_opt.gif" alt="(Image not found)" class="galleryImage">
+        </a>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="thumbnail">
+        <h3>Gradient fog intensity</h3>
+        <a href="https://port51.github.io/img/WATER/pushWater1_opt.gif">
+            <img src="https://port51.github.io/img/WATER/pushWater1_opt.gif" alt="(Image not found)" class="galleryImage">
+        </a>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="thumbnail">
+        <h3>Fresnel</h3>
+        <a href="https://port51.github.io/img/WATER/pushWater1_opt.gif">
+            <img src="https://port51.github.io/img/WATER/pushWater1_opt.gif" alt="(Image not found)" class="galleryImage">
+        </a>
+    </div>
+</div>
+
+<p>Fresnel is technically a reflection at grazing angles, and so I sampled the ocean gradient using the surface normal as the direction. This makes it so the fresnel matches the surrounding ocean, which allows objects to look like they fit environments of any depth.
+</p>
+
+<div class="col-md-6">
+    <div class="thumbnail">
+        <h3>Final scene, with bubbles and lightmaps</h3>
+        <a href="https://port51.github.io/img/WATER/pushWater1_opt.gif">
+            <img src="https://port51.github.io/img/WATER/pushWater1_opt.gif" alt="(Image not found)" class="galleryImage">
+        </a>
+    </div>
+</div>
+
+<h1>Current Progress</h1>
+
+<p>This is still very early in development.</p>
+
+
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <a class="no-underline" href=https://port51.github.io/index.html>
+        <div class="nav-button-rounded">
+            Main Portfolio
+        </div>
+    </a>
+
+
+
+    
+    
+
+    
+    
+    
+
+<div class="item-status-container">
+    <div class="item-status-text"><span class="bold italic">In Progress</span></div>
+</div>
+
+
+  </div>
+
+
+
+    <footer>
+        <div style="color: #dddddd"><div style="font-weight: bold;">GDPR Compliance:</div>
+        I designed this site to not store user data or use cookies, whether 1st party or 3rd party. This is why videos are not embedded.
+        <br>Some things won't work if JavaScript is disabled.
+        </div>
+    </footer>
+
+    
+    <script src=https://port51.github.io/lib/prism.js></script>
+    
+    </div>
+
+    <script>
+        
+        
+
+    </script>
+
+</body>
+</html>
