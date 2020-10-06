@@ -27,7 +27,7 @@
       <pubDate>Tue, 18 Dec 2018 13:44:43 -0500</pubDate>
       
       <guid>https://port51.github.io/projects/vrdepths/</guid>
-      <description>NOTE: This is a work in progress and the art isn&#39;t very polished yet. -- Light Transmittance through Water As light travels through water, colors of different wavelengths are absorbed at different rates. Red is absorbed fastest, followed by orange, yellow, green, and blue. This can be modeled fairly well by applying exponential decay to the RGB channels. The distance used is the total distance the light travels. For sunlight, that’s a combination of depth and the distance to the camera.</description>
+      <description>NOTE: This is a work in progress and the art isn&#39;t very polished yet. -- Game Progress  For this game, I came up with the following lighting goals:  Objects that look convincing at any depth Performant shaders Artistic controls to tweak how things look  At first, I tried to combine different effects as needed. Objects looked bluer the deeper they were, had a fresnel also based on depth, and there was an ocean skybox with colors based on &#34;</description>
     </item>
     
     <item>
