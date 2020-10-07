@@ -57,11 +57,17 @@
 </p>
 
 <p>This can be modeled by applying exponential decay to the RGB channels based on the distance light travels in water. This became the defining formula, which all lighting effects use:
-
-$$ r(d)=e^{-k_{r}d} $$
-$$ g(d)=e^{-k_{g}d} $$
-$$ b(d)=e^{-k_{b}d} $$
 </p>
+
+<div class="indented">
+    <pre>
+<code class="language-c" >// HLSL:
+inline half3 GetColorTransmittance(float travelDistance)
+{
+    return exp(travelDistance * float3(-0.0033558, -0.002562, -0.0020622));
+}</code>
+    </pre>
+</div>
 
 <div class="clearfix"></div>
 <p>Below is the terrain mesh with it applied. The beach at the top gets full lighting, while the depths are essentially pitch black.
